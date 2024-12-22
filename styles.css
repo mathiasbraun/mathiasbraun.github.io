@@ -25,3 +25,20 @@ body {
     padding: 20px;
     background-color: #ffffff; /* Weiß */
 }
+
+/* Für Mobilgeräte (Breite kleiner als 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stapelt die Ränder und den Inhalt vertikal */
+    }
+
+    .container > .side {
+        display: none; /* Versteckt die Ränder auf kleinen Bildschirmen */
+    }
+
+    .container > .content {
+        flex: 1; /* Textbereich füllt den ganzen Bildschirm */
+        max-width: 100%;
+        padding: 10px; /* Kleinerer Abstand für schmale Bildschirme */
+    }
+}
