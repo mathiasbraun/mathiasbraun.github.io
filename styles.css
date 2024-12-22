@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    background-color: #fdf6e3; /* Dezentes Beige */
 }
 
 .container {
@@ -10,15 +10,16 @@ body {
     width: 100%;
     min-height: 100vh; /* Vollbildhöhe */
     box-sizing: border-box;
+    background-color: #fdf6e3; /* Dezentes Beige */
 }
 
 .container > .side {
     flex: 1; /* 1 Teil für den Rand */
-    background-color: #f0f0f0; /* Optional: Hintergrundfarbe für den Rand */
+    background-color: #fdf6e3; /* Dezentes Beige */
 }
 
 .container > .content {
     flex: 2; /* 2 Teile für den Textbereich */
     padding: 20px;
-    background-color: #ffffff; /* Optional: Hintergrundfarbe für den Text */
+    background-color: #fdf6e3; /* Dezentes Beige */
 }
