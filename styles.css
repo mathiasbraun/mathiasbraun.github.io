@@ -21,7 +21,7 @@ body {
 }
 
 .container > .content {
-    flex: 2; /* 2 Teile für den Textbereich */
+    flex: 1.5; /* 2 Teile für den Textbereich */
     padding: 20px;
     background-color: #ffffff; /* Weiß */
 }
