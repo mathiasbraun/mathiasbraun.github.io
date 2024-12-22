@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 14px;
-    background-color: #fdf6e3; /* Dezentes Beige */
+    background-color: #ffffff; /* Weiß */
     line-height: 1.15;
 }
 
@@ -12,16 +12,16 @@ body {
     width: 100%;
     min-height: 100vh; /* Vollbildhöhe */
     box-sizing: border-box;
-    background-color: #fdf6e3; /* Dezentes Beige */
+    background-color: #ffffff; /* Weiß */
 }
 
 .container > .side {
     flex: 1; /* 1 Teil für den Rand */
-    background-color: #fdf6e3; /* Dezentes Beige */
+    background-color: #ffffff; /* Weiß */
 }
 
 .container > .content {
     flex: 2; /* 2 Teile für den Textbereich */
     padding: 20px;
-    background-color: #fdf6e3; /* Dezentes Beige */
+    background-color: #ffffff; /* Weiß */
 }
