@@ -1,71 +1,84 @@
+/* Styling für die Navigationsleiste */
+.navbar {
+    background-color: #000000; /* Schwarzer Hintergrund */
+    overflow: hidden; /* Verhindert, dass Text überläuft */
+    text-align: center; /* Zentriert die Links */
+    border-bottom: 2px solid #000000; /* Dünner schwarzer Rand unten */
+}
+
+.navbar a {
+    display: inline-block;
+    color: #ffffff; /* Weiße Schriftfarbe */
+    text-align: center;
+    padding: 14px 20px; /* Abstand um den Text herum */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    background-color: #ddd; /* Heller Hintergrund beim Hover */
+    color: #000000; /* Schwarze Schrift beim Hover */
+}
+
+/* Deine bereits existierenden Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px; /* Behalte die angegebene Fontgröße bei */
-    background-color: #ffffff; /* Weiß */
+    font-size: 14px;
+    background-color: #ffffff;
 }
 
 .container {
     display: flex;
     width: 100%;
-    min-height: 100vh; /* Vollbildhöhe */
+    min-height: 100vh;
     box-sizing: border-box;
-    background-color: #ffffff; /* Weiß */
+    background-color: #ffffff;
 }
 
 .container > .side {
-    flex: 1; /* 1 Teil für den Rand */
-    background-color: #ffffff; /* Weiß */
+    flex: 1;
+    background-color: #ffffff;
 }
 
 .container > .content {
-    flex: 1.5; /* 1 Teil für den Textbereich */
+    flex: 1.5;
     padding: 20px;
-    background-color: #ffffff; /* Weiß */
+    background-color: #ffffff;
 }
 
-/* Styling für Absätze */
 p {
-    margin: 10px 0; /* 20px vertikaler Abstand zwischen Absätzen */
-    line-height: 1.3; /* Mehr Abstand zwischen den Zeilen innerhalb eines Absatzes */
+    margin: 10px 0;
+    line-height: 1.3;
 }
 
-/* Anpassung für Inline-LaTeX-Formeln */
-.math-inline {
-    display: inline; /* Verhindert, dass MathJax als Inline-Block behandelt wird */
-    vertical-align: baseline; /* Richtet die Formel an der Grundlinie aus */
-}
-
-/* Setze serifenlose Schriftart für MathJax */
 .math-inline, .mjx-math {
-    font-family: Helvetica, Arial, sans-serif !important; /* Serifenlose Schriftart für LaTeX */
+    font-family: Helvetica, Arial, sans-serif !important;
 }
 
-/* Styling für Links */
 a {
-    color: #b00000; /* Dunkelrot */
-    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: #b00000;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #b00000; /* Leuchtendes Rot beim Hover */
-    text-decoration: none; /* Unterstreichung bleibt deaktiviert */
+    color: #b00000;
+    text-decoration: none;
 }
 
-/* Für Mobilgeräte (Breite kleiner als 768px) */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stapelt die Ränder und den Inhalt vertikal */
+        flex-direction: column;
     }
 
     .container > .side {
-        display: none; /* Versteckt die Ränder auf kleinen Bildschirmen */
+        display: none;
     }
 
     .container > .content {
-        flex: 1; /* Textbereich füllt den ganzen Bildschirm */
+        flex: 1;
         max-width: 100%;
-        padding: 10px; /* Kleinerer Abstand für schmale Bildschirme */
+        padding: 10px;
     }
 }
