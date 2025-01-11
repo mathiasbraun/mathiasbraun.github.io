@@ -12,11 +12,12 @@
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                font: 'sf'  // Hier stellen wir sicher, dass die serifenlose Schriftart verwendet wird
+                // Einstellung für die serifenlose Schriftart für alle Ausdrücke
+                font: 'sf'  // Setze alle mathematischen Ausdrücke auf serifenlos
             },
             "HTML-CSS": {
-                availableFonts: ["TeX", "MathJax_Main", "MathJax_SF"], // MathJax_SF für serifenlose Schriftarten
-                webFont: "MathJax_SF", // verwenden serifenlose Schriftart
+                availableFonts: ["TeX", "MathJax_Main", "MathJax_SF"], // Schriftauswahl für MathJax
+                webFont: "MathJax_SF", // Verwenden der serifenlosen Schriftart
                 linebreaks: { automatic: true }
             }
         };
