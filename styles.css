@@ -87,7 +87,7 @@ a:hover {
 
 /* Abstand zwischen den Links festlegen */
 .navbar {
-    gap: 10px; /* Abstand zwischen den Links */
+    gap: 5px; /* Abstand zwischen den Links */
 }
 
 .navbar a:hover {
