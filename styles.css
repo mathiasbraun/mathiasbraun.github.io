@@ -1,10 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
     font-size: 12px;
-    background-color: #ffffff;
-    text-align: left; /* Setze den gesamten Text im Body auf linksbündig */
+    background-color: #ffffff; /* Weiß */
 }
 
 .container {
@@ -25,14 +24,12 @@ body {
     flex: 1.5;
     padding: 20px;
     background-color: #ffffff;
-    text-align: left; /* Text linksbündig im .content */
 }
 
 /* Styling für Absätze */
 p {
-    margin: 9px auto;
+    margin: 9px;
     line-height: 17px;
-    text-align: left; /* Text im Absatz linksbündig */
 }
 
 /* Styling für Links */
@@ -66,17 +63,30 @@ a:hover {
 /* Styling für die Navigationsleiste */
 .navbar {
     background-color: #b00000;
-    overflow: hidden;
-    text-align: center;
-    border-bottom: 1px solid #000000;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: center; /* Zentriert den gesamten Block von Links */
-    align-items: center; /* Zentriert die Links vertikal */
-    padding: 0 20px; /* Abstand zu den Rändern der Navigationsleiste */
+    justify-content: space-between; /* Links und rechts ausrichten */
+    align-items: center;
+    padding: 0 10px; /* Abstand zu den Rändern der Navigationsleiste */
+    border-bottom: 1px solid #000000;
+}
+
+/* Styling für den Text "Mathias Braun" auf der linken Seite */
+.navbar .brand {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 12px 0;
+    font-weight: bold;
+}
+
+/* Styling für die Links auf der rechten Seite */
+.navbar .nav-links {
+    display: flex;
+    gap: 10px; /* Abstand zwischen den Links */
+    padding: 12px 0;
 }
 
 /* Styling für die Links in der Navigationsleiste */
@@ -86,11 +96,6 @@ a:hover {
     padding: 12px 20px;
     text-decoration: none;
     font-size: 12px;
-}
-
-/* Abstand zwischen den Links festlegen */
-.navbar {
-    gap: 10px; /* Abstand zwischen den Links */
 }
 
 .navbar a:hover {
