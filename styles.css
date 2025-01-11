@@ -60,35 +60,13 @@ a:hover {
     }
 }
 
-/* Styling für die obere Navigationsleiste */
-.topbar {
-    background-color: #800000; /* Dunkleres Rot */
-    position: fixed;
-    top: 0;
-    left: 0; /* Stellt sicher, dass die Top Bar ganz oben links beginnt */
-    right: 0; /* Damit es sich von beiden Seiten zum Bildschirmrand ausdehnt */
-    z-index: 1001; /* Höherer Index als die Haupt-Navigation */
-    display: flex;
-    justify-content: center; /* Zentriert den Text */
-    align-items: center;
-    padding: 0 30px; /* 30px Abstand links und rechts */
-    height: 40px; /* Höhe der oberen Navigationsleiste */
-}
-
-/* Styling für den Brand-Namen */
-.topbar .brand {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: normal; /* Normale Schrift */
-}
-
 /* Styling für die Navigationsleiste */
 .navbar {
     background-color: #b00000;
     position: fixed;
-    top: 40px; /* Stellt sicher, dass sie unter der oberen Leiste sitzt */
-    left: 0;
-    right: 0;
+    top: 0;
+    left: 0; /* Stellt sicher, dass die Top Bar ganz oben links beginnt */
+    right: 0; /* Damit es sich von beiden Seiten zum Bildschirmrand ausdehnt */
     z-index: 1000;
     display: flex;
     justify-content: center; /* Zentriert die Links */
