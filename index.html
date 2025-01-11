@@ -1,71 +1,42 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 13px; /* Behalte die angegebene Fontgröße bei */
-    background-color: #ffffff; /* Weiß */
-    line-height: 1.3; /* Behalte den ursprünglichen Zeilenabstand bei */
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathias Braun</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
 
-.container {
-    display: flex;
-    width: 100%;
-    min-height: 100vh; /* Vollbildhöhe */
-    box-sizing: border-box;
-    background-color: #ffffff; /* Weiß */
-}
+<div class="container">
+    <div class="side"></div> <!-- Linker Rand -->
+    <div class="content">
+        <h1>Welcome!</h1>
+        <p>
+            Welcome to my homepage! I am a mathematician researching on optimal transport and its applications to metric geometry, mathematical relativity, and PDEs.
+        </p>
+        <p>
+            Currently, I am a <a href="https://www.epfl.ch/schools/sb/research/math/bernoulli-instructors" target="_blank">Bernoulli Instructor</a> @ <a href="https://www.epfl.ch/schools/sb/research/math" target="_blank">EPFL</a>.
+        </p>
+        <p>
+            Before, I held a Postdoctoral Fellowship in the research group of Professor <a href="https://www.math.toronto.edu/mccann" target="_blank">Robert McCann</a> @ <a href="https://www.mathematics.utoronto.ca" target="_blank">Department of Mathematics</a>, <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>. 
+            In between, I was a <a href="https://www.fields.utoronto.ca/honours-and-fellowships/postdoctoral-fellowships" target="_blank">Fields Postdoctoral Fellow</a> @ <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>, 
+            supervised by Professor <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, Professor <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Professor Robert McCann, and Professor <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>. 
+            I was associated with the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
+        </p>
+        <p>
+            I completed my doctoral studies supervised by Professor <a href="https://wt.iam.uni-bonn.de/sturm/home" target="_blank">Karl-Theodor Sturm</a> @ <a href="https://wt.iam.uni-bonn.de" target="_blank">Institute for Applied Mathematics</a>, <a href="https://www.uni-bonn.de/en" target="_blank">University of Bonn</a>.
+        </p>
+        <p>
+            If you have any questions, please feel free to contact me!
+            \[
+                \Box_p := \mathrm{div}\big[\vert\mathrm{d}\cdot\vert_*^{p-2}\,\nabla\cdot\big]
+            \]
+        </p>
+    </div>
+    <div class="side"></div> <!-- Rechter Rand -->
+</div>
 
-.container > .side {
-    flex: 1; /* 1 Teil für den Rand */
-    background-color: #ffffff; /* Weiß */
-}
-
-.container > .content {
-    flex: 1.5; /* 1 Teil für den Textbereich */
-    padding: 20px;
-    background-color: #ffffff; /* Weiß */
-}
-
-/* Styling für Absätze */
-p {
-    margin: 20px 0; /* 20px vertikaler Abstand zwischen Absätzen */
-    line-height: 1.8; /* Mehr Abstand zwischen den Zeilen innerhalb eines Absatzes */
-}
-
-/* Anpassung für Inline-LaTeX-Formeln */
-.math-inline {
-    display: inline; /* Verhindert, dass MathJax als Inline-Block behandelt wird */
-    vertical-align: baseline; /* Richtet die Formel an der Grundlinie aus */
-}
-
-.math-inline > * {
-    vertical-align: baseline; /* Stellt sicher, dass Unterelemente korrekt ausgerichtet sind */
-}
-
-/* Styling für Links */
-a {
-    color: #b00000; /* Dunkelrot */
-    text-decoration: none; /* Entfernt die Unterstreichung */
-}
-
-a:hover {
-    color: #b00000; /* Leuchtendes Rot beim Hover */
-    text-decoration: none; /* Unterstreichung bleibt deaktiviert */
-}
-
-/* Für Mobilgeräte (Breite kleiner als 768px) */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Stapelt die Ränder und den Inhalt vertikal */
-    }
-
-    .container > .side {
-        display: none; /* Versteckt die Ränder auf kleinen Bildschirmen */
-    }
-
-    .container > .content {
-        flex: 1; /* Textbereich füllt den ganzen Bildschirm */
-        max-width: 100%;
-        padding: 10px; /* Kleinerer Abstand für schmale Bildschirme */
-    }
-}
+</body>
+</html>
