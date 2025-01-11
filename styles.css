@@ -73,7 +73,7 @@ a:hover {
     display: flex;
     justify-content: center; /* Zentriert den gesamten Block von Links */
     align-items: center; /* Zentriert die Links vertikal */
-    padding: 0 30px; /* Abstand zu den Rändern der Navigationsleiste */
+    padding: 0 20px; /* Abstand zu den Rändern der Navigationsleiste */
 }
 
 /* Styling für die Links in der Navigationsleiste */
