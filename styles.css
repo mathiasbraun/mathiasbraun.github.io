@@ -71,9 +71,9 @@ a:hover {
     width: 100%;
     z-index: 1000;
     display: flex; /* Flexbox aktivieren */
-    justify-content: space-evenly; /* Verteilt die Links gleichmäßig */
+    justify-content: space-between; /* Verteilt die Links gleichmäßig mit Abstand zwischen */
     align-items: center; /* Zentriert die Links vertikal */
-    padding: 10px 0; /* Fügt oben und unten etwas Abstand hinzu */
+    padding: 0 20px; /* Fügt links und rechts Abstand hinzu */
 }
 
 /* Styling für die Links in der Navigationsleiste */
