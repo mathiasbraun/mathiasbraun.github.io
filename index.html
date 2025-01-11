@@ -10,11 +10,13 @@
     <script type="text/javascript">
         MathJax = {
             tex: {
-                font: "TeX",  // TeX ist serifenlos
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                font: 'sf'  // Hier stellen wir sicher, dass die serifenlose Schriftart verwendet wird
             },
             "HTML-CSS": {
-                availableFonts: ["TeX", "MathJax_Main"],
-                webFont: "TeX", // Stellt sicher, dass TeX (serifenlos) verwendet wird
+                availableFonts: ["TeX", "MathJax_Main", "MathJax_SF"], // MathJax_SF für serifenlose Schriftarten
+                webFont: "MathJax_SF", // verwenden serifenlose Schriftart
                 linebreaks: { automatic: true }
             }
         };
@@ -46,9 +48,11 @@
         </p>
         <p>
             If you have any questions, please feel free to contact me!
-            \[
-                \Box_p := \mathrm{div}\big[\vert\mathrm{d}\cdot\vert_*^{p-2}\,\nabla\cdot\big]
-            \]
+            <p>
+                \[
+                    \Box_p := \mathsf{div}\big[\vert\mathsf{d}\cdot\vert_*^{p-2}\,\nabla\cdot\big]
+                \]
+            </p>
         </p>
     </div>
     <div class="side"></div> <!-- Rechter Rand -->
