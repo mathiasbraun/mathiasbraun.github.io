@@ -44,7 +44,7 @@ a {
 
 a:hover {
     color: crimson; /* Leuchtendes Rot beim Hover */
-    text-decoration: underline; /* Optional: Unterstreichung beim Hover */
+    text-decoration: none; /* Unterstreichung bleibt deaktiviert */
 }
 
 /* Für Mobilgeräte (Breite kleiner als 768px) */
