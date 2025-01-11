@@ -24,7 +24,7 @@ body {
     flex: 1.5;
     padding: 20px;
     background-color: #ffffff;
-    text-align: left; /* Zentriert den Text im Body */
+    text-align: left; /* Text linksbündig im .content */
 }
 
 /* Styling für Absätze */
