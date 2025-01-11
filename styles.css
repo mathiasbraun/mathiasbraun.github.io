@@ -86,7 +86,7 @@ a:hover {
 /* Container für Links */
 .navbar-links {
     display: flex;
-    gap: 20px; /* Exakter Abstand zwischen den Links */
+    gap: 40px; /* Exakter Abstand zwischen den Links */
     justify-content: space-between;
     width: calc(100% - 40px); /* Symmetrischer Abstand links und rechts */
     max-width: 1200px; /* Optionale Begrenzung der Breite */
