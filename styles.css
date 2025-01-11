@@ -78,7 +78,7 @@ a:hover {
 
 /* Styling für den Text "Mathias Braun" auf der linken Seite */
 .navbar .brand {
-    color: #ffffff;
+    color: #000000;
     font-size: 12px;
     font-weight: normal;
 }
