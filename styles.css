@@ -90,7 +90,7 @@ a:hover {
     text-align: center;
     padding: 14px 20px; /* Abstand um den Text herum */
     text-decoration: none; /* Entfernt die Unterstreichung */
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* Kein Hover-Effekt, die Schrift bleibt wie sie ist */
