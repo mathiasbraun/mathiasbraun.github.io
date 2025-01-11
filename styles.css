@@ -70,7 +70,8 @@ a:hover {
     display: flex;
     justify-content: space-between; /* Links und rechts ausrichten */
     align-items: center;
-    padding: 0 30px; /* Abstand zu den Rändern der Navigationsleiste */
+    padding-left: 30px; /* Abstand zu den Rändern der Navigationsleiste links */
+    padding-right: 30px; /* Abstand zu den Rändern der Navigationsleiste rechts */
     height: 40px; /* Angepasste Höhe */
     border-bottom: 1px solid #000000;
 }
