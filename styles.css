@@ -62,7 +62,7 @@ a:hover {
 
 /* Styling für die Navigationsleiste */
 .navbar {
-    background-color: #000000;
+    background-color: #b00000;
     overflow: hidden;
     text-align: center;
     border-bottom: 2px solid #000000;
@@ -78,7 +78,7 @@ a:hover {
 
 /* Styling für die Links in der Navigationsleiste */
 .navbar a {
-    color: #b00000;
+    color: #ffffff;
     text-align: center;
     padding: 12px 20px;
     text-decoration: none;
