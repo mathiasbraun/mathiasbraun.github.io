@@ -29,7 +29,7 @@ body {
 /* Styling für Absätze */
 p {
     margin: 10px; /* 20px vertikaler Abstand zwischen Absätzen */
-    line-height: 14px; /* Mehr Abstand zwischen den Zeilen innerhalb eines Absatzes */
+    line-height: 16px; /* Mehr Abstand zwischen den Zeilen innerhalb eines Absatzes */
 }
 
 /* Anpassung für Inline-LaTeX-Formeln */
