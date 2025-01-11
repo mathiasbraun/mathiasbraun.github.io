@@ -26,6 +26,16 @@ body {
     background-color: #ffffff; /* Weiß */
 }
 
+/* Anpassung für Inline-LaTeX-Formeln */
+.math-inline {
+    display: inline; /* Verhindert, dass MathJax als Inline-Block behandelt wird */
+    vertical-align: baseline; /* Richtet die Formel an der Grundlinie aus */
+}
+
+.math-inline > * {
+    vertical-align: baseline; /* Stellt sicher, dass Unterelemente korrekt ausgerichtet sind */
+}
+
 /* Für Mobilgeräte (Breite kleiner als 768px) */
 @media (max-width: 768px) {
     .container {
