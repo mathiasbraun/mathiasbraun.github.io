@@ -4,8 +4,13 @@
     overflow: hidden; /* Verhindert, dass Text überläuft */
     text-align: center; /* Zentriert die Links */
     border-bottom: 2px solid #000000; /* Dünner schwarzer Rand unten */
+    position: fixed; /* Macht die Leiste fixiert am oberen Rand */
+    top: 0; /* Platziert sie am oberen Rand */
+    width: 100%; /* Leiste nimmt die volle Breite ein */
+    z-index: 1000; /* Stellt sicher, dass die Leiste immer oben bleibt */
 }
 
+/* Styling für die Links in der Navigationsleiste */
 .navbar a {
     display: inline-block;
     color: #ffffff; /* Weiße Schriftfarbe */
@@ -15,26 +20,20 @@
     font-size: 16px;
 }
 
+/* Kein Hover-Effekt, die Schrift bleibt wie sie ist */
 .navbar a:hover {
-    color: #000000; /* Schwarze Schrift beim Hover */
-    /* Kein Hintergrund-Wechsel mehr */
+    color: #ffffff; /* Die Schriftfarbe bleibt weiß */
+    background-color: transparent; /* Der Hintergrund bleibt transparent */
 }
 
-/* Deine bereits existierenden Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    background-color: #ffffff;
-}
-
+/* Styling für den Content-Bereich, damit er nicht von der Leiste überlappt wird */
 .container {
     display: flex;
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
     background-color: #ffffff;
+    padding-top: 60px; /* Platz für die fixierte Leiste oben */
 }
 
 .container > .side {
