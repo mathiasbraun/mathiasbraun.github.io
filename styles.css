@@ -66,7 +66,7 @@ a:hover {
     position: fixed;
     top: 0;
     left: 0; /* Stellt sicher, dass die Top Bar ganz oben links beginnt */
-    width: 100%; /* Stellt sicher, dass die Breite die gesamte Bildschirmbreite abdeckt */
+    right: 0; /* Damit es sich von beiden Seiten zum Bildschirmrand ausdehnt */
     z-index: 1000;
     display: flex;
     justify-content: space-between; /* Links und rechts ausrichten */
