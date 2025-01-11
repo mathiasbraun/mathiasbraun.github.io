@@ -29,7 +29,7 @@ body {
 /* Styling für Absätze */
 p {
     margin: 10px 0; /* 20px vertikaler Abstand zwischen Absätzen */
-    line-height: 1.3; /* Mehr Abstand zwischen den Zeilen innerhalb eines Absatzes */
+    line-height: 1.4; /* Mehr Abstand zwischen den Zeilen innerhalb eines Absatzes */
 }
 
 /* Anpassung für Inline-LaTeX-Formeln */
@@ -88,9 +88,9 @@ a:hover {
     display: inline-block;
     color: #ffffff; /* Weiße Schriftfarbe */
     text-align: center;
-    padding: 14px 20px; /* Abstand um den Text herum */
+    padding: 12px 20px; /* Abstand um den Text herum */
     text-decoration: none; /* Entfernt die Unterstreichung */
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* Kein Hover-Effekt, die Schrift bleibt wie sie ist */
