@@ -37,8 +37,9 @@ p {
     vertical-align: baseline; /* Richtet die Formel an der Grundlinie aus */
 }
 
-.math-inline > * {
-    vertical-align: baseline; /* Stellt sicher, dass Unterelemente korrekt ausgerichtet sind */
+/* Setze serifenlose Schriftart für MathJax */
+.math-inline, .mjx-math {
+    font-family: Helvetica, Arial, sans-serif !important; /* Serifenlose Schriftart für LaTeX */
 }
 
 /* Styling für Links */
