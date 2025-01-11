@@ -16,8 +16,8 @@
 }
 
 .navbar a:hover {
-    background-color: #ddd; /* Heller Hintergrund beim Hover */
     color: #000000; /* Schwarze Schrift beim Hover */
+    /* Kein Hintergrund-Wechsel mehr */
 }
 
 /* Deine bereits existierenden Styles */
