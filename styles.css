@@ -64,16 +64,23 @@ a:hover {
 .navbar {
     background-color: #b00000;
     overflow: hidden;
-    text-align: center;
     border-bottom: 1px solid #000000;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: center; /* Zentriert den gesamten Block von Links */
-    align-items: center; /* Zentriert die Links vertikal */
-    padding: 0 20px; /* Abstand zu den Rändern der Navigationsleiste */
+    justify-content: space-between; /* Abstand links und rechts ausgleichen */
+    align-items: center; /* Vertikale Zentrierung */
+    padding: 0 20px; /* Abstand links und rechts vom Rand */
+}
+
+/* Styling für den Container mit Links */
+.navbar-links {
+    display: flex;
+    gap: 10px; /* Abstand zwischen den Links */
+    flex-grow: 1;
+    justify-content: center; /* Zentriert die Links zwischen den Seitenrändern */
 }
 
 /* Styling für die Links in der Navigationsleiste */
@@ -83,11 +90,6 @@ a:hover {
     padding: 12px 20px;
     text-decoration: none;
     font-size: 12px;
-}
-
-/* Abstand zwischen den Links festlegen */
-.navbar {
-    gap: 5px; /* Abstand zwischen den Links */
 }
 
 .navbar a:hover {
