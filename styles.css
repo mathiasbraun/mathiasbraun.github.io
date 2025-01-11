@@ -36,6 +36,17 @@ body {
     vertical-align: baseline; /* Stellt sicher, dass Unterelemente korrekt ausgerichtet sind */
 }
 
+/* Styling für Links */
+a {
+    color: darkred; /* Dunkelrot */
+    text-decoration: none; /* Entfernt die Unterstreichung */
+}
+
+a:hover {
+    color: crimson; /* Leuchtendes Rot beim Hover */
+    text-decoration: underline; /* Optional: Unterstreichung beim Hover */
+}
+
 /* Für Mobilgeräte (Breite kleiner als 768px) */
 @media (max-width: 768px) {
     .container {
