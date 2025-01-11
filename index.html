@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathias Braun</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- MathJax Konfiguration für serifenlose Schriftart -->
+    <script type="text/javascript">
+        MathJax = {
+            tex: {
+                font: "TeX",  // TeX ist serifenlos
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX", "MathJax_Main"],
+                webFont: "TeX", // Stellt sicher, dass TeX (serifenlos) verwendet wird
+                linebreaks: { automatic: true }
+            }
+        };
+    </script>
+
+    <!-- MathJax Script -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
