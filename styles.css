@@ -1,9 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
+    font-family: 'Poppins', sans-serif;
     font-size: 12px;
-    background-color: #ffffff; /* Weiß */
+    background-color: #ffffff;
 }
 
 .container {
@@ -24,12 +24,15 @@ body {
     flex: 1.5;
     padding: 20px;
     background-color: #ffffff;
+    text-align: center; /* Zentriert den Text im Body */
 }
 
 /* Styling für Absätze */
 p {
-    margin: 9px;
+    margin: 9px auto; /* Zentriert die Absätze im Body */
     line-height: 17px;
+    text-align: justify; /* Falls gewünscht, gleichmäßige Zeilenlänge */
+    max-width: 800px; /* Optionale Begrenzung der Breite für bessere Lesbarkeit */
 }
 
 /* Styling für Links */
@@ -63,33 +66,36 @@ a:hover {
 /* Styling für die Navigationsleiste */
 .navbar {
     background-color: #b00000;
-    overflow: hidden;
-    text-align: center;
     border-bottom: 1px solid #000000;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: center; /* Zentriert den gesamten Block von Links */
+    justify-content: center; /* Zentriert den Block der Links */
     align-items: center; /* Zentriert die Links vertikal */
-    padding: 0 20px; /* Abstand zu den Rändern der Navigationsleiste */
+    padding: 0; /* Kein zusätzliches Padding */
+}
+
+/* Container für die Links */
+.navbar-links {
+    display: flex;
+    gap: 10px; /* Exakter Abstand zwischen den Links */
+    justify-content: space-between; /* Gleichmäßige Verteilung der Links */
+    width: calc(100% - 40px); /* Symmetrische Abstände links und rechts */
+    max-width: 1200px; /* Begrenzung der Breite */
 }
 
 /* Styling für die Links in der Navigationsleiste */
 .navbar a {
     color: #ffffff;
     text-align: center;
-    padding: 12px 20px;
     text-decoration: none;
     font-size: 12px;
+    padding: 12px 20px; /* Vertikales und horizontales Padding */
 }
 
-/* Abstand zwischen den Links festlegen */
-.navbar {
-    gap: 5px; /* Abstand zwischen den Links */
-}
-
+/* Hover-Effekt */
 .navbar a:hover {
     color: #ffffff;
     background-color: transparent;
