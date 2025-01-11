@@ -1,9 +1,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
+    font-family: 'Poppins', sans-serif;
     font-size: 12px;
-    background-color: #ffffff; /* Weiß */
+    background-color: #ffffff;
 }
 
 .container {
@@ -70,28 +70,29 @@ a:hover {
     width: 100%;
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Abstand links und rechts ausgleichen */
-    align-items: center; /* Vertikale Zentrierung */
-    padding: 0 20px; /* Abstand links und rechts vom Rand */
-}
-
-/* Styling für den Container mit Links */
-.navbar-links {
-    display: flex;
-    gap: 10px; /* Abstand zwischen den Links */
-    flex-grow: 1;
-    justify-content: center; /* Zentriert die Links zwischen den Seitenrändern */
+    justify-content: center;
+    align-items: center;
 }
 
 /* Styling für die Links in der Navigationsleiste */
 .navbar a {
     color: #ffffff;
     text-align: center;
-    padding: 12px 20px;
     text-decoration: none;
     font-size: 12px;
+    padding: 12px 0; /* Vertikales Padding */
 }
 
+/* Container für Links */
+.navbar-links {
+    display: flex;
+    gap: 10px; /* Exakter Abstand zwischen den Links */
+    justify-content: space-between;
+    width: calc(100% - 40px); /* Symmetrischer Abstand links und rechts */
+    max-width: 1200px; /* Optionale Begrenzung der Breite */
+}
+
+/* Hover-Effekt für die Links */
 .navbar a:hover {
     color: #ffffff;
     background-color: transparent;
