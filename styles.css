@@ -70,9 +70,9 @@ a:hover {
     top: 0;
     width: 100%;
     z-index: 1000;
-    display: flex; /* Flexbox aktivieren */
-    justify-content: flex-start; /* Links am linken Rand ausrichten */
-    align-items: center; /* Links vertikal zentrieren */
+    display: flex;
+    justify-content: center; /* Zentriert den gesamten Block von Links */
+    align-items: center; /* Zentriert die Links vertikal */
     padding: 0 30px; /* Abstand zu den Rändern der Navigationsleiste */
 }
 
