@@ -75,22 +75,12 @@ a:hover {
 .navbar {
     background-color: #000000; /* Schwarzer Hintergrund */
     overflow: hidden; /* Verhindert, dass Text überläuft */
-    text-align: left; /* Setzt den Text links */
+    text-align: center; /* Zentriert die Links */
     border-bottom: 2px solid #000000; /* Dünner schwarzer Rand unten */
     position: fixed; /* Macht die Leiste fixiert am oberen Rand */
     top: 0; /* Platziert sie am oberen Rand */
     width: 100%; /* Leiste nimmt die volle Breite ein */
     z-index: 1000; /* Stellt sicher, dass die Leiste immer oben bleibt */
-    padding-left: 20px; /* Abstand vom linken Rand */
-    padding-right: 20px; /* Abstand vom rechten Rand */
-}
-
-/* Styling für den Namen "Mathias Braun" */
-.navbar .name {
-    color: #ffffff; /* Weiße Schriftfarbe */
-    display: inline-block;
-    padding: 14px 20px; /* Abstand um den Text herum */
-    font-size: 14px;
 }
 
 /* Styling für die Links in der Navigationsleiste */
@@ -100,8 +90,7 @@ a:hover {
     text-align: center;
     padding: 14px 20px; /* Abstand um den Text herum */
     text-decoration: none; /* Entfernt die Unterstreichung */
-    font-size: 14px;
-    float: right; /* Rechtsbündig */
+    font-size: 16px;
 }
 
 /* Kein Hover-Effekt, die Schrift bleibt wie sie ist */
