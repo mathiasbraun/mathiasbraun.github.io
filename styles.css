@@ -65,14 +65,15 @@ a:hover {
     background-color: #b00000;
     position: fixed;
     top: 0;
-    width: calc(100% - 60px); /* 30px auf beiden Seiten von der Gesamtlänge abziehen */
+    left: 0; /* Stellt sicher, dass die Top Bar ganz oben links beginnt */
+    width: 100%; /* Stellt sicher, dass die Breite die gesamte Bildschirmbreite abdeckt */
     z-index: 1000;
     display: flex;
+    justify-content: space-between; /* Links und rechts ausrichten */
     align-items: center;
     padding: 0 30px; /* 30px Abstand links und rechts */
     height: 40px; /* Höhe der Navigationsleiste */
     border-bottom: 1px solid #000000;
-    left: 30px; /* Verschiebung, damit der Abstand links 30px beträgt */
 }
 
 /* Styling für den Text "Mathias Braun" auf der linken Seite */
@@ -86,7 +87,6 @@ a:hover {
 .navbar .nav-links {
     display: flex;
     gap: 10px; /* Abstand zwischen den Links */
-    margin-left: auto; /* Links nach rechts schieben */
 }
 
 /* Styling für die Links in der Navigationsleiste */
