@@ -69,25 +69,17 @@ a:hover {
     right: 0; /* Damit es sich von beiden Seiten zum Bildschirmrand ausdehnt */
     z-index: 1000;
     display: flex;
-    justify-content: space-between; /* Links und rechts ausrichten */
+    justify-content: center; /* Zentriert die Links */
     align-items: center;
     padding: 0 30px; /* 30px Abstand links und rechts */
     height: 40px; /* Höhe der Navigationsleiste */
     border-bottom: 1px solid #000000;
 }
 
-/* Styling für den Text "Mathias Braun" auf der linken Seite */
-.navbar .brand {
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: normal; /* Keine Fettschrift mehr */
-}
-
 /* Styling für die Links auf der rechten Seite */
 .navbar .nav-links {
     display: flex;
     gap: 10px; /* Abstand zwischen den Links */
-    margin-left: auto; /* Positioniert die Links rechts */
 }
 
 /* Styling für die Links in der Navigationsleiste */
