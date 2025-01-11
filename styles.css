@@ -80,13 +80,14 @@ a:hover {
 .navbar .brand {
     color: #ffffff;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: normal; /* Keine Fettschrift mehr */
 }
 
 /* Styling für die Links auf der rechten Seite */
 .navbar .nav-links {
     display: flex;
-    gap: 5px; /* Abstand zwischen den Links */
+    gap: 10px; /* Abstand zwischen den Links */
+    margin-left: auto; /* Positioniert die Links rechts */
 }
 
 /* Styling für die Links in der Navigationsleiste */
