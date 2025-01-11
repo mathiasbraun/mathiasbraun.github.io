@@ -38,12 +38,12 @@ body {
 
 /* Styling für Links */
 a {
-    color: #ff2d00; /* Dunkelrot */
+    color: #b00000; /* Dunkelrot */
     text-decoration: none; /* Entfernt die Unterstreichung */
 }
 
 a:hover {
-    color: #ff2d00; /* Leuchtendes Rot beim Hover */
+    color: #b00000; /* Leuchtendes Rot beim Hover */
     text-decoration: none; /* Unterstreichung bleibt deaktiviert */
 }
 
