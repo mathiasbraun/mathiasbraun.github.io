@@ -65,7 +65,7 @@ a:hover {
     background-color: #b00000;
     overflow: hidden;
     text-align: center;
-    border-bottom: 2px solid #b00000;
+    border-bottom: 3px solid #000000;
     position: fixed;
     top: 0;
     width: 100%;
