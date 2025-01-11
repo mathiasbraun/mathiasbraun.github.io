@@ -1,100 +1,87 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 13px; /* Behalte die angegebene Fontgröße bei */
+    font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
+    font-size: 13px;
     background-color: #ffffff; /* Weiß */
 }
 
 .container {
     display: flex;
     width: 100%;
-    min-height: 100vh; /* Vollbildhöhe */
+    min-height: 100vh;
     box-sizing: border-box;
-    background-color: #ffffff; /* Weiß */
-    padding-top: 60px; /* Platz für die fixierte Top-Leiste */
+    background-color: #ffffff;
+    padding-top: 60px;
 }
 
 .container > .side {
-    flex: 1; /* 1 Teil für den Rand */
-    background-color: #ffffff; /* Weiß */
+    flex: 1;
+    background-color: #ffffff;
 }
 
 .container > .content {
-    flex: 1.5; /* 1 Teil für den Textbereich */
+    flex: 1.5;
     padding: 20px;
-    background-color: #ffffff; /* Weiß */
+    background-color: #ffffff;
 }
 
 /* Styling für Absätze */
 p {
-    margin: 10px; /* 20px vertikaler Abstand zwischen Absätzen */
-    line-height: 16px; /* Mehr Abstand zwischen den Zeilen innerhalb eines Absatzes */
-}
-
-/* Anpassung für Inline-LaTeX-Formeln */
-.math-inline {
-    display: inline; /* Verhindert, dass MathJax als Inline-Block behandelt wird */
-    vertical-align: baseline; /* Richtet die Formel an der Grundlinie aus */
-}
-
-/* Setze serifenlose Schriftart für MathJax */
-.math-inline, .mjx-math {
-    font-family: Helvetica, Arial, sans-serif !important; /* Serifenlose Schriftart für LaTeX */
+    margin: 10px;
+    line-height: 16px;
 }
 
 /* Styling für Links */
 a {
-    color: #b00000; /* Dunkelrot */
-    text-decoration: none; /* Entfernt die Unterstreichung */
+    color: #b00000;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #b00000; /* Leuchtendes Rot beim Hover */
-    text-decoration: none; /* Unterstreichung bleibt deaktiviert */
+    color: #b00000;
+    text-decoration: none;
 }
 
 /* Für Mobilgeräte (Breite kleiner als 768px) */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column; /* Stapelt die Ränder und den Inhalt vertikal */
+        flex-direction: column;
     }
 
     .container > .side {
-        display: none; /* Versteckt die Ränder auf kleinen Bildschirmen */
+        display: none;
     }
 
     .container > .content {
-        flex: 1; /* Textbereich füllt den ganzen Bildschirm */
+        flex: 1;
         max-width: 100%;
-        padding: 10px; /* Kleinerer Abstand für schmale Bildschirme */
+        padding: 10px;
     }
 }
 
 /* Styling für die Navigationsleiste */
 .navbar {
-    background-color: #000000; /* Schwarzer Hintergrund */
-    overflow: hidden; /* Verhindert, dass Text überläuft */
-    text-align: center; /* Zentriert die Links */
-    border-bottom: 2px solid #000000; /* Dünner schwarzer Rand unten */
-    position: fixed; /* Macht die Leiste fixiert am oberen Rand */
-    top: 0; /* Platziert sie am oberen Rand */
-    width: 100%; /* Leiste nimmt die volle Breite ein */
-    z-index: 1000; /* Stellt sicher, dass die Leiste immer oben bleibt */
+    background-color: #000000;
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 2px solid #000000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
-/* Styling für die Links in der Navigationsleiste */
 .navbar a {
     display: inline-block;
-    color: #ffffff; /* Weiße Schriftfarbe */
+    color: #ffffff;
     text-align: center;
-    padding: 12px 20px; /* Abstand um den Text herum */
-    text-decoration: none; /* Entfernt die Unterstreichung */
+    padding: 12px 20px;
+    text-decoration: none;
     font-size: 12px;
 }
 
-/* Kein Hover-Effekt, die Schrift bleibt wie sie ist */
 .navbar a:hover {
-    color: #ffffff; /* Die Schriftfarbe bleibt weiß */
-    background-color: transparent; /* Der Hintergrund bleibt transparent */
+    color: #ffffff;
+    background-color: transparent;
 }
