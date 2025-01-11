@@ -70,7 +70,8 @@ a:hover {
     display: flex;
     justify-content: space-between; /* Links und rechts ausrichten */
     align-items: center;
-    padding: 0 10px; /* Abstand zu den Rändern der Navigationsleiste */
+    padding: 0 15px; /* Abstand zu den Rändern der Navigationsleiste */
+    height: 50px; /* Angepasste Höhe */
     border-bottom: 1px solid #000000;
 }
 
@@ -78,7 +79,6 @@ a:hover {
 .navbar .brand {
     color: #ffffff;
     font-size: 14px;
-    padding: 12px 0;
     font-weight: bold;
 }
 
@@ -86,14 +86,13 @@ a:hover {
 .navbar .nav-links {
     display: flex;
     gap: 10px; /* Abstand zwischen den Links */
-    padding: 12px 0;
 }
 
 /* Styling für die Links in der Navigationsleiste */
 .navbar a {
     color: #ffffff;
     text-align: center;
-    padding: 12px 20px;
+    padding: 10px 20px; /* Weniger Abstand, um die Höhe zu reduzieren */
     text-decoration: none;
     font-size: 12px;
 }
