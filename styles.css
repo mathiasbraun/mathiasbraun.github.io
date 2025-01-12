@@ -49,6 +49,7 @@ a:hover {
 mjx-container {
     font-family: 'Poppins', sans-serif !important; /* Poppins für MathJax */
     font-size: 12px; /* Gleiche Schriftgröße wie der Body */
+    font-weight: 300;
     color: inherit; /* Erbt die Textfarbe vom Elternteil */
 }
 
