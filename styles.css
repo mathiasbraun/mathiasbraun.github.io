@@ -1,32 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
+    font-size: 12px;
+    background-color: #ffffff; /* Weiß */
+    color: #2c2f36;
+    user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    padding-top: 60px;
+}
+
+.container > .side {
+    flex: 1;
+    background-color: #ffffff;
+}
+
+.container > .content {
+    flex: 1.5;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* Styling für Absätze */
+p {
+    margin: 9px;
+    line-height: 17px;
+}
+
+/* Styling für Links */
+a {
+    color: #3a5a40; /* Grün */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3a5a40; /* Grün */
+    text-decoration: none;
+}
+
+/* MathJax Styling */
+mjx-container {
+    font-family: 'Poppins', sans-serif !important; /* Poppins für MathJax */
+    font-size: 12px; /* Gleiche Schriftgröße wie der Body */
+    font-weight: 300;
+    color: inherit; /* Erbt die Textfarbe vom Elternteil */
+}
+
+/* Für Mobilgeräte (Breite kleiner als 768px) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .container > .side {
+        display: none;
+    }
+
+    .container > .content {
+        flex: 1;
+        max-width: 100%;
+        padding: 10px;
+    }
+}
+
 /* Styling für die Navigationsleiste */
 .navbar {
     background-color: #3a5a40; /* Grün */
     position: fixed;
     top: 0;
-    left: 0; /* Stellt sicher, dass die Top Bar ganz oben links beginnt */
-    right: 0; /* Damit es sich von beiden Seiten zum Bildschirmrand ausdehnt */
+    left: 0;
+    right: 0;
     z-index: 1000;
     display: flex;
-    justify-content: center; /* Zentriert die Links */
+    justify-content: center; /* Zentriert den Container der Links */
     align-items: center;
-    padding: 0 30px; /* 30px Abstand links und rechts */
-    height: 40px; /* Höhe der Navigationsleiste */
+    padding: 0 30px;
+    height: 40px;
     border-bottom: 1px solid #2c2f36;
-    user-select: none; /* Verhindert das Auswählen und Kopieren von Text in der Topbar */
-}
-
-/* Styling für die Links auf der rechten Seite */
-.navbar .nav-links {
-    display: flex;
-    gap: 0px; /* Abstand zwischen den Links */
-    justify-content: center; /* Verhindert, dass die Links ungleichmäßig verteilt werden */
+    user-select: none;
 }
 
 /* Styling für die Links in der Navigationsleiste */
+.navbar .nav-links {
+    display: flex;
+    gap: 0px; /* Abstand zwischen den Links auf null */
+}
+
+/* Styling für die Links */
 .navbar a {
     color: #ffffff;
     text-align: center;
-    padding: 10px 20px; /* Weniger Abstand, um die Höhe zu reduzieren */
+    padding: 10px 20px;
     text-decoration: none;
     font-size: 12px;
 }
