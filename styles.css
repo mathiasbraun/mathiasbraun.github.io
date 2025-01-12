@@ -5,6 +5,7 @@ body {
     font-size: 12px;
     background-color: #ffffff; /* Weiß */
     color: #2c2f36;
+    user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
 }
 
 .container {
@@ -75,6 +76,7 @@ a:hover {
     padding: 0 30px; /* 30px Abstand links und rechts */
     height: 40px; /* Höhe der Navigationsleiste */
     border-bottom: 1px solid #2c2f36;
+    user-select: none; /* Verhindert das Auswählen und Kopieren von Text in der Topbar */
 }
 
 /* Styling für die Links auf der rechten Seite */
