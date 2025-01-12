@@ -100,7 +100,7 @@ mjx-container {
     padding: 10px 20px; /* Weniger Abstand, um die Höhe zu reduzieren */
     text-decoration: none;
     font-size: 12px;
-    margin-right: -5px; /* Negative Margin, um den Abstand weiter zu verringern */
+    margin-right: -10px; /* Negative Margin, um den Abstand weiter zu verringern */
 }
 
 .navbar a:hover {
