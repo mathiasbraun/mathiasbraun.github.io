@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
     font-size: 12px;
-    background-color: #f0f0f0; /* Weiß */
+    background-color: #faf8f1; /* Weiß */
     color: #2c2f36;
     user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
 }
@@ -13,19 +13,19 @@ body {
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
-    background-color: #f0f0f0;
+    background-color: #faf8f1;
     padding-top: 60px;
 }
 
 .container > .side {
     flex: 1;
-    background-color: #f0f0f0;
+    background-color: #faf8f1;
 }
 
 .container > .content {
     flex: 1.5;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: #faf8f1;
 }
 
 /* Styling für Absätze */
@@ -87,7 +87,7 @@ a:hover {
 
 /* Styling für die Links in der Navigationsleiste */
 .navbar a {
-    color: #f0f0f0;
+    color: #faf8f1;
     text-align: center;
     padding: 10px 20px; /* Weniger Abstand, um die Höhe zu reduzieren */
     text-decoration: none;
