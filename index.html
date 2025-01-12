@@ -19,15 +19,14 @@
             chtml: {
                 fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
                 scale: 1.0,
-                // Hier wird die Schriftart für MathJax Formeln auf Poppins gesetzt
-                mtextFont: 'Poppins', // Für MathJax mtext (normaler Text in der Formel)
-                mathFont: 'Poppins',  // Für MathJax Mathematik-Schriftart
+                mtextFont: 'Poppins',  // Textschriftart in Formeln
+                mathFont: 'Poppins',   // Mathematische Symbole in Poppins setzen
             }
         };
-        
-        // Dies stellt sicher, dass MathJax Formeln rendert, sobald die Seite geladen wird
+
+        // Ensure MathJax renders formulas after the page is loaded
         window.onload = function() {
-            MathJax.typeset();
+            MathJax.typeset(); // Dies sorgt dafür, dass MathJax nach dem Laden der Seite ausgeführt wird
         };
     </script>
 </head>
