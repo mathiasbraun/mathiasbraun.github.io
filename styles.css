@@ -90,7 +90,7 @@ mjx-container {
 /* Styling für die Links auf der rechten Seite */
 .navbar .nav-links {
     display: flex;
-    gap: -20px; /* Abstand zwischen den Links */
+    gap: 0px; /* Abstand zwischen den Links */
 }
 
 /* Styling für die Links in der Navigationsleiste */
