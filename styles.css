@@ -1,11 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
+    font-family: 'Poppins', sans-serif;
     font-size: 12px;
-    background-color: #ffffff; /* Weiß */
+    background-color: #ffffff;
     color: #2c2f36;
-    user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
+    user-select: none;
 }
 
 .container {
@@ -36,21 +36,21 @@ p {
 
 /* Styling für Links */
 a {
-    color: #3a5a40; /* Grün */
+    color: #3a5a40;
     text-decoration: none;
 }
 
 a:hover {
-    color: #3a5a40; /* Grün */
+    color: #3a5a40;
     text-decoration: none;
 }
 
 /* MathJax Styling */
 mjx-container {
-    font-family: 'Poppins', sans-serif !important; /* Poppins für MathJax */
-    font-size: 12px; /* Gleiche Schriftgröße wie der Body */
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px;
     font-weight: 300;
-    color: inherit; /* Erbt die Textfarbe vom Elternteil */
+    color: inherit;
 }
 
 /* Für Mobilgeräte (Breite kleiner als 768px) */
@@ -72,14 +72,14 @@ mjx-container {
 
 /* Styling für die Navigationsleiste */
 .navbar {
-    background-color: #3a5a40; /* Grün */
+    background-color: #3a5a40;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     display: flex;
-    justify-content: center; /* Zentriert den Container der Links */
+    justify-content: center;
     align-items: center;
     padding: 0 30px;
     height: 40px;
@@ -87,19 +87,27 @@ mjx-container {
     user-select: none;
 }
 
-/* Styling für die Links in der Navigationsleiste */
 .navbar .nav-links {
     display: flex;
-    gap: -5px; /* Abstand zwischen den Links auf null */
+    gap: 0px; /* Abstand zwischen Links */
 }
 
-/* Styling für die Links */
+/* Styling für die Links in der Navigationsleiste */
 .navbar a {
     color: #ffffff;
     text-align: center;
     padding: 10px 20px;
     text-decoration: none;
     font-size: 12px;
+}
+
+/* Styling für die vertikalen Striche */
+.navbar .divider {
+    display: flex;
+    align-items: center;
+    color: #2c2f36; /* Gleiche Farbe wie der Bodytext */
+    font-size: 12px; /* Passt zur Schriftgröße */
+    padding: 0 20px; /* Gleicher Abstand wie bei den Links */
 }
 
 .navbar a:hover {
