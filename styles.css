@@ -4,7 +4,6 @@ body {
     font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
     font-size: 12px;
     background-color: #ffffff; /* Weiß */
-    /* color: #2c2f36; */
     color: #2c2f36;
     user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
 }
@@ -44,6 +43,13 @@ a {
 a:hover {
     color: #3a5a40; /* Grün */
     text-decoration: none;
+}
+
+/* MathJax Styling */
+mjx-container {
+    font-family: 'Poppins', sans-serif !important; /* Poppins für MathJax */
+    font-size: 12px; /* Gleiche Schriftgröße wie der Body */
+    color: inherit; /* Erbt die Textfarbe vom Elternteil */
 }
 
 /* Für Mobilgeräte (Breite kleiner als 768px) */
