@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
-    font-size: 13px;
+    font-size: 12px;
     background-color: #ffffff; /* Weiß */
     color: #2c2f36;
     user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
@@ -31,7 +31,7 @@ body {
 /* Styling für Absätze */
 p {
     margin: 9px;
-    line-height: 18px;
+    line-height: 17px;
 }
 
 /* Styling für Links */
