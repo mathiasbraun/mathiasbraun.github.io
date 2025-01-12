@@ -11,28 +11,27 @@
     <!-- MathJax-Script -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-        window.MathJax = {
-            tex: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            },
-            chtml: {
-                fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
-                scale: 1.0,
-            },
-            // Versuchen, MathJax so zu konfigurieren, dass auch die Formeln in Poppins angezeigt werden
-            loader: {load: ['[tex]/ams', '[tex]/color']},
-            tex2jax: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']],
-                processEscapes: true
-            }
-        };
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        },
+        chtml: {
+            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
+            scale: 1.0,
+            mtextFontInherit: true, // Dies stellt sicher, dass auch Text in Formeln Poppins verwendet
+        },
+        loader: {load: ['[tex]/ams', '[tex]/color']},
+        tex2jax: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true
+        }
+    };
 
-        // Dies stellt sicher, dass MathJax nach dem Laden der Seite ausgeführt wird
-        window.onload = function() {
-            MathJax.typeset(); 
-        };
+    window.onload = function() {
+        MathJax.typeset();
+    };
     </script>
 </head>
 <body>
