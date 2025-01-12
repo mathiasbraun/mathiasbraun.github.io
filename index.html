@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome für Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <!-- MathJax-Script -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
@@ -19,7 +23,7 @@
         chtml: {
             fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
             scale: 1.0,
-            mtextFontInherit: true, // Dies stellt sicher, dass auch Text in Formeln Poppins verwendet
+            mtextFontInherit: true,
         },
         loader: {load: ['[tex]/ams', '[tex]/color']},
         tex2jax: {
@@ -49,66 +53,21 @@
     </div>
 </div>
 
-<!-- Social Media Icons -->
-<div class="social-icons">
-    <a href="https://www.researchgate.net/profile/Mathias-Braun" target="_blank" title="ResearchGate">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M23.54 12.66c0-5.73-4.61-10.34-10.34-10.34S2.86 6.93 2.86 12.66s4.61 10.34 10.34 10.34 10.34-4.61 10.34-10.34zm-4.17 0c0 3.43-2.79 6.22-6.22 6.22-3.43 0-6.22-2.79-6.22-6.22 0-3.43 2.79-6.22 6.22-6.22 3.43 0 6.22 2.79 6.22 6.22z"></path>
-        </svg>
-    </a>
-    
-    <a href="https://orcid.org/" target="_blank" title="ORCID">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm2 17.865c-1.723-.348-3.357-.986-4.61-1.914l-2.784 4.433c1.709.851 3.738 1.48 5.722 1.48 3.314 0 6-2.686 6-6 0-.528-.07-1.04-.2-1.538-1.48.715-3.115 1.13-4.588 1.037zm-4 0c1.332-.345 2.687-.773 4-1.349v-5.858c-1.313.576-2.668 1.004-4 1.349v5.858zm-2-8.71c1.12-.495 2.31-.876 3.5-1.07v-6.22c-1.181.194-2.38.462-3.5.84v6.22z"></path>
-        </svg>
-    </a>
-    
-    <a href="https://scholar.google.com/" target="_blank" title="Google Scholar">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M9.219 2.5c-.389 0-.789.144-1.094.438-.308.298-.406.688-.313 1.08l2.406 10.25c.078.312.312.561.625.687s.646.066.864-.22c.219-.288.274-.673.125-1.016l-2.406-10.25c-.078-.3-.313-.526-.625-.647-.305-.126-.662-.13-.978-.004zm5.562 0c-.389 0-.789.144-1.094.438-.308.298-.406.688-.313 1.08l2.406 10.25c.078.312.312.561.625.687s.646.066.864-.22c.219-.288.274-.673.125-1.016l-2.406-10.25c-.078-.3-.313-.526-.625-.647-.305-.126-.662-.13-.978-.004zm-4.531 6.5c-.58 0-1.16.109-1.687.328-.497.217-.952.5-1.344.812-.391-.301-.857-.582-1.344-.812-.527-.219-1.107-.328-1.687-.328-1.63 0-3 1.342-3 3s1.342 3 3 3c.58 0 1.16-.109 1.687-.328.497-.217.952-.5 1.344-.812.391.301.857.582 1.344.812.527.219 1.107.328 1.687.328 1.63 0 3-1.342 3-3s-1.342-3-3-3zm-.781 3c-.391 0-.767-.089-1.125-.25-.349-.172-.643-.419-.844-.719-.177-.291-.281-.626-.281-.969 0-.343.104-.677.281-.968.201-.301.495-.548.844-.719.358-.161.734-.25 1.125-.25 1.247 0 2.25 1.003 2.25 2.25 0 1.246-1.003 2.25-2.25 2.25z"></path>
-        </svg>
-    </a>
-    
-    <a href="https://www.webofscience.com/" target="_blank" title="Web of Science">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M19.5 12c0-3.994-3.006-7.5-7.5-7.5s-7.5 3.506-7.5 7.5 3.006 7.5 7.5 7.5 7.5-3.506 7.5-7.5z"></path>
-        </svg>
-    </a>
-    
-    <a href="https://www.ams.org/" target="_blank" title="AMS">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M10 2v5l-3-3-3 3v-5h6zm4 0v5h6v-5h-6z"></path>
-        </svg>
-    </a>
-    
-    <a href="https://zbmath.org/" target="_blank" title="zbMATH">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12-12-5.373-12-12 5.373-12 12-12zm0 21c4.963 0 9-4.037 9-9s-4.037-9-9-9-9 4.037-9 9 4.037 9 9 9zm0-14c.553 0 1 .447 1 1s-.447 1-1 1-1-.447-1-1 .447-1 1-1zm-2 3h4v2h-4zm-2 4h8v2h-8zm2 4h4v2h-4z"></path>
-        </svg>
-    </a>
-    
-    <a href="https://arxiv.org/" target="_blank" title="arXiv">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M19 4h-2v12h2v-12zm-4 0h-2v12h2v-12zm-4 0h-2v12h2v-12zm-4 0h-2v12h2v-12zm6 0h-2v12h2v-12z"></path>
-        </svg>
-    </a>
-
-    <a href="https://www.linkedin.com/" target="_blank" title="LinkedIn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M19 0h-14c-1.104 0-2 .896-2 2v20c0 1.104.896 2 2 2h14c1.104 0 2-.896 2-2v-20c0-1.104-.896-2-2-2zm-10 18h-2v-8h2zm-1-9.003c-.809 0-1.457-.653-1.457-1.458 0-.807.648-1.458 1.457-1.458s1.457.651 1.457 1.458c0 .805-.648 1.458-1.457 1.458zm9 9.003h-2v-4c0-1.104-.896-2-2-2h-3c-1.104 0-2 .896-2 2v4h-2v-8h2v1.004c-.734-.504-1.524-.711-2.36-.711-2.201 0-3.64 1.373-3.64 3.643v4h-2v-4c0-2.201 1.373-3.643 3.643-3.643 1.113 0 2.152.413 2.994 1.153v-1.004h2v8z"></path>
-        </svg>
-    </a>
-
-    <a href="mailto:your.email@example.com" target="_blank" title="Email">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path d="M0 3v18h24v-18h-24zm12 13l-7-5h14l-7 5zm7-6h-14v-3h14v3z"></path>
-        </svg>
-    </a>
-</div>
-
 <div class="container">
     <div class="side"></div> <!-- Linker Rand -->
     <div class="content">
+        <div class="social-icons">
+            <a href="https://www.researchgate.net" target="_blank"><i class="fab fa-researchgate"></i></a>
+            <a href="https://orcid.org" target="_blank"><i class="fab fa-orcid"></i></a>
+            <a href="https://scholar.google.com" target="_blank"><i class="fab fa-google"></i></a>
+            <a href="https://www.webofscience.com" target="_blank"><i class="fab fa-webofscience"></i></a>
+            <a href="https://www.ams.org" target="_blank"><i class="fab fa-ams"></i></a>
+            <a href="https://zbmath.org" target="_blank"><i class="fab fa-zbmath"></i></a>
+            <a href="https://arxiv.org" target="_blank"><i class="fab fa-arxiv"></i></a>
+            <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:your-email@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+
         <p>
             Welcome to my homepage! I am a mathematician researching on optimal transport and its applications to metric geometry, mathematical relativity, and PDEs.
         </p>
@@ -116,9 +75,9 @@
             Currently, I am a <a href="https://www.epfl.ch/schools/sb/research/math/bernoulli-instructors" target="_blank">Bernoulli Instructor</a> @ <a href="https://www.epfl.ch/schools/sb/research/math" target="_blank">EPFL</a>.
         </p>
         <p>
-            Before, I held a Postdoctoral Fellowship in the group of Professor <a href="https://www.math.toronto.edu/mccann" target="_blank">Robert McCann</a> @ <a href="https://www.mathematics.utoronto.ca" target="_blank">Department of Mathematics</a>, <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>.
-            In between, I was a <a href="https://www.fields.utoronto.ca/honours-and-fellowships/postdoctoral-fellowships" target="_blank">Fields Postdoctoral Fellow</a> @ <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>,
-            advised by Professor <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, Professor <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Professor Robert McCann, and Professor <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>.
+            Before, I held a Postdoctoral Fellowship in the group of Professor <a href="https://www.math.toronto.edu/mccann" target="_blank">Robert McCann</a> @ <a href="https://www.mathematics.utoronto.ca" target="_blank">Department of Mathematics</a>, <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>. 
+            In between, I was a <a href="https://www.fields.utoronto.ca/honours-and-fellowships/postdoctoral-fellowships" target="_blank">Fields Postdoctoral Fellow</a> @ <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>, 
+            advised by Professor <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, Professor <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Professor Robert McCann, and Professor <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>. 
             I was associated with the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
         </p>
         <p>
