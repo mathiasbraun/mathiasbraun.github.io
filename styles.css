@@ -13,19 +13,19 @@ body {
     width: 100%;
     min-height: 100vh;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
     padding-top: 60px;
 }
 
 .container > .side {
     flex: 1;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
 }
 
 .container > .content {
     flex: 1.5;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
 }
 
 /* Styling für Absätze */
@@ -87,7 +87,7 @@ a:hover {
 
 /* Styling für die Links in der Navigationsleiste */
 .navbar a {
-    color: #ffffff;
+    color: #f0f0f0;
     text-align: center;
     padding: 10px 20px; /* Weniger Abstand, um die Höhe zu reduzieren */
     text-decoration: none;
@@ -95,6 +95,6 @@ a:hover {
 }
 
 .navbar a:hover {
-    color: #ffffff;
+    color: #f0f0f0;
     background-color: transparent;
 }
