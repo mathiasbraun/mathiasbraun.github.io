@@ -4,6 +4,7 @@ body {
     font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
     font-size: 12px;
     background-color: #ffffff; /* Weiß */
+    color: #2c2f36;
 }
 
 .container {
