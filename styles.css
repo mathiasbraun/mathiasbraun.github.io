@@ -37,12 +37,12 @@ p {
 
 /* Styling für Links */
 a {
-    color: #2b4f3e; /* Grün */
+    color: #3a5a40; /* Grün */
     text-decoration: none;
 }
 
 a:hover {
-    color: #2b4f3e; /* Grün */
+    color: #3a5a40; /* Grün */
     text-decoration: none;
 }
 
@@ -65,7 +65,7 @@ a:hover {
 
 /* Styling für die Navigationsleiste */
 .navbar {
-    background-color: #2b4f3e; /* Grün */
+    background-color: #3a5a40; /* Grün */
     position: fixed;
     top: 0;
     left: 0; /* Stellt sicher, dass die Top Bar ganz oben links beginnt */
@@ -96,6 +96,6 @@ a:hover {
 }
 
 .navbar a:hover {
-    color: #faf8f1;
+    color: #ffffff;
     background-color: transparent;
 }
