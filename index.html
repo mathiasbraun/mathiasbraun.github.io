@@ -9,25 +9,29 @@
     
     <link rel="stylesheet" href="styles.css">
     <!-- MathJax-Script -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
-        MathJax = {
+        window.MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
-                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
             },
             chtml: {
+                fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
                 scale: 1.0,
-                font: 'sans-serif' // Erzwingt die Verwendung einer Sans-Serif-Schrift wie Poppins
             }
         };
+        
+        // Dies stellt sicher, dass MathJax Formeln rendert, sobald die Seite geladen wird
+        window.onload = function() {
+            MathJax.typeset();
+        };
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
 <!-- Navigationsleiste oben -->
 <div class="navbar">
-    <!-- Links auf der rechten Seite -->
     <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#research">Research</a>
