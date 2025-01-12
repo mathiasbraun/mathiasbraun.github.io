@@ -90,7 +90,7 @@ mjx-container {
 /* Styling für die Links auf der rechten Seite */
 .navbar .nav-links {
     display: flex;
-    gap: 0px; /* Abstand zwischen den Links */
+    gap: 0px; /* Kein Abstand zwischen den Links */
 }
 
 /* Styling für die Links in der Navigationsleiste */
@@ -100,6 +100,7 @@ mjx-container {
     padding: 10px 20px; /* Weniger Abstand, um die Höhe zu reduzieren */
     text-decoration: none;
     font-size: 12px;
+    margin-right: -5px; /* Negative Margin, um den Abstand weiter zu verringern */
 }
 
 .navbar a:hover {
