@@ -80,7 +80,7 @@ a:hover {
 /* Styling für die Links auf der rechten Seite */
 .navbar .nav-links {
     display: flex;
-    gap: 3px; /* Abstand zwischen den Links */
+    gap: 1px; /* Abstand zwischen den Links */
 }
 
 /* Styling für die Links in der Navigationsleiste */
