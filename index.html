@@ -33,6 +33,57 @@
         MathJax.typeset();
     };
     </script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: 12px;
+            background-color: #ffffff;
+            color: #2c2f36;
+        }
+
+        .navbar {
+            background-color: #3a5a40; /* Grün */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 30px;
+            height: 40px;
+            border-bottom: 1px solid #2c2f36;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center; /* Zentriert die Links vertikal */
+            gap: 10px; /* Standardabstand zwischen den Links */
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 12px;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+            background-color: transparent;
+        }
+
+        .divider {
+            width: 1px; /* Dünner vertikaler Strich */
+            height: 100%; /* Vom oberen bis zum unteren Rand der Top Bar */
+            background-color: #2c2f36; /* Gleiche Farbe wie der Body-Text */
+            display: inline-block; /* Behält seine Größe im Inline-Layout */
+        }
+    </style>
 </head>
 <body>
 
