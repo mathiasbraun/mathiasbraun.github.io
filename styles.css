@@ -4,7 +4,8 @@ body {
     font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
     font-size: 12px;
     background-color: #faf8f1; /* Weiß */
-    color: #2c2f36;
+    /* color: #2c2f36; */
+    color: #000000;
     user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
 }
 
