@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Poppins', sans-serif; /* Hier verwenden wir Poppins */
     font-size: 12px;
-    background-color: #ffffff; /* Weiß */
+    background-color: #f0f0f0; /* Weiß */
     color: #2c2f36;
     user-select: none; /* Verhindert das Auswählen und Kopieren von Text im Body */
 }
