@@ -34,23 +34,27 @@
     };
     </script>
     <style>
-        /* Styling für die Listen */
-        ul, ol {
-            display: inline-block; /* Machen Sie die Liste inline */
-            padding-left: 20px; /* Abstand zum linken Rand */
+        /* Styling für die Listen und Text */
+        .inline-list {
+            display: inline; /* Listenelemente in einer Zeile anzeigen */
+            list-style-type: none; /* Entfernt die Standard-Listenpunkte */
+            padding: 0;
+            margin: 0;
         }
 
-        ul li, ol li {
-            display: block; /* Die Listenelemente bleiben blockweise */
+        .inline-list li {
+            display: inline; /* Listenelemente in einer Zeile anzeigen */
+            margin-right: 10px; /* Abstand zwischen den Listenelementen */
         }
 
-        /* Entfernt Listen-Standard-Styling (Punkte und Nummern) */
-        ul {
-            list-style-type: disc;
+        .inline-list b {
+            display: inline; /* Macht den "Item list" Text inline */
+            margin-right: 10px; /* Abstand zum ersten Listenelement */
         }
 
-        ol {
-            list-style-type: decimal;
+        p {
+            margin-bottom: 10px;
+            display: inline; /* Text und Listenelemente sollen inline sein */
         }
     </style>
 </head>
@@ -130,7 +134,7 @@
         <!-- Ungeordnete Liste (UL) -->
         <p>
             <b>Item list.</b>
-            <ul>
+            <ul class="inline-list">
                 <li>First item</li>
                 <li>Second item</li>
                 <li>Third item</li>
@@ -140,7 +144,7 @@
         <!-- Geordnete Liste (OL) -->
         <p>
             <b>Ordered list.</b>
-            <ol>
+            <ol class="inline-list">
                 <li>First item</li>
                 <li>Second item</li>
                 <li>Third item</li>
