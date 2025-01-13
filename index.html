@@ -4,11 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathias Braun</title>
-    <!-- Google Font for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="styles.css">
-    <!-- MathJax Script -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
     window.MathJax = {
@@ -19,7 +15,7 @@
         chtml: {
             fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
             scale: 1.0,
-            mtextFontInherit: true, // Ensures that text in formulas also uses Poppins
+            mtextFontInherit: true, 
         },
         loader: {load: ['[tex]/ams', '[tex]/color']},
         tex2jax: {
@@ -33,37 +29,6 @@
         MathJax.typeset();
     };
     </script>
-    <style>
-        /* Styling für die Listen und Text */
-        .inline-list {
-            list-style-type: none; /* Entfernt die Standard-Listenpunkte */
-            padding: 0;
-            margin: 0;
-        }
-
-        /* Erster Listeneintrag bleibt inline mit Text */
-        .inline-list li:first-child {
-            display: inline; /* Der erste Listeneintrag bleibt inline */
-            margin-right: 10px; /* Abstand zwischen dem Text und dem Listeneintrag */
-        }
-
-        /* Alle folgenden Listeneinträge beginnen in einer neuen Zeile */
-        .inline-list li:not(:first-child) {
-            display: block; /* Die restlichen Listeneinträge beginnen in einer neuen Zeile */
-            margin-top: 5px; /* Abstand zwischen den Listeneinträgen */
-        }
-
-        /* Styling für den "Item list"-Text */
-        .inline-list b {
-            display: inline; /* Macht den "Item list" Text inline */
-            margin-right: 10px; /* Abstand zum ersten Listenelement */
-        }
-
-        /* Stellen Sie sicher, dass alle Absätze genug Abstand haben */
-        p {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
 
@@ -138,25 +103,21 @@
             aforementioned analytic objects.
         </p>
 
+        <p><b>Item list.</b></p>
         <!-- Ungeordnete Liste (UL) -->
-        <p>
-            <b>Item list.</b>
-            <ul class="inline-list">
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-            </ul>
-        </p>
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
 
+        <p><b>Ordered list.</b></p>
         <!-- Geordnete Liste (OL) -->
-        <p>
-            <b>Ordered list.</b>
-            <ol class="inline-list">
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-            </ol>
-        </p>
+        <ol>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ol>
     </div>
     <div class="side"></div> <!-- Right margin -->
 </div>
