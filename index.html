@@ -36,16 +36,15 @@
     <style>
         /* Styling für die Listen und Text */
         .inline-list {
-            display: inline; /* Listenelemente in einer Zeile anzeigen */
             list-style-type: none; /* Entfernt die Standard-Listenpunkte */
             padding: 0;
             margin: 0;
         }
 
-        /* Styling für den ersten Listeneintrag, der inline angezeigt wird */
+        /* Erster Listeneintrag bleibt inline mit Text */
         .inline-list li:first-child {
             display: inline; /* Der erste Listeneintrag bleibt inline */
-            margin-right: 10px; /* Abstand zwischen den Listeneinträgen */
+            margin-right: 10px; /* Abstand zwischen dem Text und dem Listeneintrag */
         }
 
         /* Alle folgenden Listeneinträge beginnen in einer neuen Zeile */
@@ -54,34 +53,16 @@
             margin-top: 5px; /* Abstand zwischen den Listeneinträgen */
         }
 
+        /* Styling für den "Item list"-Text */
         .inline-list b {
             display: inline; /* Macht den "Item list" Text inline */
             margin-right: 10px; /* Abstand zum ersten Listenelement */
         }
 
+        /* Stellen Sie sicher, dass alle Absätze genug Abstand haben */
         p {
             margin-bottom: 10px;
         }
-
-        ul, ol {
-            display: inline; /* Damit auch Listen inline dargestellt werden */
-        }
-
-        li {
-            display: inline; /* Listenelemente in einer Zeile */
-        }
-
-        li:before {
-            content: "\2022 "; /* Hinzufügen eines Aufzählungszeichens vor den Listenelementen */
-            font-size: 16px;
-            margin-right: 5px;
-        }
-
-        ol li:before {
-            content: counter(list-item) ". "; /* Nummerierung für geordnete Listen */
-            margin-right: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -176,7 +157,6 @@
                 <li>Third item</li>
             </ol>
         </p>
-
     </div>
     <div class="side"></div> <!-- Right margin -->
 </div>
