@@ -39,6 +39,32 @@
         html {
             scroll-behavior: smooth;
         }
+
+        /* Adjust offset for smooth scrolling */
+        body {
+            padding-top: 50px; /* Adjust based on the height of your navbar */
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            z-index: 1000;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
     </style>
 </head>
 <body>
