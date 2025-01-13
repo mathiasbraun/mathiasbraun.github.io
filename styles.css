@@ -28,13 +28,13 @@ body {
     background-color: #ffffff;
 }
 
-/* Styling für Absätze */
+/* Styling for paragraphs */
 p {
     margin: 9px;
     line-height: 17px;
 }
 
-/* Styling für Links */
+/* Styling for links */
 a {
     color: #3a5a40;
     text-decoration: none;
@@ -53,7 +53,7 @@ mjx-container {
     color: inherit;
 }
 
-/* Für Mobilgeräte (Breite kleiner als 768px) */
+/* For mobile devices (width less than 768px) */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -70,7 +70,7 @@ mjx-container {
     }
 }
 
-/* Styling für die Navigationsleiste */
+/* Styling for the navigation bar */
 .navbar {
     background-color: #3a5a40;
     position: fixed;
@@ -89,10 +89,10 @@ mjx-container {
 
 .navbar .nav-links {
     display: flex;
-    gap: 0px; /* Abstand zwischen Links */
+    gap: 0px; /* Gap between links */
 }
 
-/* Styling für die Links in der Navigationsleiste */
+/* Styling for the links in the navigation bar */
 .navbar a {
     color: #ffffff;
     text-align: center;
@@ -101,13 +101,13 @@ mjx-container {
     font-size: 12px;
 }
 
-/* Styling für die vertikalen Striche */
+/* Styling for vertical dividers */
 .navbar .divider {
     display: flex;
     align-items: center;
-    color: #2c2f36; /* Gleiche Farbe wie der Bodytext */
-    font-size: 12px; /* Passt zur Schriftgröße */
-    padding: 0 20px; /* Gleicher Abstand wie bei den Links */
+    color: #2c2f36; /* Same color as body text */
+    font-size: 12px; /* Matches font size */
+    padding: 0 20px; /* Same padding as links */
 }
 
 .navbar a:hover {
