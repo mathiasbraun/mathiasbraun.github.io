@@ -56,6 +56,26 @@
             margin-bottom: 10px;
             display: inline; /* Text und Listenelemente sollen inline sein */
         }
+
+        ul, ol {
+            display: inline; /* Damit auch Listen inline dargestellt werden */
+        }
+
+        li {
+            display: inline; /* Listenelemente in einer Zeile */
+        }
+
+        li:before {
+            content: "\2022 "; /* Hinzufügen eines Aufzählungszeichens vor den Listenelementen */
+            font-size: 16px;
+            margin-right: 5px;
+        }
+
+        ol li:before {
+            content: counter(list-item) ". "; /* Nummerierung für geordnete Listen */
+            margin-right: 5px;
+        }
+
     </style>
 </head>
 <body>
