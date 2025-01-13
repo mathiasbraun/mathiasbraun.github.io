@@ -42,9 +42,16 @@
             margin: 0;
         }
 
-        .inline-list li {
-            display: inline; /* Listenelemente in einer Zeile anzeigen */
-            margin-right: 10px; /* Abstand zwischen den Listenelementen */
+        /* Styling für den ersten Listeneintrag, der inline angezeigt wird */
+        .inline-list li:first-child {
+            display: inline; /* Der erste Listeneintrag bleibt inline */
+            margin-right: 10px; /* Abstand zwischen den Listeneinträgen */
+        }
+
+        /* Alle folgenden Listeneinträge beginnen in einer neuen Zeile */
+        .inline-list li:not(:first-child) {
+            display: block; /* Die restlichen Listeneinträge beginnen in einer neuen Zeile */
+            margin-top: 5px; /* Abstand zwischen den Listeneinträgen */
         }
 
         .inline-list b {
@@ -54,7 +61,6 @@
 
         p {
             margin-bottom: 10px;
-            display: inline; /* Text und Listenelemente sollen inline sein */
         }
 
         ul, ol {
