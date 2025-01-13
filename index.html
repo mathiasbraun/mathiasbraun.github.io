@@ -33,67 +33,11 @@
         MathJax.typeset();
     };
     </script>
+
+    <!-- CSS for smooth scrolling -->
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .navbar {
-            background-color: #333;
-            padding: 10px;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-        }
-
-        .container {
-            display: flex;
-            padding-top: 50px; /* Abstand nach oben für die fixierte Navbar */
-        }
-
-        .content {
-            flex: 1;
-            padding: 20px;
-        }
-
-        .side {
-            width: 20px; /* Platzhalter für den Abstand an den Seiten */
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            margin: 10px 0;
-        }
-
-        p {
-            line-height: 1.6;
-        }
-
-        ul, ol {
-            margin-top: 10px;
-        }
-
-        /* Smooth scroll and offset */
         html {
             scroll-behavior: smooth;
-        }
-
-        /* Prevent navbar overlap on scroll */
-        .section {
-            padding-top: 60px; /* Sicherstellen, dass der Text nicht hinter der Navbar verschwindet */
         }
     </style>
 </head>
@@ -103,7 +47,7 @@
 <div class="navbar">
     <div class="nav-links">
         <a href="#home">Welcome</a>
-        <a href="#news">News</a>
+        <a href="#home">News</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
         <a href="#activities">Activities</a>
@@ -116,78 +60,73 @@
 <div class="container">
     <div class="side"></div> <!-- Left margin -->
     <div class="content">
-        <div id="home" class="section">
-            <h1>Welcome to My Homepage</h1>
-            <p>
-                Welcome to my homepage! I am a mathematician researching optimal transport and its applications to metric geometry, mathematical relativity, and PDEs.
-            </p>
-            <p>
-                Currently, I am a <a href="https://www.epfl.ch/schools/sb/research/math/bernoulli-instructors" target="_blank">Bernoulli Instructor</a> @ <a href="https://www.epfl.ch/schools/sb/research/math" target="_blank">EPFL</a>.
-            </p>
-            <p>
-                Before, I held a Postdoctoral Fellowship in the group of Professor <a href="https://www.math.toronto.edu/mccann" target="_blank">Robert McCann</a> @ <a href="https://www.mathematics.utoronto.ca" target="_blank">Department of Mathematics</a>, <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>. 
-                In between, I was a <a href="https://www.fields.utoronto.ca/honours-and-fellowships/postdoctoral-fellowships" target="_blank">Fields Postdoctoral Fellow</a> @ <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>, 
-                advised by Professor <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, Professor <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Professor Robert McCann, and Professor <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>. 
-                I was associated with the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
-            </p>
-            <p>
-                I completed my doctorate advised by Professor <a href="https://wt.iam.uni-bonn.de/sturm/home" target="_blank">Theo Sturm</a> @ <a href="https://wt.iam.uni-bonn.de" target="_blank">Institute for Applied Mathematics</a>, <a href="https://www.uni-bonn.de/en" target="_blank">University of Bonn</a>.
-            </p>
-            <p>
-                If you have any questions, please feel invited to get in touch with me!
-            </p>
-        </div>
-
-        <div id="research" class="section">
-            <h1>Research</h1>
-            <p>
-                <b>Nonsmooth Lorentzian geometry.</b> I am currently working on a promising optimal transport approach
-                to Einstein's theory of gravity. In this work, I have obtained results about the timelike 
-                curvature-dimension condition &mdash; briefly TCD condition &mdash; for nonsmooth measured Lorentzian spaces, 
-                especially its pathwise interpretation, its local-to-global property, and sharp geometric inequalities. 
-                It characterizes the condition "Ricci curvature being bounded from below in timelike directions, and 
-                dimension being bounded from above" for smooth spacetimes, hence includes the strong energy condition of 
-                Hawking and Penrose. The class of spaces in which the TCD condition makes sense includes spacetime solutions 
-                to the Einstein equation with low regularity metric. In this work with Matteo Calisti, we have shown spacetimes 
-                with \(C^1\) metrics &mdash; the borderline regularity for local existence results for the Einstein equation in four 
-                dimensions &mdash; and timelike lower bounds for their distributional Ricci tensor to be covered by the synthetic 
-                Lorentzian setting. The latter should thus lead to new understandings of (super-)solutions to the Einstein equation. 
-                With Shin-ichi Ohta, we have also covered Finsler spacetimes here.
-            </p>
-            <p>
-                <b>Dirichlet spaces with singular Ricci bounds.</b> I am also active in the positive signature case, namely 
-                Dirichlet spaces with singular Ricci bounds. These singularities can arise e.g. from spatial interior or boundary 
-                irregularities, or from simple unboundedness of the "Ricci tensor". In this work with Karen Habermann and Theo Sturm, 
-                we have characterized variable Ricci bounds in the Lagrangian and Eulerian picture. Moreover, here I have 
-                developed a second order calculus on spaces with Ricci curvature bounded from below by a signed measure in 
-                the extended Kato class. This setting includes a vast class of curvature singularities which are still 
-                controlled by the heat kernel. The analysis of such spaces might lead to applications to Ricci flow, where 
-                curvature never stays bounded by flowing through singularities.
-            </p>
-            <p>
-                <b>Stochastic tensor calculus.</b> A side project I am curious about is a nonsmooth analogue of Eells–Elworthy–Malliavin's 
-                construction of diffusion processes on Riemannian manifolds. A key difficulty to date is that this approach is 
-                highly extrinsic. The prototypical setting should be the above mentioned Dirichlet spaces with lower Ricci bounds, 
-                in which both Brownian motion and an intrinsic tensor calculus make sense. A successful treatment might lead to 
-                stochastic derivative and representation formulas for heat semigroups on functions, 1-forms, vector fields, 
-                etc. à la Bismut–Elworthy–Li and Feynman–Kac. In turn, this entails pathwise insights into the behavior of the 
-                aforementioned analytic objects.
-            </p>
-
+        <h1 style="text-align: center; font-size: 12px;" id="home">THIS PAGE IS UNDER CONSTRUCTION</h1>
+        <p>
+            Welcome to my homepage! I am a mathematician researching on optimal transport and its applications to metric geometry, mathematical relativity, and PDEs.
+        </p>
+        <p>
+            Currently, I am a <a href="https://www.epfl.ch/schools/sb/research/math/bernoulli-instructors" target="_blank">Bernoulli Instructor</a> @ <a href="https://www.epfl.ch/schools/sb/research/math" target="_blank">EPFL</a>.
+        </p>
+        <p>
+            Before, I held a Postdoctoral Fellowship in the group of Professor <a href="https://www.math.toronto.edu/mccann" target="_blank">Robert McCann</a> @ <a href="https://www.mathematics.utoronto.ca" target="_blank">Department of Mathematics</a>, <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>. 
+            In between, I was a <a href="https://www.fields.utoronto.ca/honours-and-fellowships/postdoctoral-fellowships" target="_blank">Fields Postdoctoral Fellow</a> @ <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>, 
+            advised by Professor <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, Professor <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Professor Robert McCann, and Professor <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>. 
+            I was associated with the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
+        </p>
+        <p>
+            I completed my doctorate advised by Professor <a href="https://wt.iam.uni-bonn.de/sturm/home" target="_blank">Theo Sturm</a> @ <a href="https://wt.iam.uni-bonn.de" target="_blank">Institute for Applied Mathematics</a>, <a href="https://www.uni-bonn.de/en" target="_blank">University of Bonn</a>.
+        </p>
+        <p>
+            If you have any questions, please feel invited to get in touch with me!
+        </p>
+        <h1 style="text-align: center; font-size: 12px;" id="research">RESEARCH</h1>
+        <p>
+            <b>Nonsmooth Lorentzian geometry.</b> I am currently working on a promising optimal transport approach
+            to Einstein's theory of gravity. In this work, I have obtained results about the timelike 
+            curvature-dimension condition &mdash; briefly TCD condition &mdash; for nonsmooth measured Lorentzian spaces, 
+            especially its pathwise interpretation, its local-to-global property, and sharp geometric inequalities. 
+            It characterizes the condition "Ricci curvature being bounded from below in timelike directions, and 
+            dimension being bounded from above" for smooth spacetimes, hence includes the strong energy condition of 
+            Hawking and Penrose. The class of spaces in which the TCD condition makes sense includes spacetime solutions 
+            to the Einstein equation with low regularity metric. In this work with Matteo Calisti, we have shown spacetimes 
+            with \(C^1\) metrics &mdash; the borderline regularity for local existence results for the Einstein equation in four 
+            dimensions &mdash; and timelike lower bounds for their distributional Ricci tensor to be covered by the synthetic 
+            Lorentzian setting. The latter should thus lead to new understandings of (super-)solutions to the Einstein equation. 
+            With Shin-ichi Ohta, we have also covered Finsler spacetimes here.
+        </p>
+        <p>
+            <b>Dirichlet spaces with singular Ricci bounds.</b> I am also active in the positive signature case, namely 
+            Dirichlet spaces with singular Ricci bounds. These singularities can arise e.g. from spatial interior or boundary 
+            irregularities, or from simple unboundedness of the "Ricci tensor". In this work with Karen Habermann and Theo Sturm, 
+            we have characterized variable Ricci bounds in the Lagrangian and Eulerian picture. Moreover, here I have 
+            developed a second order calculus on spaces with Ricci curvature bounded from below by a signed measure in 
+            the extended Kato class. This setting includes a vast class of curvature singularities which are still 
+            controlled by the heat kernel. The analysis of such spaces might lead to applications to Ricci flow, where 
+            curvature never stays bounded by flowing through singularities.
+        </p>
+        <p>
+            <b>Stochastic tensor calculus.</b> A side project I am curious about is a nonsmooth analogue of Eells–Elworthy–Malliavin's 
+            construction of diffusion processes on Riemannian manifolds. A key difficulty to date is that this approach is 
+            highly extrinsic. The prototypical setting should be the above mentioned Dirichlet spaces with lower Ricci bounds, 
+            in which both Brownian motion and an intrinsic tensor calculus make sense. A successful treatment might lead to 
+            stochastic derivative and representation formulas for heat semigroups on functions, 1-forms, vector fields, 
+            etc. à la Bismut–Elworthy–Li and Feynman–Kac. In turn, this entails pathwise insights into the behavior of the 
+            aforementioned analytic objects.
+        </p>
+        <p>
             <ul>
                 <li>First item</li>
                 <li>Second item</li>
                 <li>Third item</li>
             </ul>
-
+        </p>
+        <p>
             <ol>
                 <li>First item</li>
                 <li>Second item</li>
                 <li>Third item</li>
             </ol>
-        </div>
-
-        <!-- Weitere Abschnitte hier -->
+        </p>
     </div>
     <div class="side"></div> <!-- Right margin -->
 </div>
