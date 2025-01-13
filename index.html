@@ -33,6 +33,26 @@
         MathJax.typeset();
     };
     </script>
+    <style>
+        /* Styling für die Listen */
+        ul, ol {
+            display: inline-block; /* Machen Sie die Liste inline */
+            padding-left: 20px; /* Abstand zum linken Rand */
+        }
+
+        ul li, ol li {
+            display: block; /* Die Listenelemente bleiben blockweise */
+        }
+
+        /* Entfernt Listen-Standard-Styling (Punkte und Nummern) */
+        ul {
+            list-style-type: disc;
+        }
+
+        ol {
+            list-style-type: decimal;
+        }
+    </style>
 </head>
 <body>
 
@@ -106,22 +126,27 @@
             etc. à la Bismut–Elworthy–Li and Feynman–Kac. In turn, this entails pathwise insights into the behavior of the 
             aforementioned analytic objects.
         </p>
+
+        <!-- Ungeordnete Liste (UL) -->
         <p>
-    <b>Item list.</b>
-    <ul style="display: inline; margin: 0; padding: 0;">
-        <ul style="display: inline; margin: 0; padding: 0;">
-        <li style="display: inline;">First item</li>
-        <li style="display: inline;">Second item</li>
-        <li style="display: inline;">Third item</li>
-    </ul>
-</p>
+            <b>Item list.</b>
+            <ul>
+                <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li>
+            </ul>
+        </p>
+
+        <!-- Geordnete Liste (OL) -->
         <p>
+            <b>Ordered list.</b>
             <ol>
                 <li>First item</li>
                 <li>Second item</li>
                 <li>Third item</li>
             </ol>
         </p>
+
     </div>
     <div class="side"></div> <!-- Right margin -->
 </div>
