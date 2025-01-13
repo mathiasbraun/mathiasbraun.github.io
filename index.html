@@ -32,6 +32,29 @@
     window.onload = function() {
         MathJax.typeset();
     };
+
+    // JavaScript to adjust the scroll position for anchor links
+    document.addEventListener("DOMContentLoaded", function() {
+        var links = document.querySelectorAll('.navbar a');
+        
+        links.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                var targetId = link.getAttribute('href').substring(1);
+                var targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    // Prevent default action of jumping to the anchor
+                    e.preventDefault();
+                    
+                    // Scroll with offset
+                    window.scrollTo({
+                        top: targetElement.offsetTop - document.querySelector('.navbar').offsetHeight, 
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
     </script>
 </head>
 <body>
@@ -41,7 +64,7 @@
     <div class="nav-links">
         <a href="#home">Welcome</a>
         <a href="#home">News</a>
-        <a href="#research">Research</a>
+        <a href="#research">Research</a> <!-- Link to Research section -->
         <a href="#publications">Publications</a>
         <a href="#activities">Activities</a>
         <a href="#teaching">Teaching</a>
@@ -72,7 +95,9 @@
         <p>
             If you have any questions, please feel invited to get in touch with me!
         </p>
-        <h1 id="research" style="text-align: center; font-size: 12px;">RESEARCH</h1>
+        
+        <!-- Research Section -->
+        <h1 id="research" style="text-align: center; font-size: 12px;">RESEARCH</h1> <!-- ID for the Research section -->
         <p>
             <b>Nonsmooth Lorentzian geometry.</b> I am currently working on a promising optimal transport approach
             to Einstein's theory of gravity. In this work, I have obtained results about the timelike 
@@ -106,14 +131,15 @@
             etc. à la Bismut–Elworthy–Li and Feynman–Kac. In turn, this entails pathwise insights into the behavior of the 
             aforementioned analytic objects.
         </p>
+        
+        <!-- Item list -->
+        <ul>
+            <li>First item</li>
+            <li>Second item</li>
+            <li>Third item</li>
+        </ul>
         <p>
-            <ul>
-                <li>First item</li>
-                <li>Second item</li>
-                <li>Third item</li>
-            </ul>
-        </p>
-        <p>
+            <!-- Ordered list -->
             <ol>
                 <li>First item</li>
                 <li>Second item</li>
