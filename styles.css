@@ -114,16 +114,3 @@ mjx-container {
     color: #ffffff;
     background-color: transparent;
 }
-
-.reverse-list {
-  counter-reset: countdown 5; /* Die Zahl 5 ist der Startwert */
-}
-
-.reverse-list li {
-  list-style: none; /* Entfernt die Standardnummerierung */
-  counter-decrement: countdown; /* Zählt rückwärts */
-}
-
-.reverse-list li::before {
-  content: counter(countdown) ". "; /* Fügt die rückwärts zählende Nummer hinzu */
-}
