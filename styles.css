@@ -35,12 +35,12 @@ p {
 
 /* Styling for links */
 a {
-    color: #4CAF50; /* Updated green color */
+    color: #2E7D32; /* Updated darker green color */
     text-decoration: none;
 }
 
 a:hover {
-    color: #4CAF50; /* Updated green color */
+    color: #2E7D32; /* Updated darker green color */
     text-decoration: none;
 }
 
@@ -71,7 +71,7 @@ mjx-container {
 
 /* Styling for the navigation bar */
 .navbar {
-    background-color: #4CAF50; /* Updated green color */
+    background-color: #2E7D32; /* Updated darker green color */
     position: fixed;
     top: 0;
     left: 0;
