@@ -35,12 +35,12 @@ p {
 
 /* Styling for links */
 a {
-    color: #3a5a40;
+    color: #4CAF50; /* Updated green color */
     text-decoration: none;
 }
 
 a:hover {
-    color: #3a5a40;
+    color: #4CAF50; /* Updated green color */
     text-decoration: none;
 }
 
