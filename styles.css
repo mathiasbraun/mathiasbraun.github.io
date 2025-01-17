@@ -71,7 +71,7 @@ mjx-container {
 
 /* Styling for the navigation bar */
 .navbar {
-    background-color: #3a5a40;
+    background-color: #4CAF50; /* Updated green color */
     position: fixed;
     top: 0;
     left: 0;
