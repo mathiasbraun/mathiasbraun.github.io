@@ -33,6 +33,11 @@ p {
     line-height: 17px;
 }
 
+/* Styling for lists (remove top indent) */
+ul, ol {
+    margin-top: 0; /* Entfernt den Abstand nach oben */
+}
+
 /* Styling for links */
 a {
     color: #2E7D32; /* Updated darker green color */
