@@ -40,12 +40,12 @@ ul, ol {
 
 /* Styling for links */
 a {
-    color: #2E7D32; /* Updated darker green color */
+    color: #1E3A5F; /* Marineblau */
     text-decoration: none;
 }
 
 a:hover {
-    color: #2E7D32; /* Updated darker green color */
+    color: #1E3A5F; /* Marineblau */
     text-decoration: none;
 }
 
@@ -76,7 +76,7 @@ mjx-container {
 
 /* Styling for the navigation bar */
 .navbar {
-    background-color: #2E7D32; /* Updated darker green color */
+    background-color: #1E3A5F; /* Marineblau */
     position: fixed;
     top: 0;
     left: 0;
