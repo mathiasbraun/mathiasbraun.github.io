@@ -41,9 +41,11 @@ ul, ol {
 /* Styling for links */
 a {
     color: #357ABD; /* Etwas dunkleres Blau */
+    text-decoration: none;
 }
 a:hover {
     color: #357ABD;
+    text-decoration: none;
 }
 
 /* MathJax Styling */
