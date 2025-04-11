@@ -40,13 +40,10 @@ ul, ol {
 
 /* Styling for links */
 a {
-    color: #4A90E2; /* Sanftes Hellblau für Links */
-    text-decoration: none;
+    color: #357ABD; /* Etwas dunkleres Blau */
 }
-
 a:hover {
-    color: #4A90E2; /* Sanftes Hellblau für Links im Hover */
-    text-decoration: none;
+    color: #357ABD;
 }
 
 /* MathJax Styling */
