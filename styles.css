@@ -198,23 +198,14 @@ li {
     text-align: center;
 }
 
-/* Round profile photo above the name + icon row. */
+/* Round profile photo above the icon row. */
 .topbar-photo {
     display: block;
     width: 132px;
     height: 132px;
-    margin: 0 auto 14px auto;
+    margin: 0 auto 18px auto;
     border-radius: 50%;
     object-fit: cover;
-}
-
-/* Name under the photo, in the heading colour/weight (centered here). */
-.topbar-name {
-    margin: 0 0 16px 0;
-    font-size: 20px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    color: var(--accent);
 }
 
 .topbar-icons {
@@ -222,16 +213,8 @@ li {
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: center;
-    gap: 12px 15px;                    /* row-gap 12px, column-gap 15px */
+    gap: 15px;
     margin-bottom: 10px;
-}
-
-/* Full-width, zero-height break: forces the icons onto two centered rows (6/4)
-   without any oversized gaps. */
-.ti-break {
-    flex-basis: 100%;
-    height: 0;
-    margin: 0;
 }
 
 .topbar-icons a.ti {
