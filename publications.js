@@ -76,29 +76,11 @@
       : el('span', { class: 'pub-title', text: item.title }));
     li.appendChild(document.createTextNode('.'));
 
-    // "Abstract" button (before the status badge) — opens the roll-down abstract.
-    let abstractWrap = null;
-    if (item.abstract && item.abstract.trim()) {
-      const btn = el('span', { class: 'pub-abstract-btn', text: 'Abstract', attrs: { role: 'button', tabindex: '0', 'aria-label': 'Toggle abstract' } });
-      const a = makeAbstract(item.abstract, function (open) { btn.classList.toggle('is-open', open); });
-      btn.addEventListener('click', a.flip);
-      btn.addEventListener('keydown', function (ev) {
-        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); a.flip(); }
-      });
-      li.appendChild(btn);
-      abstractWrap = a.wrapper;
-    }
-
-    // Status badge (plain label).
+    // Status badge (plain label) — stays on the title line, right after the title.
     li.appendChild(el('span', {
       class: 'pub-badge pub-badge--' + item.status.replace(/\s+/g, '-'),
       text: item.status
     }));
-
-    // arXiv logo only for non-preprints — a preprint's title already links to arXiv.
-    if (item.arxiv && item.status !== 'preprint') {
-      li.appendChild(arxivLogo(item.arxiv));
-    }
     li.appendChild(el('br'));
 
     // Reference line. Preprints show no reference line at all.
@@ -127,7 +109,26 @@
       li.appendChild(refSpan);
     }
 
-    // The abstract rolls down below the entry.
+    // Actions line at the END of the item: the "Abstract" button and (for
+    // non-preprints) the arXiv logo, on their own separate line.
+    let abstractWrap = null;
+    const actions = el('div', { class: 'pub-actions' });
+    if (item.abstract && item.abstract.trim()) {
+      const btn = el('span', { class: 'pub-abstract-btn', text: 'Abstract', attrs: { role: 'button', tabindex: '0', 'aria-label': 'Toggle abstract' } });
+      const a = makeAbstract(item.abstract, function (open) { btn.classList.toggle('is-open', open); });
+      btn.addEventListener('click', a.flip);
+      btn.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); a.flip(); }
+      });
+      actions.appendChild(btn);
+      abstractWrap = a.wrapper;
+    }
+    if (item.arxiv && item.status !== 'preprint') {
+      actions.appendChild(arxivLogo(item.arxiv));
+    }
+    if (actions.childNodes.length) li.appendChild(actions);
+
+    // The abstract rolls down below the actions line.
     if (abstractWrap) li.appendChild(abstractWrap);
 
     return li;
