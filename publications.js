@@ -76,11 +76,26 @@
       : el('span', { class: 'pub-title', text: item.title }));
     li.appendChild(document.createTextNode('.'));
 
-    // Status badge (plain label) — stays on the title line, right after the title.
+    // Status badge, then the "Abstract" button, then the arXiv logo — all on the
+    // title line, in that order.
     li.appendChild(el('span', {
       class: 'pub-badge pub-badge--' + item.status.replace(/\s+/g, '-'),
       text: item.status
     }));
+    let abstractWrap = null;
+    if (item.abstract && item.abstract.trim()) {
+      const btn = el('span', { class: 'pub-abstract-btn', text: 'Abstract', attrs: { role: 'button', tabindex: '0', 'aria-label': 'Toggle abstract' } });
+      const a = makeAbstract(item.abstract, function (open) { btn.classList.toggle('is-open', open); });
+      btn.addEventListener('click', a.flip);
+      btn.addEventListener('keydown', function (ev) {
+        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); a.flip(); }
+      });
+      li.appendChild(btn);
+      abstractWrap = a.wrapper;
+    }
+    if (item.arxiv && item.status !== 'preprint') {
+      li.appendChild(arxivLogo(item.arxiv));
+    }
     li.appendChild(el('br'));
 
     // Reference line. Preprints show no reference line at all.
@@ -109,26 +124,7 @@
       li.appendChild(refSpan);
     }
 
-    // Actions line at the END of the item: the "Abstract" button and (for
-    // non-preprints) the arXiv logo, on their own separate line.
-    let abstractWrap = null;
-    const actions = el('div', { class: 'pub-actions' });
-    if (item.abstract && item.abstract.trim()) {
-      const btn = el('span', { class: 'pub-abstract-btn', text: 'Abstract', attrs: { role: 'button', tabindex: '0', 'aria-label': 'Toggle abstract' } });
-      const a = makeAbstract(item.abstract, function (open) { btn.classList.toggle('is-open', open); });
-      btn.addEventListener('click', a.flip);
-      btn.addEventListener('keydown', function (ev) {
-        if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); a.flip(); }
-      });
-      actions.appendChild(btn);
-      abstractWrap = a.wrapper;
-    }
-    if (item.arxiv && item.status !== 'preprint') {
-      actions.appendChild(arxivLogo(item.arxiv));
-    }
-    if (actions.childNodes.length) li.appendChild(actions);
-
-    // The abstract rolls down below the actions line.
+    // The abstract rolls down below the entry.
     if (abstractWrap) li.appendChild(abstractWrap);
 
     return li;
