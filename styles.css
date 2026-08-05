@@ -181,6 +181,56 @@ li {
 }
 
 /* ==========================================================================
+   Top link bar (profile icons, talk slides, workshop)
+   ========================================================================== */
+.topbar {
+    margin-bottom: 26px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.topbar-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.topbar-icons a.ti {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    color: var(--muted);
+    transition: color 0.15s ease;
+}
+
+.topbar-icons a.ti:hover {
+    color: var(--accent);
+}
+
+.topbar-icons a.ti i {
+    font-size: 18px;
+}
+
+/* Text fallbacks (EPFL, AMS, zbMATH) — no dedicated icon exists. */
+.topbar-icons a.ti-text {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+}
+
+.topbar-talks,
+.topbar-workshop {
+    line-height: 1.7;
+}
+
+.topbar-talks a,
+.topbar-workshop a {
+    color: var(--accent);
+}
+
+/* ==========================================================================
    Publications (generated from publications-data.js by publications.js)
    ========================================================================== */
 .pub-leadin {
