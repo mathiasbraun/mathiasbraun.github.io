@@ -212,12 +212,14 @@ li {
    accent-coloured box, so the ink shows in the site blue — change background-color
    to recolour. Box aspect (~5.6:1) matches the trimmed image so it sits tight. */
 .topbar-sig {
-    width: 260px;
-    height: 47px;
-    margin: 2px auto 20px auto;
+    width: 220px;
+    height: 40px;
+    margin: 4px auto 20px auto;
     background-color: var(--accent);
     -webkit-mask: url("signature.png?v=1") center / contain no-repeat;
             mask: url("signature.png?v=1") center / contain no-repeat;
+    /* Slight clockwise tilt to level out the natural upward slant of the writing. */
+    transform: rotate(2deg);
 }
 
 .topbar-icons {
