@@ -439,6 +439,12 @@ mjx-container {
     color: inherit;
 }
 
+/* Wraps an inline formula together with its trailing punctuation (see
+   glueMathPunctuation in publications.js) so a line break can't isolate a comma. */
+.math-nobreak {
+    white-space: nowrap;
+}
+
 /* ==========================================================================
    Small screens
    ========================================================================== */

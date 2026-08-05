@@ -30,6 +30,27 @@
     return el('a', { class: 'pub-arxiv-btn', text: 'arXiv', href: 'https://arxiv.org/abs/' + id, attrs: { title: 'arXiv:' + id, 'aria-label': 'arXiv:' + id } });
   }
 
+  // Keep trailing punctuation on the same line as the inline formula it follows.
+  // MathJax renders each formula as an atomic inline element, and the browser may
+  // break right after it, dropping a lone comma/period onto the next line. Wrapping
+  // the formula together with the punctuation in a nowrap span prevents that (and
+  // also strips any stray space that slipped in before the punctuation).
+  function glueMathPunctuation(root) {
+    root.querySelectorAll('mjx-container').forEach(function (c) {
+      if (c.getAttribute('display') === 'true') return; // skip centered display equations
+      const next = c.nextSibling;
+      if (!next || next.nodeType !== 3) return;
+      const m = next.textContent.match(/^\s*([,.;:!?)]+)/);
+      if (!m) return;
+      const span = document.createElement('span');
+      span.className = 'math-nobreak';
+      c.parentNode.insertBefore(span, c);
+      span.appendChild(c);
+      span.appendChild(document.createTextNode(m[1]));
+      next.textContent = next.textContent.slice(m[0].length);
+    });
+  }
+
   // Build the roll-down abstract (grid 0fr -> 1fr) and return it with a flip fn.
   function makeAbstract(abstract, onState) {
     const outer = el('div', { class: 'pub-abstract-wrap' });
@@ -49,7 +70,7 @@
         setOpen(false);
       } else if (!typeset && window.MathJax && window.MathJax.typesetPromise) {
         // Typeset first (while collapsed) so the roll animates to the final height.
-        window.MathJax.typesetPromise([box]).then(function () { typeset = true; setOpen(true); });
+        window.MathJax.typesetPromise([box]).then(function () { glueMathPunctuation(box); typeset = true; setOpen(true); });
       } else {
         setOpen(true);
       }
