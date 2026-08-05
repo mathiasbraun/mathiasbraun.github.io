@@ -10,15 +10,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=44">
-    <!-- MathJax Script -->
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="styles.css?v=45">
+    <!-- MathJax: the config MUST be defined BEFORE the library script loads —
+         MathJax v3 reads window.MathJax at load time. When it came *after* (as it
+         used to), custom delimiters like $...$ and processEnvironments were ignored,
+         so the formulas in the abstracts showed up as literal "code". -->
     <script>
     window.MathJax = {
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']],
             displayMath: [['$$', '$$'], ['\\[', '\\]']],
             processEnvironments: true, // allow \begin{equation*}...\end{equation*} in abstracts
+            processEscapes: true,
             packages: {'[+]': ['ams', 'color', 'boldsymbol']},
             macros: {
                 mathscr: ['\\mathcal{#1}', 1] // \mathscr is not built in; approximate with \mathcal
@@ -27,20 +30,12 @@
         chtml: {
             fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
             scale: 1.0,
-            mtextFontInherit: true, // Ensures that text in formulas also uses Poppins
+            mtextFontInherit: true // text in formulas also uses Poppins
         },
-        loader: {load: ['[tex]/ams', '[tex]/color', '[tex]/boldsymbol']},
-        tex2jax: {
-            inlineMath: [['$', '$'], ['\\(', '\\)']],
-            displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEscapes: true
-        }
-    };
-
-    window.onload = function() {
-        MathJax.typeset();
+        loader: {load: ['[tex]/ams', '[tex]/color', '[tex]/boldsymbol']}
     };
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </head>
 <body>
@@ -249,7 +244,7 @@
 </div>
 
 <!-- Publications database + renderer -->
-<script src="publications-data.js?v=6"></script>
+<script src="publications-data.js?v=7"></script>
 <script src="publications.js?v=22"></script>
 
 </body>

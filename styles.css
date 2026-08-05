@@ -100,6 +100,10 @@ h1[id] {
     letter-spacing: 0.01em;
     text-align: left;
     color: var(--accent);
+    /* Flex row so the small leading icon is vertically centered with the title
+       text (baseline alignment left it sitting slightly high). */
+    display: flex;
+    align-items: center;
 }
 
 /* "Welcome" now points at the top bar (id="home"); land it just below the navbar. */
@@ -219,6 +223,10 @@ li {
     font-weight: 600;
     letter-spacing: 0.01em;
     color: var(--accent);
+    /* Same vertical centering of the leading icon as the section headings. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .topbar-icons {
