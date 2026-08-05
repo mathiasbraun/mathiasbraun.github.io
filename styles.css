@@ -198,6 +198,16 @@ li {
     text-align: center;
 }
 
+/* Round profile photo above the icon row. */
+.topbar-photo {
+    display: block;
+    width: 132px;
+    height: 132px;
+    margin: 0 auto 18px auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 .topbar-icons {
     display: flex;
     flex-wrap: wrap;
@@ -290,9 +300,9 @@ li {
     font-size: 9px;
     line-height: 1;
     padding: 2px 7px;
-    /* Left gap from the title; the right gap is supplied by the arXiv logo's own
-       left margin, so both sides of the badge stay equal (7px). */
-    margin-left: 7px;
+    /* Gap to the following tag via margin-right — a right margin is invisible at a
+       line end, so a tag that wraps to the start of a line is not indented. */
+    margin-right: 7px;
     border-radius: 10px;
     vertical-align: middle;
     text-transform: uppercase;
@@ -326,7 +336,7 @@ li {
     font-size: 9px;
     line-height: 1;
     padding: 2px 7px;
-    margin-left: 7px;
+    margin-right: 7px;
     border-radius: 10px;
     vertical-align: middle;
     text-transform: uppercase;

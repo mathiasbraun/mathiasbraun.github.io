@@ -70,7 +70,7 @@
     li.appendChild(url
       ? el('a', { class: 'pub-title', text: item.title, href: url })
       : el('span', { class: 'pub-title', text: item.title }));
-    li.appendChild(document.createTextNode('.'));
+    li.appendChild(document.createTextNode('. '));
 
     // Status badge, then the "Abstract" button, then the arXiv logo — all on the
     // title line, in that order.
