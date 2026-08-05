@@ -198,7 +198,7 @@ li {
     text-align: center;
 }
 
-/* Round profile photo above the signature + icon row. */
+/* Round profile photo above the name + icon row. */
 .topbar-photo {
     display: block;
     width: 132px;
@@ -208,19 +208,14 @@ li {
     object-fit: cover;
 }
 
-/* Handwritten name. The PNG (black ink on transparent) is used as a mask over an
-   accent-coloured box, so the ink shows in the site blue — change background-color
-   to recolour. Box aspect (~5.6:1) matches the trimmed image so it sits tight. */
-.topbar-sig {
-    width: 205px;
-    height: 37px;
-    margin: 4px auto 20px auto;
-    background-color: var(--accent);
-    -webkit-mask: url("signature.png?v=1") center / contain no-repeat;
-            mask: url("signature.png?v=1") center / contain no-repeat;
-    /* Clockwise tilt of 2.6deg: measured from the raw image, "Braun" (right) sits
-       ~2.6deg higher than "Mathias", so this levels the two words. */
-    transform: rotate(2.6deg);
+/* Name under the photo, as plain text — sized to the section headings (h1[id],
+   15px), same accent colour, centered via the .topbar text-align. */
+.topbar-name {
+    margin: 0 0 18px 0;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--accent);
 }
 
 .topbar-icons {
