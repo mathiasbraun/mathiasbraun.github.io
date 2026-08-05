@@ -215,15 +215,15 @@ li {
     font-size: 18px;
 }
 
-/* EPFL, AMS, zbMATH shown as their site favicons (no dedicated icon glyph). */
-.topbar-icons a.ti .ti-favicon {
+/* EPFL, AMS, zbMATH shown as their official wordmark logos (Wikimedia).
+   Matched by height; width follows the logo's aspect ratio. */
+.topbar-icons a.ti .ti-logo {
     display: block;
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
+    height: 16px;
+    width: auto;
 }
 
-.topbar-icons a.ti:hover .ti-favicon {
+.topbar-icons a.ti:hover .ti-logo {
     opacity: 0.65;
 }
 
