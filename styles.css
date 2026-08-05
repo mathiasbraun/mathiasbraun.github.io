@@ -224,9 +224,14 @@ li {
     height: 12px;
     width: auto;
     filter: brightness(0) invert(46%);
-    /* Drop the logo onto the text baseline so it reads like inline text, with
-       descenders (e.g. the "p" in zbMATH Open) dipping slightly below. */
+    /* Drop the logo onto the text baseline so it reads like inline text. */
     transform: translateY(2px);
+}
+
+/* zbMATH's logo contains a descender ("p" in Open); drop it a touch more so the
+   descender dips below the baseline like normal text. */
+.topbar-icons a.ti .ti-logo[alt="zbMATH"] {
+    transform: translateY(4px);
 }
 
 .topbar-talks,
