@@ -28,7 +28,7 @@
             }
         },
         chtml: {
-            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
+            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2', // no trailing slash — MathJax appends "/<file>.woff"; a trailing slash makes "//" → HTTP 400
             scale: 1.0,
             mtextFontInherit: true // text in formulas also uses Poppins
         },
