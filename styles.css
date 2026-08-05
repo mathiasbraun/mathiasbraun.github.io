@@ -431,10 +431,11 @@ li {
 /* ==========================================================================
    MathJax
    ========================================================================== */
+/* Let MathJax use its own math fonts so variables are properly italic and symbols
+   render correctly. (A previous `font-family: Poppins !important` forced all math
+   into an upright text font, which looked wrong.) Only the colour is inherited;
+   text inside formulas still matches Poppins via the tex `mtextFontInherit` option. */
 mjx-container {
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 12px;
-    font-weight: 300;
     color: inherit;
 }
 
