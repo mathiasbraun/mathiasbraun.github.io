@@ -209,9 +209,12 @@ li {
 }
 
 /* Name under the photo, as plain text — sized to the section headings (h1[id],
-   15px), same accent colour, centered via the .topbar text-align. */
+   15px), same accent colour, centered via the .topbar text-align. Tight
+   line-height + a 14px bottom margin match the photo-to-name gap above it, so the
+   name sits evenly between the photo and the icons. */
 .topbar-name {
-    margin: 0 0 18px 0;
+    margin: 0 0 14px 0;
+    line-height: 1.1;
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.01em;
@@ -265,6 +268,12 @@ li {
 .topbar-talks,
 .topbar-workshop {
     line-height: 1.7;
+}
+
+/* The word "Workshop" and its quotation marks in the body text colour (black),
+   not the muted grey; only the linked title "MDPDE 2026" stays in accent blue. */
+.topbar-workshop {
+    color: var(--text);
 }
 
 .topbar-talks a,

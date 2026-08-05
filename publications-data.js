@@ -193,7 +193,7 @@ const PUBLICATIONS = {
     },
     {
       "id": "prepublications",
-      "title": "Prepublications",
+      "title": "Preprints",
       "items": [
         {
           "id": "comparison-theory-lipschitz-spacetimes",
