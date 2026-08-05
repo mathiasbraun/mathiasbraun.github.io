@@ -193,7 +193,7 @@ li {
 .topbar-icons {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     gap: 15px;
     margin-bottom: 10px;
@@ -221,9 +221,12 @@ li {
    so the whole row sits on one line in one colour. */
 .topbar-icons a.ti .ti-logo {
     display: block;
-    height: 15px;
+    height: 12px;
     width: auto;
     filter: brightness(0) invert(46%);
+    /* Drop the logo onto the text baseline so it reads like inline text, with
+       descenders (e.g. the "p" in zbMATH Open) dipping slightly below. */
+    transform: translateY(2px);
 }
 
 .topbar-talks,
