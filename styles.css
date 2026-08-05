@@ -102,9 +102,9 @@ h1[id] {
     color: var(--accent);
 }
 
-/* The very first heading should hug the top offset exactly (see .container). */
+/* "Welcome" now points at the top bar (id="home"); land it just below the navbar. */
 #home {
-    margin-top: 0;
+    scroll-margin-top: 54px;
 }
 
 /* Small dark-blue icon before each section title. */
