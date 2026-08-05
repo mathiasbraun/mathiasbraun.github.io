@@ -236,19 +236,20 @@ li {
 .pub-badge--in-press {
     background-color: var(--accent-soft);
     color: var(--accent-strong);
-    border: 1px solid #cdd9e8;
+    border: 1px solid var(--accent-soft); /* border same colour as the fill */
 }
 
 .pub-badge--preprint {
     background-color: #eceef0;
     color: var(--muted);
-    border: 1px solid #e0e2e5;
+    border: 1px solid #eceef0; /* border same colour as the fill */
 }
 
-/* "Abstract" toggle button — same pill size as the badges but an outlined (ghost)
-   accent style; fills in on hover and while the abstract is open. Sits on the
-   title line between the status badge and the arXiv logo. */
-.pub-abstract-btn {
+/* "Abstract" and "arXiv" buttons — outlined (ghost) accent pills, same size as
+   the badges. They fill with the accent colour on hover (and, for Abstract, while
+   the abstract is open; for arXiv, also while pressed). */
+.pub-abstract-btn,
+.pub-arxiv-btn {
     display: inline-block;
     font-size: 9px;
     line-height: 1;
@@ -268,27 +269,11 @@ li {
 }
 
 .pub-abstract-btn:hover,
-.pub-abstract-btn.is-open {
+.pub-abstract-btn.is-open,
+.pub-arxiv-btn:hover,
+.pub-arxiv-btn:active {
     background-color: var(--accent);
     color: #ffffff;
-}
-
-/* Compact arXiv logo. Its left margin supplies the gap after the badge. */
-.pub-arxiv {
-    margin-left: 7px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
-    color: var(--muted);
-    vertical-align: middle;
-}
-
-.pub-arxiv:hover {
-    color: var(--text);
-}
-
-.pub-arxiv-x {
-    color: #b31b1b; /* arXiv red */
 }
 
 /* Roll-down reveal: the wrapper's single grid row grows from 0fr to its natural

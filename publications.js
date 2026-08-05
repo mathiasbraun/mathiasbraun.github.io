@@ -25,13 +25,9 @@
     return null;
   }
 
-  // Small arXiv wordmark ("arXiv" with the signature red X), linked to the paper.
-  function arxivLogo(id) {
-    const a = el('a', { class: 'pub-arxiv', href: 'https://arxiv.org/abs/' + id, attrs: { title: 'arXiv:' + id, 'aria-label': 'arXiv:' + id } });
-    a.appendChild(document.createTextNode('ar'));
-    a.appendChild(el('span', { class: 'pub-arxiv-x', text: 'X' }));
-    a.appendChild(document.createTextNode('iv'));
-    return a;
+  // arXiv button — styled like the "Abstract" button; links to the paper.
+  function arxivButton(id) {
+    return el('a', { class: 'pub-arxiv-btn', text: 'arXiv', href: 'https://arxiv.org/abs/' + id, attrs: { title: 'arXiv:' + id, 'aria-label': 'arXiv:' + id } });
   }
 
   // Build the roll-down abstract (grid 0fr -> 1fr) and return it with a flip fn.
@@ -94,7 +90,7 @@
       abstractWrap = a.wrapper;
     }
     if (item.arxiv && item.status !== 'preprint') {
-      li.appendChild(arxivLogo(item.arxiv));
+      li.appendChild(arxivButton(item.arxiv));
     }
     li.appendChild(el('br'));
 
