@@ -203,28 +203,27 @@ li {
     display: inline-flex;
     align-items: center;
     line-height: 1;
-    color: var(--muted);
-    transition: color 0.15s ease;
+    color: #757575;                    /* uniform grey for all glyph icons */
+    transition: opacity 0.15s ease;
 }
 
+/* Uniform hover for the whole row (dims glyphs and logos alike). */
 .topbar-icons a.ti:hover {
-    color: var(--accent);
+    opacity: 0.55;
 }
 
 .topbar-icons a.ti i {
     font-size: 18px;
 }
 
-/* EPFL, AMS, zbMATH shown as their official wordmark logos (Wikimedia).
-   Matched by height; width follows the logo's aspect ratio. */
+/* EPFL, AMS, zbMATH wordmark logos — flattened to the SAME grey as the glyph
+   icons (brightness(0) makes a silhouette, invert() tints it), and height-matched
+   so the whole row sits on one line in one colour. */
 .topbar-icons a.ti .ti-logo {
     display: block;
-    height: 16px;
+    height: 15px;
     width: auto;
-}
-
-.topbar-icons a.ti:hover .ti-logo {
-    opacity: 0.65;
+    filter: brightness(0) invert(46%);
 }
 
 .topbar-talks,
