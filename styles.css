@@ -198,14 +198,26 @@ li {
     text-align: center;
 }
 
-/* Round profile photo above the icon row. */
+/* Round profile photo above the signature + icon row. */
 .topbar-photo {
     display: block;
     width: 132px;
     height: 132px;
-    margin: 0 auto 18px auto;
+    margin: 0 auto 14px auto;
     border-radius: 50%;
     object-fit: cover;
+}
+
+/* Handwritten name. The PNG (black ink on transparent) is used as a mask over an
+   accent-coloured box, so the ink shows in the site blue — change background-color
+   to recolour. Box aspect (~5.6:1) matches the trimmed image so it sits tight. */
+.topbar-sig {
+    width: 260px;
+    height: 47px;
+    margin: 2px auto 20px auto;
+    background-color: var(--accent);
+    -webkit-mask: url("signature.png?v=1") center / contain no-repeat;
+            mask: url("signature.png?v=1") center / contain no-repeat;
 }
 
 .topbar-icons {
