@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mathias Braun</title>
     <!-- Google Font for Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=25">
     <!-- MathJax Script -->
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>
@@ -15,13 +15,18 @@
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']],
             displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEnvironments: true, // allow \begin{equation*}...\end{equation*} in abstracts
+            packages: {'[+]': ['ams', 'color', 'boldsymbol']},
+            macros: {
+                mathscr: ['\\mathcal{#1}', 1] // \mathscr is not built in; approximate with \mathcal
+            }
         },
         chtml: {
             fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2/',
             scale: 1.0,
             mtextFontInherit: true, // Ensures that text in formulas also uses Poppins
         },
-        loader: {load: ['[tex]/ams', '[tex]/color']},
+        loader: {load: ['[tex]/ams', '[tex]/color', '[tex]/boldsymbol']},
         tex2jax: {
             inlineMath: [['$', '$'], ['\\(', '\\)']],
             displayMath: [['$$', '$$'], ['\\[', '\\]']],
@@ -34,12 +39,6 @@
     };
     </script>
 
-    <!-- CSS for smooth scrolling -->
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
 </head>
 <body>
 
@@ -60,7 +59,7 @@
 <div class="container">
     <div class="side"></div> <!-- Left margin -->
     <div class="content">
-        <h1 style="text-align: center; font-size: 12px;" id="home">This page is under construction</h1>
+        <h1 id="home">This page is under construction</h1>
         <p>
             Welcome to my homepage! I am a mathematician researching on optimal transport, nonlinear PDEs, and mathematical relativity.
         </p>
@@ -70,7 +69,7 @@
         <p>
             Before, I held a Postdoctoral Fellowship in the group of Professor <a href="https://www.math.toronto.edu/mccann" target="_blank">Robert McCann</a> @ <a href="https://www.mathematics.utoronto.ca" target="_blank">Department of Mathematics</a>, <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>. 
             In between, I was a <a href="https://www.fields.utoronto.ca/honours-and-fellowships/postdoctoral-fellowships" target="_blank">Fields Postdoctoral Fellow</a> @ <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>, 
-            advised by Professors <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Robert McCann, and <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>. 
+            advised by Professors <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Robert McCann, and <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>.
             I was associated with the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
         </p>
         <p>
@@ -79,99 +78,44 @@
         <p>
             If you have any questions, please feel invited to get in touch with me!
         </p>
-        <h1 style="text-align: center; font-size: 12px;" id="research">Research</h1>
+        <h1 id="research">Research</h1>
         <p>
-            <b>Optimal transport.</b> Text.
+            <b>Nonsmooth Lorentzian geometry.</b> I am currently working on a promising optimal transport approach
+            to Einstein's theory of gravity. In this work, I have obtained results about the timelike 
+            curvature-dimension condition &mdash; briefly TCD condition &mdash; for nonsmooth measured Lorentzian spaces, 
+            especially its pathwise interpretation, its local-to-global property, and sharp geometric inequalities. 
+            It characterizes the condition "Ricci curvature being bounded from below in timelike directions, and 
+            dimension being bounded from above" for smooth spacetimes, hence includes the strong energy condition of 
+            Hawking and Penrose. The class of spaces in which the TCD condition makes sense includes spacetime solutions 
+            to the Einstein equation with low regularity metric. In this work with Matteo Calisti, we have shown spacetimes 
+            with \(C^1\) metrics &mdash; the borderline regularity for local existence results for the Einstein equation in four 
+            dimensions &mdash; and timelike lower bounds for their distributional Ricci tensor to be covered by the synthetic 
+            Lorentzian setting. The latter should thus lead to new understandings of (super-)solutions to the Einstein equation. 
+            With Shin-ichi Ohta, we have also covered Finsler spacetimes here.
         </p>
         <p>
-            <b>Nonlinear PDEs.</b> Text.
+            <b>Dirichlet spaces with singular Ricci bounds.</b> I am also active in the positive signature case, namely 
+            Dirichlet spaces with singular Ricci bounds. These singularities can arise e.g. from spatial interior or boundary 
+            irregularities, or from simple unboundedness of the "Ricci tensor". In this work with Karen Habermann and Theo Sturm, 
+            we have characterized variable Ricci bounds in the Lagrangian and Eulerian picture. Moreover, here I have 
+            developed a second order calculus on spaces with Ricci curvature bounded from below by a signed measure in 
+            the extended Kato class. This setting includes a vast class of curvature singularities which are still 
+            controlled by the heat kernel. The analysis of such spaces might lead to applications to Ricci flow, where 
+            curvature never stays bounded by flowing through singularities.
         </p>
         <p>
-            <b>Mathematical relativity.</b> Text.
+            <b>Stochastic tensor calculus.</b> A side project I am curious about is a nonsmooth analogue of Eells–Elworthy–Malliavin's 
+            construction of diffusion processes on Riemannian manifolds. A key difficulty to date is that this approach is 
+            highly extrinsic. The prototypical setting should be the above mentioned Dirichlet spaces with lower Ricci bounds, 
+            in which both Brownian motion and an intrinsic tensor calculus make sense. A successful treatment might lead to 
+            stochastic derivative and representation formulas for heat semigroups on functions, 1-forms, vector fields, 
+            etc. à la Bismut–Elworthy–Li and Feynman–Kac. In turn, this entails pathwise insights into the behavior of the 
+            aforementioned analytic objects.
         </p>
-        <h1 style="text-align: center; font-size: 12px;" id="publications">Publications</h1>
-        <p>
-            To view or hide the abstract of a specific work, please click on the respective tag displayed in italic.
-        </p>
-        <p>
-            <b>Monographs</b> (1)<b>.</b> 
-            <ol>
-                <li>Mathias Braun.
-                    <br><a href="https://www.ams.org/books/memo/1522" target="_blank">Vector calculus for tamed Dirichlet spaces</a>.
-                    <br>Memoirs of the American Mathematical Society <b>303</b> (2024), no. 1522, 118 pp.
-                </li>
-            </ol>
-        </p>
-        <p>
-            <b>Articles</b> (8)<b>.</b>
-            <ol start="2">
-                <li>Mathias Braun, Shin-ichi Ohta.
-                    <br><a href="https://www.ams.org/journals/tran/2024-377-05/S0002-9947-2024-09126-2/home.html" target="_blank">Optimal transport and timelike lower Ricci curvature bounds on Finsler spacetimes</a>.
-                    <br>Transactions of the American Mathematical Society <b>377</b> (2024), no. 5, 3529&ndash;3576.
-                </li>
-                <li>
-                    Mathias Braun, Chiara Rigoni.
-                    <br><a href="https://www.sciencedirect.com/science/article/pii/S0304414923002648?via%3Dihub" target="_blank">Heat kernel bounds and Ricci curvature for Lipschitz manifolds</a>.
-                    <br>Stochastic Processes and their Applications <b>170</b> (2024), Paper No. 104292, 21 pp.
-                </li>
-                <li>
-                    Mathias Braun, Matteo Calisti.
-                    <br><a href="https://www.worldscientific.com/doi/10.1142/S0219199723500499" target="_blank">Timelike Ricci bounds for low regularity spacetimes by optimal transport</a>.
-                    <br>Communications in Contemporary Mathematics <b>26</b> (2024), no. 9, Paper No. 2350049, 23 pp.
-                </li>
-                <li>
-                    Mathias Braun.
-                    <br><a href="https://www.sciencedirect.com/science/article/pii/S0021782423000831" target="_blank">Rényi's entropy on Lorentzian spaces. Timelike curvature-dimension conditions.</a>
-                    <br>Journal de Mathématiques Pures et Appliquées (9) <b>177</b> (2023), 46&ndash;128.
-                </li>
-                <li>
-                    Mathias Braun.
-                    <br><a href="https://www.sciencedirect.com/science/article/pii/S0362546X22002802?dgcid=author" target="_blank">Good geodesics satisfying the timelike curvature-dimension condition</a>.
-                    <br>Nonlinear Analysis <b>229</b> (2023), Paper No. 113205, 30 pp.
-                </li>
-                <li>
-                    Mathias Braun.
-                    <br><a href="https://www.sciencedirect.com/science/article/pii/S0022123622002191?dgcid=author" target="_blank">Heat flow on 1-forms under lower Ricci bounds. Functional inequalities, spectral theory, and heat kernel</a>.
-                    <br>Journal of Functional Analysis <b>283</b> (2022), no. 7, Paper No. 109599, 65 pp.
-                </li>
-                <li>
-                    Mathias Braun, Batu Güneysu.
-                    <br><a href="https://projecteuclid.org/journals/electronic-journal-of-probability/volume-26/issue-none/Heat-flow-regularity-BismutElworthyLis-derivative-formula-and-pathwise-couplings-on/10.1214/21-EJP703.full" target="_blank">Heat flow regularity, Bismut&ndash;Elworthy&ndash;Li's derivative formula, and pathwise couplings on Riemannian manifolds with Kato bounded Ricci curvature</a>.
-                    <br>Electronic Journal of Probability <b>26</b> (2021), Paper No. 129, 1&ndash;25.
-                </li>
-                <li>
-                    Mathias Braun, Karen Habermann, Karl-Theodor Sturm.
-                    <br><a href="https://www.sciencedirect.com/science/article/pii/S0021782421000118" target="_blank">Optimal transport, gradient estimates, and pathwise Brownian coupling on spaces with variable Ricci bounds</a>.
-                    <br>Journal de Mathématiques Pures et Appliquées <b>147</b> (2021), 60&ndash;97.
-                </li>
-            </ol>
-        </p>
-        <p>
-            <b>Preprints</b> (4)<b>.</b>
-            <ol start="10">
-                <li>
-                    Mathias Braun, Nicola Gigli, Robert J. McCann, Argam Ohanyan, Clemens Sämann.
-                    <br><a href="https://arxiv.org/abs/2410.12632" target="_blank">An elliptic proof of the splitting theorems from Lorentzian geometry</a>.
-                    <br>arXiv:2410.12632, 34 pp.
-                </li>
-                <li>
-                    Mathias Braun.
-                    <br><a href="https://arxiv.org/abs/2408.16525" target="_blank">Nonsmooth d'Alembertian for Lorentz distance functions</a>.
-                    <br>arXiv:2408.16525, 84 pp.
-                </li>
-                <li>
-                    Tobias Beran, Mathias Braun, Matteo Calisti, Nicola Gigli, Robert J. McCann, Argam Ohanyan, Felix Rott, Clemens Sämann.
-                    <br><a href="https://arxiv.org/abs/2408.15968" target="_blank">A nonlinear d'Alembert comparison theorem and causal differential calculus on metric measure spacetimes</a>.
-                    <br>arXiv:2408.15968, 132 pp.
-                </li>
-                <li>
-                    Mathias Braun, Robert J. McCann.
-                    <br><a href="https://arxiv.org/abs/2312.17158" target="_blank">Causal convergence conditions through variable timelike Ricci curvature bounds</a>.
-                    <br>arXiv:2312.17158, 109 pp.
-                </li>
-            </ol>
-        </p>
-        <h1 style="text-align: center; font-size: 12px;" id="activities">Activities</h1>
+        <h1 id="publications">Publications</h1>
+        <!-- Publications are generated from publications-data.js by publications.js -->
+        <div id="publications-container"></div>
+        <h1 id="activities">Activities</h1>
         <p>
             <b>Outreach.</b> In fall 2022, I was interviewed by Fields Notes about my research within the magazine's 
             spotlight on the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>. Click <a href="https://www.fields.utoronto.ca/sites/default/files/01817_TFI_FieldsNotes-proof.pdf" target="_blank">here</a> to read the volume.
@@ -184,7 +128,7 @@
             the hybrid <a href="https://sites.google.com/site/professorsormani/home/lorephygeseminar" target="_blank">Low Regularity Physics and Geometry Seminar</a>. It was part 
             of the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
         </p>
-        <h1 style="text-align: center; font-size: 12px;" id="teaching">Teaching</h1>
+        <h1 id="teaching">Teaching</h1>
         <p>
             <b>EPFL.</b>
             <ul>
@@ -215,7 +159,7 @@
                     <br>Seminar Assistant.</li>
             </ul>
         </p>
-        <h1 style="text-align: center; font-size: 12px;" id="vitae">Vitae</h1>
+        <h1 id="vitae">Vitae</h1>
         <p>
             <b>Career.</b>
             <ul>
@@ -248,13 +192,13 @@
                 </li>
             </ul>
         </p>
-        <h1 style="text-align: center; font-size: 12px;" id="contact">Contact</h1>
+        <h1 id="contact">Contact</h1>
         <p>
             <b>Languages.</b> I speak German, English, and French fluently. Please feel free to contact me in any of these languages.
         </p>
         <p>
-            <b>Email.</b> I can be contacted by mathias [dot] braun [at] epfl [dot] ch. 
-                <br>If you are a student in one of my courses, if applicable please use your university email address when reaching out to me. 
+            <b>Email.</b> I can be contacted by mathias [dot] braun [at] epfl [dot] ch.
+                <br>If you are a student in one of my courses, if applicable please use your university email address when reaching out to me.
                 Otherwise, your message may land in my spam folder and thus remain unintentionally unanswered.
                 <br>In the vague hope predatory publishers read this before contacting me: no.
         </p>
@@ -268,6 +212,10 @@
     </div>
     <div class="side"></div> <!-- Right margin -->
 </div>
+
+<!-- Publications database + renderer -->
+<script src="publications-data.js?v=5"></script>
+<script src="publications.js?v=18"></script>
 
 </body>
 </html>

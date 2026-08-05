@@ -1,0 +1,48 @@
+name: Update publications
+
+# Checks for new works via ORCID/OpenAlex and, if it finds any, opens a pull
+# request adding them to publications-data.js for you to review and merge.
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'   # every Monday at 06:00 UTC
+  workflow_dispatch: {}   # allows running it manually from the Actions tab
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Discover new publications
+        run: node scripts/update-publications.cjs
+
+      - name: Open a pull request if anything changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet -- publications-data.js; then
+            echo "No new publications — nothing to do."
+            exit 0
+          fi
+          BRANCH="auto/update-publications-${{ github.run_number }}"
+          git config user.name "publications-bot"
+          git config user.email "publications-bot@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add publications-data.js
+          git commit -m "Add new publications detected via ORCID/OpenAlex"
+          git push -u origin "$BRANCH"
+          [ -f pr-summary.md ] || echo "New publications detected." > pr-summary.md
+          gh pr create --base main --head "$BRANCH" \
+            --title "📚 New publications detected" \
+            --body-file pr-summary.md
