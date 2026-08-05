@@ -107,6 +107,13 @@ h1[id] {
     margin-top: 0;
 }
 
+/* Small dark-blue icon before each section title. */
+.heading-icon {
+    margin-right: 9px;
+    font-size: 0.82em;
+    color: var(--accent);
+}
+
 /* ==========================================================================
    Navigation bar (fixed, deep slate)
    ========================================================================== */
@@ -184,6 +191,7 @@ li {
    Top link bar (profile icons, talk slides, workshop)
    ========================================================================== */
 .topbar {
+    padding-top: 18px;
     margin-bottom: 26px;
     font-size: 12px;
     color: var(--muted);
