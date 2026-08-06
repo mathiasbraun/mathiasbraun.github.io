@@ -51,12 +51,27 @@
     });
   }
 
+  // Uppercase Greek typed as literal Unicode (Γ, Δ, …) is rendered italic by
+  // MathJax, but LaTeX convention sets uppercase Greek upright. Rewrite those to
+  // their commands (\Gamma, \Delta, …), which MathJax sets upright — but only
+  // inside math regions, so surrounding prose is never touched. Lowercase Greek
+  // (γ, μ, …) is left alone: it should stay italic.
+  function uprightCapitalGreek(s) {
+    const MAP = {
+      'Γ': '\\Gamma ', 'Δ': '\\Delta ', 'Θ': '\\Theta ', 'Λ': '\\Lambda ',
+      'Ξ': '\\Xi ', 'Π': '\\Pi ', 'Σ': '\\Sigma ', 'Φ': '\\Phi ',
+      'Ψ': '\\Psi ', 'Ω': '\\Omega '
+    };
+    const fix = function (seg) { return seg.replace(/[ΓΔΘΛΞΠΣΦΨΩ]/g, function (c) { return MAP[c]; }); };
+    return s.replace(/\$\$[\s\S]*?\$\$|\$[^$]*\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\\begin\{[^}]*\}[\s\S]*?\\end\{[^}]*\}/g, fix);
+  }
+
   // Build the roll-down abstract (grid 0fr -> 1fr) and return it with a flip fn.
   function makeAbstract(abstract, onState) {
     const outer = el('div', { class: 'pub-abstract-wrap' });
     const clip = el('div', { class: 'pub-abstract-clip' });
     const box = el('div', { class: 'pub-abstract' });
-    box.textContent = abstract;
+    box.textContent = uprightCapitalGreek(abstract);
     clip.appendChild(box);
     outer.appendChild(clip);
 
