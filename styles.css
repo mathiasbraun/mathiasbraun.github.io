@@ -253,26 +253,32 @@ li {
     opacity: 0.55;
 }
 
+/* Per-icon calibration so every top-bar icon has EXACTLY the same top and bottom
+   edge. Icon fonts render each glyph at a different height, so each icon is scaled
+   (font-size) and nudged (translateY) to a common ink height of 14px with aligned
+   bottoms; values were measured per glyph. Default 18px covers ResearchGate,
+   Google Scholar and Email. */
 .topbar-icons a.ti i {
     font-size: 18px;
 }
+.topbar-icons a.ti[aria-label="ResearchGate"] i   { transform: translateY(1.5px); }
+.topbar-icons a.ti[aria-label="Google Scholar"] i { transform: translateY(1.5px); }
+.topbar-icons a.ti[aria-label="Email"] i          { transform: translateY(1.33px); }
+.topbar-icons a.ti[aria-label="ORCID"] i          { font-size: 13.836px; transform: translateY(-1.08px); }
+.topbar-icons a.ti[aria-label="Web of Science"] i { font-size: 13.836px; transform: translateY(-1.08px); }
+.topbar-icons a.ti[aria-label="arXiv"] i          { font-size: 13.836px; transform: translateY(-1.08px); }
+.topbar-icons a.ti[aria-label="LinkedIn"] i       { font-size: 14.824px; transform: translateY(0.26px); }
 
 /* EPFL, AMS, zbMATH wordmark logos — flattened to the SAME grey as the glyph
    icons (brightness(0) makes a silhouette, invert() tints it), and height-matched
    so the whole row sits on one line in one colour. */
 .topbar-icons a.ti .ti-logo {
     display: block;
-    height: 12px;
+    height: 14px;
     width: auto;
     filter: brightness(0) invert(46%);
-    /* Drop the logo onto the text baseline so it reads like inline text. */
-    transform: translateY(2px);
-}
-
-/* zbMATH's logo contains a descender ("p" in Open); drop it a touch more so the
-   descender dips below the baseline like normal text. */
-.topbar-icons a.ti .ti-logo[alt="zbMATH"] {
-    transform: translateY(4px);
+    /* Aligned to the same 14px band and bottom edge as the glyph icons. */
+    transform: translateY(1.5px);
 }
 
 .topbar-talks,
