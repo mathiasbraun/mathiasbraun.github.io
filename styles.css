@@ -290,6 +290,11 @@ li {
 .topbar-icons a.ti .ti-logo[alt="zbMATH"] {
     transform-origin: center top;
     transform: translateY(1.5px) scale(1.3077);
+    /* scale() also widens the logo beyond its layout box; reserve that horizontal
+       overflow (~15.7px per side) with margins so it doesn't overlap its neighbours
+       and the row keeps its uniform ~15px gaps. */
+    margin-left: 15.73px;
+    margin-right: 15.73px;
 }
 
 .topbar-talks,
