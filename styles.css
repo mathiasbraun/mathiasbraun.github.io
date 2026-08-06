@@ -281,6 +281,14 @@ li {
     transform: translateY(1.5px);
 }
 
+/* zbMATH's wordmark has a "p" descender: scale it up so its CAPITAL height matches
+   the other logos (14px) and place its baseline — not the descender — on the shared
+   bottom line (266); the descender then dips below like normal text. */
+.topbar-icons a.ti .ti-logo[alt="zbMATH"] {
+    height: 18.31px;
+    transform: translateY(3.5px);
+}
+
 .topbar-talks,
 .topbar-workshop {
     line-height: 1.7;
