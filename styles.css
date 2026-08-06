@@ -281,12 +281,15 @@ li {
     transform: translateY(1.5px);
 }
 
-/* zbMATH's wordmark has a "p" descender: scale it up so its CAPITAL height matches
-   the other logos (14px) and place its baseline — not the descender — on the shared
-   bottom line (266); the descender then dips below like normal text. */
+/* zbMATH's wordmark has a "p" descender: enlarge it so its CAPITAL height matches
+   the other logos and its baseline (not the descender) sits on the shared bottom
+   line; the descender then dips below like normal text. Crucially this uses a
+   transform scale — NOT a taller box — so it keeps the 14px layout height and does
+   not push the flex baseline (which would shift the whole row). transform-origin
+   center-top pins the caps to the top line (252) and grows downward. */
 .topbar-icons a.ti .ti-logo[alt="zbMATH"] {
-    height: 18.31px;
-    transform: translateY(3.5px);
+    transform-origin: center top;
+    transform: translateY(1.5px) scale(1.3077);
 }
 
 .topbar-talks,
