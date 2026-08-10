@@ -1,16 +1,11 @@
 /*
  * Publications database — the single source of truth for the Publications section.
- * Rendered into the page by publications.js. Can be edited by hand or by the
- * ORCID/arXiv update bot (see .github/workflows/update-publications.yml).
+ * Rendered into the page by publications.js. Edited by hand or by the update bot
+ * (scripts/update-publications.cjs via .github/workflows/update-publications.yml).
  *
  * Each item: authors[], title, venue, details, year, status
  * (published | in press | preprint), url, doi, arxiv, abstract.
- *
- * Abstracts of published works are taken from the publisher page, otherwise from
- * arXiv (latest version). Math is written in LaTeX and typeset by MathJax.
- *
- * Wrapped as a JS global (instead of a plain .json) so the browser can load it
- * locally via file:// too; also exported for Node so the bot can read/write it.
+ * Bot-added items carry "_needsReview": true until a human verifies them.
  */
 const PUBLICATIONS = {
   "meta": {
@@ -20,7 +15,7 @@ const PUBLICATIONS = {
     "mathscinetAuthorId": "1422964",
     "zbmathAuthor": "braun.mathias",
     "googleScholar": "sDOT6TMAAAAJ",
-    "lastUpdated": "2026-08-04"
+    "lastUpdated": "2026-08-10"
   },
   "categories": [
     {
@@ -29,7 +24,9 @@ const PUBLICATIONS = {
       "items": [
         {
           "id": "vector-calculus-tamed-dirichlet",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "Vector calculus for tamed Dirichlet spaces",
           "venue": "Memoirs of the American Mathematical Society",
           "details": "303 (2024), no. 1522, 118 pp.",
@@ -42,7 +39,10 @@ const PUBLICATIONS = {
         },
         {
           "id": "causal-convergence-conditions",
-          "authors": ["Mathias Braun", "Robert J. McCann"],
+          "authors": [
+            "Mathias Braun",
+            "Robert J. McCann"
+          ],
           "title": "Causal convergence conditions through variable timelike Ricci curvature bounds",
           "venue": "Memoirs of the European Mathematical Society",
           "details": "in press, 109 pp.",
@@ -60,8 +60,64 @@ const PUBLICATIONS = {
       "title": "Publications",
       "items": [
         {
+          "id": "smartonlinewdndeliverable434adaptationoftranspor",
+          "authors": [
+            "Denis Gilbert",
+            "Olivier Piller",
+            "Hervé Ung",
+            "Thomas Bernard",
+            "Mathias Braun",
+            "Andreas Korth",
+            "Nitsche, Reik",
+            "Fereshte Sedehizade"
+          ],
+          "title": "SMaRT-OnlineWDN deliverable 4.3&4: Adaptation of transport equations and CFD Simulation of the transport phenomena and comparison with measured data",
+          "venue": "HAL (Le Centre pour la Communication Scientifique Directe)",
+          "details": "2015",
+          "year": 2015,
+          "status": "published",
+          "url": null,
+          "doi": null,
+          "arxiv": null,
+          "abstract": "",
+          "_needsReview": true
+        },
+        {
+          "id": "smartonlinewdnonlinesecuritymanagementandreliabi",
+          "authors": [
+            "Thomas Bernard",
+            "Mathias Braun",
+            "Olivier Piller",
+            "Denis Gilbert",
+            "Jochen Deuerlein",
+            "Andreas Korth",
+            "Reik Nitsche",
+            "Maurel, M.",
+            "Sandraz, A.-C.",
+            "Sedehizade, F.",
+            "Weber, J.-M.",
+            "Werey, C."
+          ],
+          "title": "SMaRT-OnlineWDN: Online security management and reliability toolkit for water distribution networks",
+          "venue": "Fraunhofer-Publica (Fraunhofer-Gesellschaft)",
+          "details": "2022",
+          "year": 2022,
+          "status": "published",
+          "url": "https://doi.org/10.24406/publica-fhg-380127",
+          "doi": "10.24406/publica-fhg-380127",
+          "arxiv": null,
+          "abstract": "",
+          "_needsReview": true
+        },
+        {
           "id": "elliptic-proof-splitting",
-          "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Argam Ohanyan", "Clemens Sämann"],
+          "authors": [
+            "Mathias Braun",
+            "Nicola Gigli",
+            "Robert J. McCann",
+            "Argam Ohanyan",
+            "Clemens Sämann"
+          ],
           "title": "An elliptic proof of the splitting theorems from Lorentzian geometry",
           "venue": "Communications of the American Mathematical Society",
           "details": "to appear, 34 pp.",
@@ -74,7 +130,9 @@ const PUBLICATIONS = {
         },
         {
           "id": "spacetime-reconstruction",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "Spacetime reconstruction by order and number",
           "venue": "Classical and Quantum Gravity",
           "details": "43 (2026), no. 4, Paper No. 045015, 15 pp.",
@@ -87,7 +145,10 @@ const PUBLICATIONS = {
         },
         {
           "id": "finsler-timelike-ricci",
-          "authors": ["Mathias Braun", "Shin-ichi Ohta"],
+          "authors": [
+            "Mathias Braun",
+            "Shin-ichi Ohta"
+          ],
           "title": "Optimal transport and timelike lower Ricci curvature bounds on Finsler spacetimes",
           "venue": "Transactions of the American Mathematical Society",
           "details": "377 (2024), no. 5, 3529–3576",
@@ -100,7 +161,10 @@ const PUBLICATIONS = {
         },
         {
           "id": "heat-kernel-lipschitz",
-          "authors": ["Mathias Braun", "Chiara Rigoni"],
+          "authors": [
+            "Mathias Braun",
+            "Chiara Rigoni"
+          ],
           "title": "Heat kernel bounds and Ricci curvature for Lipschitz manifolds",
           "venue": "Stochastic Processes and their Applications",
           "details": "170 (2024), Paper No. 104292, 21 pp.",
@@ -113,7 +177,10 @@ const PUBLICATIONS = {
         },
         {
           "id": "timelike-ricci-low-regularity",
-          "authors": ["Mathias Braun", "Matteo Calisti"],
+          "authors": [
+            "Mathias Braun",
+            "Matteo Calisti"
+          ],
           "title": "Timelike Ricci bounds for low regularity spacetimes by optimal transport",
           "venue": "Communications in Contemporary Mathematics",
           "details": "26 (2024), no. 9, Paper No. 2350049, 23 pp.",
@@ -126,7 +193,9 @@ const PUBLICATIONS = {
         },
         {
           "id": "renyi-entropy-lorentzian",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "Rényi's entropy on Lorentzian spaces. Timelike curvature-dimension conditions",
           "venue": "Journal de Mathématiques Pures et Appliquées (9)",
           "details": "177 (2023), 46–128",
@@ -139,7 +208,9 @@ const PUBLICATIONS = {
         },
         {
           "id": "good-geodesics-tcd",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "Good geodesics satisfying the timelike curvature-dimension condition",
           "venue": "Nonlinear Analysis",
           "details": "229 (2023), Paper No. 113205, 30 pp.",
@@ -152,7 +223,9 @@ const PUBLICATIONS = {
         },
         {
           "id": "heat-flow-1-forms",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "Heat flow on 1-forms under lower Ricci bounds. Functional inequalities, spectral theory, and heat kernel",
           "venue": "Journal of Functional Analysis",
           "details": "283 (2022), no. 7, Paper No. 109599, 65 pp.",
@@ -165,7 +238,10 @@ const PUBLICATIONS = {
         },
         {
           "id": "heat-flow-regularity-bel",
-          "authors": ["Mathias Braun", "Batu Güneysu"],
+          "authors": [
+            "Mathias Braun",
+            "Batu Güneysu"
+          ],
           "title": "Heat flow regularity, Bismut–Elworthy–Li's derivative formula, and pathwise couplings on Riemannian manifolds with Kato bounded Ricci curvature",
           "venue": "Electronic Journal of Probability",
           "details": "26 (2021), Paper No. 129, 1–25",
@@ -178,7 +254,11 @@ const PUBLICATIONS = {
         },
         {
           "id": "ot-gradient-estimates-brownian",
-          "authors": ["Mathias Braun", "Karen Habermann", "Karl-Theodor Sturm"],
+          "authors": [
+            "Mathias Braun",
+            "Karen Habermann",
+            "Karl-Theodor Sturm"
+          ],
           "title": "Optimal transport, gradient estimates, and pathwise Brownian coupling on spaces with variable Ricci bounds",
           "venue": "Journal de Mathématiques Pures et Appliquées",
           "details": "147 (2021), 60–97",
@@ -197,7 +277,10 @@ const PUBLICATIONS = {
       "items": [
         {
           "id": "comparison-theory-lipschitz-spacetimes",
-          "authors": ["Mathias Braun", "Marta Sálamo Candal"],
+          "authors": [
+            "Mathias Braun",
+            "Marta Sálamo Candal"
+          ],
           "title": "Comparison theory for Lipschitz spacetimes",
           "venue": "arXiv preprint",
           "details": "arXiv:2603.24195, 52 pp.",
@@ -210,7 +293,10 @@ const PUBLICATIONS = {
         },
         {
           "id": "synthetic-gannon-lee",
-          "authors": ["Mathias Braun", "Carlo Rotolo"],
+          "authors": [
+            "Mathias Braun",
+            "Carlo Rotolo"
+          ],
           "title": "A synthetic Gannon–Lee incompleteness theorem",
           "venue": "arXiv preprint",
           "details": "arXiv:2602.14246, 20 pp.",
@@ -223,7 +309,13 @@ const PUBLICATIONS = {
         },
         {
           "id": "lorentzian-splitting-c1",
-          "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Argam Ohanyan", "Clemens Sämann"],
+          "authors": [
+            "Mathias Braun",
+            "Nicola Gigli",
+            "Robert J. McCann",
+            "Argam Ohanyan",
+            "Clemens Sämann"
+          ],
           "title": "A Lorentzian splitting theorem for continuously differentiable metrics and weights",
           "venue": "arXiv preprint",
           "details": "arXiv:2507.06836, 44 pp.",
@@ -236,7 +328,10 @@ const PUBLICATIONS = {
         },
         {
           "id": "gromov-reconstruction-lorentzian",
-          "authors": ["Mathias Braun", "Clemens Sämann"],
+          "authors": [
+            "Mathias Braun",
+            "Clemens Sämann"
+          ],
           "title": "Gromov's reconstruction theorem and measured Gromov–Hausdorff convergence in Lorentzian geometry",
           "venue": "arXiv preprint",
           "details": "arXiv:2506.10852, 35 pp.",
@@ -249,7 +344,9 @@ const PUBLICATIONS = {
         },
         {
           "id": "exact-dalembertian-lorentz-distance",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "Exact d'Alembertian for Lorentz distance functions",
           "venue": "arXiv preprint",
           "details": "arXiv:2408.16525, 84 pp.",
@@ -262,7 +359,16 @@ const PUBLICATIONS = {
         },
         {
           "id": "nonlinear-dalembert-comparison",
-          "authors": ["Tobias Beran", "Mathias Braun", "Matteo Calisti", "Nicola Gigli", "Robert J. McCann", "Argam Ohanyan", "Felix Rott", "Clemens Sämann"],
+          "authors": [
+            "Tobias Beran",
+            "Mathias Braun",
+            "Matteo Calisti",
+            "Nicola Gigli",
+            "Robert J. McCann",
+            "Argam Ohanyan",
+            "Felix Rott",
+            "Clemens Sämann"
+          ],
           "title": "A nonlinear d'Alembert comparison theorem and causal differential calculus on metric measure spacetimes",
           "venue": "arXiv preprint",
           "details": "arXiv:2408.15968, 112 pp.",
@@ -281,7 +387,9 @@ const PUBLICATIONS = {
       "items": [
         {
           "id": "new-perspectives-dalembertian-invitation",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "New perspectives on the d'Alembertian from general relativity. An invitation",
           "venue": "Indagationes Mathematicae",
           "details": "in press, 49 pp.",
@@ -294,7 +402,9 @@ const PUBLICATIONS = {
         },
         {
           "id": "vector-calculus-oberwolfach",
-          "authors": ["Mathias Braun"],
+          "authors": [
+            "Mathias Braun"
+          ],
           "title": "Vector calculus for tamed Dirichlet spaces",
           "venue": "Oberwolfach Reports",
           "details": "58 (2021), 27–30",
