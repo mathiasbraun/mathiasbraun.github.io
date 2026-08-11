@@ -217,6 +217,17 @@ li {
     padding-right: 16px;       /* small gutter between dates and positions */
 }
 
+/* Section labels (Career./Education.) span both columns; text-indent pulls them
+   back to the content edge (the table itself is indented to the old bullet-text
+   position). */
+.vitae-table .v-head {
+    text-indent: -20px;
+    padding-bottom: 3px;
+}
+.vitae-table .v-head-gap {
+    padding-top: 12px;         /* space before the Education section */
+}
+
 /* ==========================================================================
    Top link bar (profile icons, talk slides, workshop)
    ========================================================================== */

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=57">
+    <link rel="stylesheet" href="styles.css?v=58">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -189,8 +189,11 @@
             </ul>
         </p>
         <h1 id="vitae"><i class="fa-solid fa-briefcase heading-icon"></i>Vitae</h1>
-        <p><b>Career.</b></p>
+        <!-- Career and Education share one table so the date/position divider lines
+             up across both sections (one shared column width). Section labels span
+             both columns and are pulled back to the content edge. -->
         <table class="vitae-table">
+            <tr><td class="v-head" colspan="2"><b>Career.</b></td></tr>
             <tr><td class="v-date">Jul. 2024&ndash;Present</td><td class="v-pos">Bernoulli Instructor, EPFL.</td></tr>
             <tr><td class="v-date">Jul. 2023&ndash;Jun. 2024</td><td class="v-pos">Postdoctoral Fellow, University of Toronto.
                 <br>Advisor. Robert McCann.</td></tr>
@@ -201,9 +204,7 @@
             <tr><td class="v-date">Oct. 2018&ndash;Jan. 2022</td><td class="v-pos">Scientific Assistant, University of Bonn.
                 <br>Advisor. Karl-Theodor Sturm</td></tr>
             <tr><td class="v-date">Apr. 2015&ndash;Sep. 2018</td><td class="v-pos">Tutor, University of Bonn.</td></tr>
-        </table>
-        <p><b>Education.</b></p>
-        <table class="vitae-table">
+            <tr><td class="v-head v-head-gap" colspan="2"><b>Education.</b></td></tr>
             <tr><td class="v-date">Oct. 2018&ndash;Jan. 2022</td><td class="v-pos">Doctorate in Mathematics, University of Bonn.
                 <br>Thesis. Heat flow aspects of synthetic Ricci bounds in the extended Kato class.
                 <br>Advisor. Karl-Theodor Sturm.</td></tr>
