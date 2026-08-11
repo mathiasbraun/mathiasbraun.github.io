@@ -237,7 +237,17 @@ li {
     align-items: baseline;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 10px;
+    /* Soft chip behind the icon row: hug the icons (fit-content + auto margins to
+       stay centered) and frame them with a light accent-tinted pill + hairline,
+       echoing the navbar hover pills so it sits naturally in the design. */
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 10px auto;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 999px;
 }
 
 .topbar-icons a.ti {
