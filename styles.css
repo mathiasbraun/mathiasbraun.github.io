@@ -237,17 +237,49 @@ li {
     align-items: baseline;
     justify-content: center;
     gap: 15px;
-    /* Soft chip behind the icon row: hug the icons (fit-content + auto margins to
-       stay centered) and frame them with a light accent-tinted pill + hairline,
-       echoing the navbar hover pills so it sits naturally in the design. */
-    width: fit-content;
-    max-width: 100%;
-    margin: 0 auto 10px auto;
-    padding: 7px 20px;
-    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+/* Soft round "chip" behind the five academic-profile glyph icons (ResearchGate,
+   ORCID, Google Scholar, Web of Science, arXiv) so they read as subtle buttons;
+   the wordmark logos and LinkedIn/Email stay plain. The circle is centred on each
+   glyph — its vertical nudge matches that icon's own calibration offset (see the
+   per-icon rules above) so it tracks the glyph exactly. */
+.topbar-icons a.ti[aria-label="ResearchGate"],
+.topbar-icons a.ti[aria-label="ORCID"],
+.topbar-icons a.ti[aria-label="Google Scholar"],
+.topbar-icons a.ti[aria-label="Web of Science"],
+.topbar-icons a.ti[aria-label="arXiv"] {
+    position: relative;
+}
+.topbar-icons a.ti[aria-label="ResearchGate"]::before,
+.topbar-icons a.ti[aria-label="ORCID"]::before,
+.topbar-icons a.ti[aria-label="Google Scholar"]::before,
+.topbar-icons a.ti[aria-label="Web of Science"]::before,
+.topbar-icons a.ti[aria-label="arXiv"]::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     background: var(--accent-soft);
     border: 1px solid var(--border);
-    border-radius: 999px;
+    z-index: -1;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+}
+/* Vertical nudge = each icon's own calibration translateY, so the circle stays
+   centred on the glyph (font-18 icons vs the scaled-down ones differ). */
+.topbar-icons a.ti[aria-label="ResearchGate"]::before,
+.topbar-icons a.ti[aria-label="Google Scholar"]::before {
+    transform: translate(-50%, -50%) translateY(1.5px);
+}
+.topbar-icons a.ti[aria-label="ORCID"]::before,
+.topbar-icons a.ti[aria-label="Web of Science"]::before,
+.topbar-icons a.ti[aria-label="arXiv"]::before {
+    transform: translate(-50%, -50%) translateY(-1.08px);
 }
 
 .topbar-icons a.ti {
