@@ -269,8 +269,15 @@ li {
 }
 .topbar-icons a.ti[aria-label="ResearchGate"] i,
 .topbar-icons a.ti[aria-label="Google Scholar"] i,
-.topbar-icons a.ti[aria-label="Scopus"] i {
+.topbar-icons a.ti[aria-label="Scopus"] i,
+.topbar-icons a.ti[aria-label="Email"] i {
     font-size: 21.33px;
+}
+
+/* The email tile is grey (instead of dark blue) so it stands apart from the
+   academic-profile tiles beside it. */
+.topbar-icons a.ti[aria-label="Email"] {
+    background: var(--muted);
 }
 
 .topbar-talks,

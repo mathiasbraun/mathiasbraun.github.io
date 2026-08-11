@@ -302,8 +302,7 @@ const PUBLICATIONS = {
           "status": "published",
           "url": "https://publications.mfo.de/bitstream/handle/mfo/3926/OWR_2021_58.pdf?sequence=4&isAllowed=y",
           "doi": "10.14760/OWR-2021-58",
-          "arxiv": null,
-          "abstract": "Let $(M,\\mathscr{E},\\mathfrak{m})$ be a quasi-regular, strongly local Dirichlet space with form domain $\\mathscr{F}$. For simplicity, we assume that $\\mathscr{E}$ comes with a carré du champ $\\Gamma\\colon \\mathscr{F}^2 \\to L^1(M)$ w.r.t. $\\mathfrak{m}$. Let $(\\mathsf{P}_t)_{t\\geq 0}$ be the heat flow associated with $\\mathscr{E}$ whose generator, in turn, is denoted by $\\Delta$. In particular, $\\mathsf{P}_t = \\mathrm{e}^{\\Delta t}$."
+          "arxiv": null
         }
       ]
     }
