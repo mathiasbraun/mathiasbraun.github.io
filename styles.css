@@ -234,109 +234,43 @@ li {
 .topbar-icons {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     gap: 15px;
     margin-bottom: 10px;
 }
 
-/* Soft round "chip" behind the five academic-profile glyph icons (ResearchGate,
-   ORCID, Google Scholar, Web of Science, arXiv) so they read as subtle buttons;
-   the wordmark logos and LinkedIn/Email stay plain. The circle is centred on each
-   glyph — its vertical nudge matches that icon's own calibration offset (see the
-   per-icon rules above) so it tracks the glyph exactly. */
-.topbar-icons a.ti[aria-label="ResearchGate"],
-.topbar-icons a.ti[aria-label="ORCID"],
-.topbar-icons a.ti[aria-label="Google Scholar"],
-.topbar-icons a.ti[aria-label="Web of Science"],
-.topbar-icons a.ti[aria-label="arXiv"] {
-    position: relative;
-}
-.topbar-icons a.ti[aria-label="ResearchGate"]::before,
-.topbar-icons a.ti[aria-label="ORCID"]::before,
-.topbar-icons a.ti[aria-label="Google Scholar"]::before,
-.topbar-icons a.ti[aria-label="Web of Science"]::before,
-.topbar-icons a.ti[aria-label="arXiv"]::before {
-    content: "";
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--accent-soft);
-    border: 1px solid var(--border);
-    z-index: -1;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-}
-/* Vertical nudge = each icon's own calibration translateY, so the circle stays
-   centred on the glyph (font-18 icons vs the scaled-down ones differ). */
-.topbar-icons a.ti[aria-label="ResearchGate"]::before,
-.topbar-icons a.ti[aria-label="Google Scholar"]::before {
-    transform: translate(-50%, -50%) translateY(1.5px);
-}
-.topbar-icons a.ti[aria-label="ORCID"]::before,
-.topbar-icons a.ti[aria-label="Web of Science"]::before,
-.topbar-icons a.ti[aria-label="arXiv"]::before {
-    transform: translate(-50%, -50%) translateY(-1.08px);
-}
-
+/* Each academic-profile icon sits in a dark-blue rounded "tile" with a light glyph
+   (app-icon style; this also makes the ResearchGate "RG" read as its boxed brand
+   mark). The tile is a fixed square so all five align exactly; the glyph is
+   flex-centred inside it. */
 .topbar-icons a.ti {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
     line-height: 1;
-    color: #757575;                    /* uniform grey for all glyph icons */
+    background: var(--accent-strong);   /* dark blue box */
+    color: var(--accent-soft);          /* light glyph */
+    border-radius: 5px;
     transition: opacity 0.15s ease;
 }
 
-/* Uniform hover for the whole row (dims glyphs and logos alike). */
 .topbar-icons a.ti:hover {
-    opacity: 0.55;
+    opacity: 0.72;
 }
 
-/* Per-icon calibration so every top-bar icon has EXACTLY the same top and bottom
-   edge. Icon fonts render each glyph at a different height, so each icon is scaled
-   (font-size) and nudged (translateY) to a common ink height of 14px with aligned
-   bottoms; values were measured per glyph. Default 18px covers ResearchGate,
-   Google Scholar and Email. */
+/* Per-glyph font-size so each icon renders at ~16px glyph height inside its tile
+   (icon fonts draw each glyph at a different fraction of the em). The default covers
+   ORCID and arXiv; the letter-mark icons need a larger em to reach the same height. */
 .topbar-icons a.ti i {
-    font-size: 18px;
+    font-size: 16.49px;
 }
-.topbar-icons a.ti[aria-label="ResearchGate"] i   { transform: translateY(1.5px); }
-.topbar-icons a.ti[aria-label="Google Scholar"] i { transform: translateY(1.5px); }
-.topbar-icons a.ti[aria-label="Email"] i          { transform: translateY(1.33px); }
-.topbar-icons a.ti[aria-label="ORCID"] i          { font-size: 13.836px; transform: translateY(-1.08px); }
-.topbar-icons a.ti[aria-label="Web of Science"] i { font-size: 13.836px; transform: translateY(-1.08px); }
-.topbar-icons a.ti[aria-label="arXiv"] i          { font-size: 13.836px; transform: translateY(-1.08px); }
-.topbar-icons a.ti[aria-label="LinkedIn"] i       { font-size: 14.824px; transform: translateY(0.26px); }
-
-/* EPFL, AMS, zbMATH wordmark logos — flattened to the SAME grey as the glyph
-   icons (brightness(0) makes a silhouette, invert() tints it), and height-matched
-   so the whole row sits on one line in one colour. */
-.topbar-icons a.ti .ti-logo {
-    display: block;
-    height: 14px;
-    width: auto;
-    filter: brightness(0) invert(46%);
-    /* Aligned to the same 14px band and bottom edge as the glyph icons. */
-    transform: translateY(1.5px);
-}
-
-/* zbMATH's wordmark has a "p" descender: enlarge it so its CAPITAL height matches
-   the other logos and its baseline (not the descender) sits on the shared bottom
-   line; the descender then dips below like normal text. Crucially this uses a
-   transform scale — NOT a taller box — so it keeps the 14px layout height and does
-   not push the flex baseline (which would shift the whole row). transform-origin
-   center-top pins the caps to the top line (252) and grows downward. */
-.topbar-icons a.ti .ti-logo[alt="zbMATH"] {
-    transform-origin: center top;
-    transform: translateY(1.5px) scale(1.3077);
-    /* scale() also widens the logo beyond its layout box; reserve that horizontal
-       overflow (~15.7px per side) with margins so it doesn't overlap its neighbours
-       and the row keeps its uniform ~15px gaps. */
-    margin-left: 15.73px;
-    margin-right: 15.73px;
+.topbar-icons a.ti[aria-label="ResearchGate"] i,
+.topbar-icons a.ti[aria-label="Google Scholar"] i,
+.topbar-icons a.ti[aria-label="Scopus"] i {
+    font-size: 21.33px;
 }
 
 .topbar-talks,
