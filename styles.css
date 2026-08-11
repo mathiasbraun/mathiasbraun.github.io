@@ -228,6 +228,11 @@ li {
     padding-top: 12px;         /* space before the Education section */
 }
 
+/* Thesis / Advisor sub-lines in the same muted grey as the bibliography venues. */
+.vitae-table .v-sub {
+    color: var(--muted);
+}
+
 /* ==========================================================================
    Top link bar (profile icons, talk slides, workshop)
    ========================================================================== */
