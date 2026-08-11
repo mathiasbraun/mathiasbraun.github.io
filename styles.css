@@ -181,7 +181,8 @@ ol, ul {
 }
 
 p:has(+ ol),
-p:has(+ ul) {
+p:has(+ ul),
+p:has(+ .vitae-table) {
     margin-bottom: 0;
 }
 
@@ -191,6 +192,29 @@ ul {
 
 li {
     line-height: 1.5;
+}
+
+/* ==========================================================================
+   Vitae — borderless two-column table (dates right-aligned, positions left)
+   ========================================================================== */
+/* margin-left 20px matches where the old bulleted text started, so the leftmost
+   (widest) date lines up exactly with the former bullet text. */
+.vitae-table {
+    border-collapse: collapse;
+    margin: 0 0 12px 20px;
+}
+
+.vitae-table td {
+    border: 0;
+    padding: 0 0 7px 0;        /* small vertical gap between entries */
+    vertical-align: top;
+    line-height: 1.5;
+}
+
+.vitae-table .v-date {
+    text-align: right;
+    white-space: nowrap;
+    padding-right: 16px;       /* small gutter between dates and positions */
 }
 
 /* ==========================================================================
@@ -269,8 +293,7 @@ li {
 }
 .topbar-icons a.ti[aria-label="ResearchGate"] i,
 .topbar-icons a.ti[aria-label="Google Scholar"] i,
-.topbar-icons a.ti[aria-label="Scopus"] i,
-.topbar-icons a.ti[aria-label="Email"] i {
+.topbar-icons a.ti[aria-label="Scopus"] i {
     font-size: 21.33px;
 }
 
@@ -278,6 +301,11 @@ li {
    academic-profile tiles beside it. */
 .topbar-icons a.ti[aria-label="Email"] {
     background: var(--muted);
+}
+/* The envelope glyph is wide, so it uses a smaller size than the letter-mark
+   icons to keep a little clearance from the tile edges. */
+.topbar-icons a.ti[aria-label="Email"] i {
+    font-size: 17px;
 }
 
 .topbar-talks,
