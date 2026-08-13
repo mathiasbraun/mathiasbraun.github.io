@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=59">
+    <link rel="stylesheet" href="styles.css?v=60">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -158,36 +158,23 @@
             of the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
         </p>
         <h1 id="teaching"><i class="fa-solid fa-graduation-cap heading-icon"></i>Teaching</h1>
-        <p>
-            <b>EPFL.</b>
-            <ul>
-                <li>Spring 2025. MATH-404 <a href="https://isa.epfl.ch/imoniteur_ISAP/!itffichecours.htm?ww_i_matiere=2741821332&ww_x_anneeacad=2305107546&ww_i_section=944590&ww_i_niveau=6683117&ww_c_langue=fr" target="_blank">Functional Analysis II.<br>Course Instructor</a>.</li>
-                <li>Fall 2024. MATH-327 Topics in Complex Analysis.<br>Course Instructor.</li>
-            </ul>
-        </p>
-        <p>
-            <b>University of Toronto.</b>
-            <ul>
-                <li>Winter 2024. MAT267S Advanced Ordinary Differential Equations.<br>Course Instructor.</li>
-                <li>Fall 2023. MAT224H1F Linear Algebra II.<br>Course Instructor.</li>
-                <li>Summer 2022. MAT224H1F Linear Algebra II.<br>Course Instructor.</li>
-            </ul>
-        </p>
-        <p>
-            <b>University of Bonn.</b>
-            <ul>
-                <li>Winter 2021&ndash;2022. S4B1 Graduate Seminar on Analysis "Geometric Aspects of the Space of Metric Measure Spaces".
-                    <br>Seminar Assistant.</li>
-                <li>Summer 2021. V2F2 Einführung in die Statistik.
-                    <br>Lecture Assistant.</li>
-                <li>Winter 2020&ndash;2021, Winter 2019&ndash;2020, Winter 2018&ndash;2019. MB03 Stochastik.
-                    <br>Lecture Assistant.</li>
-                <li>Summer 2020. math241 Mathematik II für Physikerinnen und Physiker.
-                    <br>Lecture Assistant.</li>
-                <li>Summer2019. MB04 Seminar Höhere Mathematik "Mathematische Modellierung".
-                    <br>Seminar Assistant.</li>
-            </ul>
-        </p>
+        <!-- Teaching, organised like Vitae: one borderless table per institution,
+             terms right-aligned, course left, role as a grey sub-line. -->
+        <table class="vitae-table teaching">
+            <tr><td class="v-head" colspan="2"><b>EPFL.</b></td></tr>
+            <tr><td class="v-date">Spring 2025</td><td class="v-pos">MATH-404 <a href="https://isa.epfl.ch/imoniteur_ISAP/!itffichecours.htm?ww_i_matiere=2741821332&amp;ww_x_anneeacad=2305107546&amp;ww_i_section=944590&amp;ww_i_niveau=6683117&amp;ww_c_langue=fr" target="_blank" rel="noopener">Functional Analysis II</a><br><span class="v-sub">Course Instructor</span></td></tr>
+            <tr><td class="v-date">Fall 2024</td><td class="v-pos">MATH-327 Topics in Complex Analysis<br><span class="v-sub">Course Instructor</span></td></tr>
+            <tr><td class="v-head v-head-gap" colspan="2"><b>University of Toronto.</b></td></tr>
+            <tr><td class="v-date">Winter 2024</td><td class="v-pos">MAT267S Advanced Ordinary Differential Equations<br><span class="v-sub">Course Instructor</span></td></tr>
+            <tr><td class="v-date">Fall 2023</td><td class="v-pos">MAT224H1F Linear Algebra II<br><span class="v-sub">Course Instructor</span></td></tr>
+            <tr><td class="v-date">Summer 2022</td><td class="v-pos">MAT224H1F Linear Algebra II<br><span class="v-sub">Course Instructor</span></td></tr>
+            <tr><td class="v-head v-head-gap" colspan="2"><b>University of Bonn.</b></td></tr>
+            <tr><td class="v-date">Winter 2021&ndash;2022</td><td class="v-pos">S4B1 Graduate Seminar on Analysis &ldquo;Geometric Aspects of the Space of Metric Measure Spaces&rdquo;<br><span class="v-sub">Seminar Assistant</span></td></tr>
+            <tr><td class="v-date">Summer 2021</td><td class="v-pos">V2F2 Einführung in die Statistik<br><span class="v-sub">Lecture Assistant</span></td></tr>
+            <tr><td class="v-date">Winter 2020&ndash;2021, Winter 2019&ndash;2020, Winter 2018&ndash;2019</td><td class="v-pos">MB03 Stochastik<br><span class="v-sub">Lecture Assistant</span></td></tr>
+            <tr><td class="v-date">Summer 2020</td><td class="v-pos">math241 Mathematik II für Physikerinnen und Physiker<br><span class="v-sub">Lecture Assistant</span></td></tr>
+            <tr><td class="v-date">Summer 2019</td><td class="v-pos">MB04 Seminar Höhere Mathematik &ldquo;Mathematische Modellierung&rdquo;<br><span class="v-sub">Seminar Assistant</span></td></tr>
+        </table>
         <h1 id="vitae"><i class="fa-solid fa-briefcase heading-icon"></i>Vitae</h1>
         <!-- Career and Education share one table so the date/position divider lines
              up across both sections (one shared column width). Section labels span
@@ -206,8 +193,9 @@
             <tr><td class="v-date">04/2015&ndash;09/2018</td><td class="v-pos">Tutor, University of Bonn</td></tr>
             <tr><td class="v-head v-head-gap" colspan="2"><b>Education.</b></td></tr>
             <tr><td class="v-date">10/2018&ndash;01/2022</td><td class="v-pos">Doctorate in Mathematics, University of Bonn
-                <br><span class="v-sub">Thesis. <a class="pub-title" href="https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/9561" target="_blank" rel="noopener">Heat flow aspects of synthetic Ricci bounds in the extended Kato class</a>. <span class="pub-badge pub-badge--published">published</span>
-                <br>Advisor. Karl-Theodor Sturm</span></td></tr>
+                <br><span class="v-sub">Thesis. <a class="pub-title" href="https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/9561" target="_blank" rel="noopener">Heat flow aspects of synthetic Ricci bounds in the extended Kato class</a>. <span class="pub-badge pub-badge--published">published</span> <span class="pub-abstract-btn" role="button" tabindex="0" aria-label="Toggle abstract">Abstract</span>
+                <br>Advisor. Karl-Theodor Sturm</span>
+                <div class="pub-abstract-wrap"><div class="pub-abstract-clip"><div class="pub-abstract">This thesis studies heat flows acting on different objects on possibly singular spaces that admit synthetic lower Ricci curvature bounds by constants, functions, or signed measures. Geometric properties of such spaces and probabilistic features of diffusion processes on these are related to functional inequalities for the involved semigroups. Moreover, heat flow methods are used to set up a second order calculus in the general presence of such measure-valued lower Ricci bounds.<br><br>First, for a given RCD space, we prove the equivalence of the following synthetic characterizations (with respect to a given lower semicontinuous function $k$) of the &ldquo;Ricci curvature at every point being bounded from below by $k$&rdquo;: geodesic semiconvexity of the relative entropy, the evolution variational inequality, Bochner's inequality, gradient bounds for the functional heat flow, transport estimates, and the pathwise coupling property.<br><br>Second, on arbitrary weighted Riemannian manifolds, we prove the equivalence of the previous pathwise coupling property with respect to $k$ and pointwise lower boundedness of the Bakry&ndash;Émery Ricci tensor by $k$, only assuming continuity of $k$. Under an additional exponential integrability condition on $k$, which holds if $k$ is in the functional Kato class of the weighted manifold, we prove conservativeness and Bismut&ndash;Elworthy&ndash;Li's derivative formula.<br><br>Third, we extend the second order calculus for RCD spaces from Gigli to Dirichlet spaces which are tamed by a signed extended Kato class measure in the sense of Erbar, Rigoni, Sturm and Tamanini. Inter alia, nonsmooth analogues of Hessians, covariant and exterior derivatives, and the Ricci curvature are defined. Employing these objects, in turn, we define heat flows on $1$-forms and vector fields and, along with their basic properties, prove domination of the latter by certain semigroups acting on functions.<br><br>Fourth, again in the setting of RCD spaces, we obtain improved functional inequalities and regularization properties of the heat flow on $1$-forms. The spectrum of its generator, the Hodge Laplacian, is studied as well. Finally, we construct a heat kernel for this heat flow and prove Gaussian upper bounds on its pointwise operator norm.</div></div></div></td></tr>
             <tr><td class="v-date">10/2016&ndash;08/2018</td><td class="v-pos">Master of Science in Mathematics, University of Bonn
                 <br><span class="v-sub">Thesis. Spectral convergence under noncollapsed mGH-convergence of compact \(\mathrm{RCD}(K,N)\) spaces
                 <br>Advisor. Karl-Theodor Sturm</span></td></tr>
@@ -239,6 +227,27 @@
 <!-- Publications database + renderer -->
 <script src="publications-data.js?v=9"></script>
 <script src="publications.js?v=24"></script>
+<script>
+// Roll-down toggle for the PhD-thesis abstract in Vitae (mirrors the bibliography).
+(function () {
+    document.querySelectorAll('.vitae-table .pub-abstract-btn').forEach(function (btn) {
+        var cell = btn.closest('td');
+        var wrap = cell && cell.querySelector('.pub-abstract-wrap');
+        if (!wrap) return;
+        var box = wrap.querySelector('.pub-abstract');
+        var typeset = false;
+        function setOpen(open) { wrap.classList.toggle('is-open', open); btn.classList.toggle('is-open', open); }
+        function flip() {
+            if (wrap.classList.contains('is-open')) { setOpen(false); }
+            else if (!typeset && window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([box]).then(function () { typeset = true; setOpen(true); });
+            } else { setOpen(true); }
+        }
+        btn.addEventListener('click', flip);
+        btn.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); flip(); } });
+    });
+})();
+</script>
 
 </body>
 </html>

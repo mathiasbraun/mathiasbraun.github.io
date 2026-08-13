@@ -233,6 +233,12 @@ li {
     color: var(--muted);
 }
 
+/* Teaching reuses the Vitae table, but its terms can be long (e.g. three winters),
+   so allow the date column to wrap there instead of forcing one very wide column. */
+.vitae-table.teaching .v-date {
+    white-space: normal;
+}
+
 /* ==========================================================================
    Top link bar (profile icons, talk slides, workshop)
    ========================================================================== */
