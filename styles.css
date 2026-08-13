@@ -239,6 +239,17 @@ li {
     white-space: normal;
 }
 
+/* The bibliography's grid 0fr->1fr abstract roll-down collapses to 0 inside a
+   table cell, so the Vitae (PhD thesis) abstract animates via max-height, which
+   the toggle script sets to the measured content height. */
+.vitae-table .pub-abstract-wrap {
+    display: block;
+    grid-template-rows: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
 /* ==========================================================================
    Top link bar (profile icons, talk slides, workshop)
    ========================================================================== */

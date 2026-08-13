@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=60">
+    <link rel="stylesheet" href="styles.css?v=61">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -228,21 +228,21 @@
 <script src="publications-data.js?v=9"></script>
 <script src="publications.js?v=24"></script>
 <script>
-// Roll-down toggle for the PhD-thesis abstract in Vitae (mirrors the bibliography).
+// Roll-down toggle for the PhD-thesis abstract in Vitae. The bibliography's grid
+// 0fr->1fr trick collapses inside a table cell, so animate via max-height set to
+// the measured content height. Math is already typeset by MathJax on page load.
 (function () {
     document.querySelectorAll('.vitae-table .pub-abstract-btn').forEach(function (btn) {
         var cell = btn.closest('td');
         var wrap = cell && cell.querySelector('.pub-abstract-wrap');
         if (!wrap) return;
         var box = wrap.querySelector('.pub-abstract');
-        var typeset = false;
-        function setOpen(open) { wrap.classList.toggle('is-open', open); btn.classList.toggle('is-open', open); }
-        function flip() {
-            if (wrap.classList.contains('is-open')) { setOpen(false); }
-            else if (!typeset && window.MathJax && window.MathJax.typesetPromise) {
-                window.MathJax.typesetPromise([box]).then(function () { typeset = true; setOpen(true); });
-            } else { setOpen(true); }
+        function setOpen(open) {
+            wrap.classList.toggle('is-open', open);
+            btn.classList.toggle('is-open', open);
+            wrap.style.maxHeight = open ? (box.getBoundingClientRect().height + 24) + 'px' : '0px';
         }
+        function flip() { setOpen(!wrap.classList.contains('is-open')); }
         btn.addEventListener('click', flip);
         btn.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); flip(); } });
     });
