@@ -27,6 +27,10 @@
    ========================================================================== */
 html {
     scroll-behavior: smooth; /* animated scroll when a nav link is clicked */
+    /* Prevent iOS/Safari from auto-inflating some text on mobile, which made
+       different paragraphs render at different sizes. */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
@@ -215,6 +219,10 @@ li {
     text-align: right;
     white-space: nowrap;
     padding-right: 16px;       /* small gutter between dates and positions */
+    /* Fixed width (fits the widest date) so the date/position divider lines up
+       between the Teaching and Vitae tables; shorter dates sit right-aligned. */
+    width: 114px;
+    box-sizing: content-box;
 }
 
 /* Section labels (Career./Education.) span both columns; text-indent pulls them
