@@ -30,6 +30,64 @@
     return el('a', { class: 'pub-arxiv-btn', text: 'arXiv', href: 'https://arxiv.org/abs/' + id, attrs: { title: 'arXiv:' + id, 'aria-label': 'arXiv:' + id } });
   }
 
+  // --- Search highlighting ---------------------------------------------------
+  // Fold a string to accent-free lowercase, recording for each output character
+  // the index it came from in the original string (so we can map matches back).
+  function foldWithMap(str) {
+    var out = '', map = [];
+    for (var i = 0; i < str.length; i++) {
+      var d = str[i].normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase();
+      for (var j = 0; j < d.length; j++) { out += d[j]; map.push(i); }
+    }
+    return { folded: out, map: map };
+  }
+
+  // Fragment of `text` with every occurrence of any term wrapped in <mark class="pub-hl">.
+  function highlightFragment(text, terms) {
+    var frag = document.createDocumentFragment();
+    text = text == null ? '' : String(text);
+    if (!terms.length || !text) { frag.appendChild(document.createTextNode(text)); return frag; }
+    var fm = foldWithMap(text), ranges = [];
+    terms.forEach(function (term) {
+      var idx = 0;
+      while ((idx = fm.folded.indexOf(term, idx)) >= 0) { ranges.push([idx, idx + term.length]); idx += term.length; }
+    });
+    if (!ranges.length) { frag.appendChild(document.createTextNode(text)); return frag; }
+    ranges.sort(function (a, b) { return a[0] - b[0]; });
+    var merged = [];
+    ranges.forEach(function (r) {
+      var last = merged[merged.length - 1];
+      if (last && r[0] <= last[1]) last[1] = Math.max(last[1], r[1]);
+      else merged.push([r[0], r[1]]);
+    });
+    var pos = 0;
+    merged.forEach(function (r) {
+      var oStart = fm.map[r[0]];
+      var oEnd = r[1] < fm.map.length ? fm.map[r[1]] : text.length;
+      if (oStart > pos) frag.appendChild(document.createTextNode(text.slice(pos, oStart)));
+      frag.appendChild(el('mark', { class: 'pub-hl', text: text.slice(oStart, oEnd) }));
+      pos = oEnd;
+    });
+    if (pos < text.length) frag.appendChild(document.createTextNode(text.slice(pos)));
+    return frag;
+  }
+
+  // Highlight matches inside already-rendered prose (used when an abstract opens);
+  // skips text that is inside math (mjx-container) or an existing mark.
+  function highlightWithin(root, terms) {
+    if (!terms.length) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), texts = [], n, p, t, skip;
+    while ((n = walker.nextNode())) {
+      skip = false; p = n.parentNode;
+      while (p && p !== root) { t = p.nodeName.toLowerCase(); if (t === 'mjx-container' || t === 'mark') { skip = true; break; } p = p.parentNode; }
+      if (!skip && n.nodeValue && n.nodeValue.trim()) texts.push(n);
+    }
+    texts.forEach(function (node) {
+      var frag = highlightFragment(node.nodeValue, terms);
+      if (frag.querySelector && frag.querySelector('mark')) node.parentNode.replaceChild(frag, node);
+    });
+  }
+
   // Keep trailing punctuation on the same line as the inline formula it follows.
   // MathJax renders each formula as an atomic inline element, and the browser may
   // break right after it, dropping a lone comma/period onto the next line. Wrapping
@@ -67,7 +125,7 @@
   }
 
   // Build the roll-down abstract (grid 0fr -> 1fr) and return it with a flip fn.
-  function makeAbstract(abstract, onState) {
+  function makeAbstract(abstract, onState, terms) {
     const outer = el('div', { class: 'pub-abstract-wrap' });
     const clip = el('div', { class: 'pub-abstract-clip' });
     const box = el('div', { class: 'pub-abstract' });
@@ -79,33 +137,42 @@
       outer.classList.toggle('is-open', open);
       if (onState) onState(open); // lets the caller flip the title's ▸/▾ marker
     }
-    let typeset = false;
+    let typeset = false, highlighted = false;
+    // Only highlight the search terms once the abstract is actually opened.
+    function reveal() {
+      if (!highlighted) { highlightWithin(box, terms || []); highlighted = true; }
+      setOpen(true);
+    }
     function flip() {
       if (outer.classList.contains('is-open')) {
         setOpen(false);
       } else if (!typeset && window.MathJax && window.MathJax.typesetPromise) {
         // Typeset first (while collapsed) so the roll animates to the final height.
-        window.MathJax.typesetPromise([box]).then(function () { glueMathPunctuation(box); typeset = true; setOpen(true); });
+        window.MathJax.typesetPromise([box]).then(function () { glueMathPunctuation(box); typeset = true; reveal(); });
       } else {
-        setOpen(true);
+        reveal();
       }
     }
     return { wrapper: outer, flip: flip };
   }
 
-  function renderItem(item) {
+  function renderItem(item, terms) {
+    terms = terms || [];
     const li = el('li', { class: 'pub-item' });
 
     // Authors.
-    li.appendChild(document.createTextNode(item.authors.join(', ') + '.'));
+    li.appendChild(highlightFragment(item.authors.join(', '), terms));
+    li.appendChild(document.createTextNode('.'));
     li.appendChild(el('br'));
 
     // Title — links to the most current version (journal for published/in press,
     // arXiv for preprints).
     const url = primaryUrl(item);
-    li.appendChild(url
-      ? el('a', { class: 'pub-title', text: item.title, href: url })
-      : el('span', { class: 'pub-title', text: item.title }));
+    const titleEl = url
+      ? el('a', { class: 'pub-title', href: url })
+      : el('span', { class: 'pub-title' });
+    titleEl.appendChild(highlightFragment(item.title, terms));
+    li.appendChild(titleEl);
     li.appendChild(document.createTextNode('. '));
 
     // Status badge, then the "Abstract" button, then the arXiv logo — all on the
@@ -117,7 +184,7 @@
     let abstractWrap = null;
     if (item.abstract && item.abstract.trim()) {
       const btn = el('span', { class: 'pub-abstract-btn', text: 'Abstract', attrs: { role: 'button', tabindex: '0', 'aria-label': 'Toggle abstract' } });
-      const a = makeAbstract(item.abstract, function (open) { btn.classList.toggle('is-open', open); });
+      const a = makeAbstract(item.abstract, function (open) { btn.classList.toggle('is-open', open); }, terms);
       btn.addEventListener('click', a.flip);
       btn.addEventListener('keydown', function (ev) {
         if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); a.flip(); }
@@ -147,11 +214,13 @@
       const refSpan = el('span', { class: 'pub-ref' });
       const m = ref.match(/^(.*?)(\d+)(\s+\(\d{4}\).*)$/);
       if (m) {
-        refSpan.appendChild(document.createTextNode(m[1]));
-        refSpan.appendChild(el('b', { class: 'pub-vol', text: m[2] }));
-        refSpan.appendChild(document.createTextNode(m[3]));
+        refSpan.appendChild(highlightFragment(m[1], terms));
+        const vol = el('b', { class: 'pub-vol' });
+        vol.appendChild(highlightFragment(m[2], terms));
+        refSpan.appendChild(vol);
+        refSpan.appendChild(highlightFragment(m[3], terms));
       } else {
-        refSpan.textContent = ref;
+        refSpan.appendChild(highlightFragment(ref, terms));
       }
       li.appendChild(refSpan);
     }
@@ -200,29 +269,34 @@
       return ia - ib;
     });
 
-    let counter = 0;
-    let shown = 0;
+    var orig = 0, shown = 0;
     cats.forEach(function (cat) {
-      var items = cat.items.filter(function (it) { return itemMatches(it, terms); });
-      if (!items.length) return; // hide categories that have no matches
+      var matched = [];
+      cat.items.forEach(function (item) {
+        orig++;                                  // position in the full (unfiltered) list
+        if (itemMatches(item, terms)) matched.push({ item: item, num: orig });
+      });
+      if (!matched.length) return;               // hide categories that have no matches
 
       const lead = el('p', { class: 'pub-leadin' });
       lead.appendChild(el('b', { text: cat.title + '.' }));
       container.appendChild(lead);
 
       const ol = el('ol', { class: 'pub-list' });
-      ol.setAttribute('start', String(counter + 1));
-      items.forEach(function (item) {
-        ol.appendChild(renderItem(item));
-        counter++;
+      matched.forEach(function (m) {
+        const li = renderItem(m.item, terms);
+        li.setAttribute('value', m.num);         // keep each item's number from the full bibliography
+        ol.appendChild(li);
+        shown++;
       });
       container.appendChild(ol);
-      shown += items.length;
     });
 
     if (!shown) {
       container.appendChild(el('p', { class: 'pub-noresults', text: 'No matching publications.' }));
     }
+    var countEl = document.getElementById('pub-count');
+    if (countEl) countEl.textContent = terms.length ? (shown + ' of ' + orig + ' shown') : '';
   }
 
   function init() {

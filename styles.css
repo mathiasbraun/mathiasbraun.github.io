@@ -396,6 +396,23 @@ li {
     color: var(--muted);
 }
 
+/* Match count under the filter box (e.g. "5 of 20 shown"); empty when unfiltered. */
+.pub-count {
+    min-height: 1em;
+    margin: 3px 2px 0 0;
+    text-align: right;
+    font-size: 11px;
+    color: var(--muted);
+}
+
+/* Highlighted search matches within the list (and in an opened abstract). */
+mark.pub-hl {
+    background-color: #ffe08a;
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
 .pub-leadin {
     margin: 14px 0 0 0;
     font-weight: 600;
