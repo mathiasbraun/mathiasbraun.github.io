@@ -162,11 +162,34 @@
     return li;
   }
 
-  function render() {
+  // Lowercase, accent-folded search text for one item (cached on the item).
+  function norm(s) { return String(s == null ? '' : s).normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase(); }
+  function itemSearchText(item) {
+    if (item._search == null) {
+      item._search = norm([
+        item.authors ? item.authors.join(' ') : '',
+        item.title, item.venue, item.details, item.year,
+        item.status, item.doi, item.arxiv, item.abstract
+      ].filter(Boolean).join(' '));
+    }
+    return item._search;
+  }
+  function itemMatches(item, terms) {
+    if (!terms.length) return true;
+    var t = itemSearchText(item);
+    return terms.every(function (term) { return t.indexOf(term) >= 0; });
+  }
+
+  // Render the list, filtered to items matching every whitespace-separated word in
+  // `query` (searched across authors/title/venue/details/year/status/ids/abstract).
+  // An empty query shows everything; numbering runs continuously over shown items.
+  function render(query) {
     const data = window.PUBLICATIONS;
     const container = document.getElementById('publications-container');
     if (!data || !container) return;
     container.textContent = '';
+
+    var terms = norm(query).split(/\s+/).filter(Boolean);
 
     // Display order of the categories (independent of their order in the data
     // file). Change this list to reorder the sections on the page.
@@ -178,24 +201,41 @@
     });
 
     let counter = 0;
+    let shown = 0;
     cats.forEach(function (cat) {
+      var items = cat.items.filter(function (it) { return itemMatches(it, terms); });
+      if (!items.length) return; // hide categories that have no matches
+
       const lead = el('p', { class: 'pub-leadin' });
       lead.appendChild(el('b', { text: cat.title + '.' }));
       container.appendChild(lead);
 
       const ol = el('ol', { class: 'pub-list' });
       ol.setAttribute('start', String(counter + 1));
-      cat.items.forEach(function (item) {
+      items.forEach(function (item) {
         ol.appendChild(renderItem(item));
         counter++;
       });
       container.appendChild(ol);
+      shown += items.length;
     });
+
+    if (!shown) {
+      container.appendChild(el('p', { class: 'pub-noresults', text: 'No matching publications.' }));
+    }
+  }
+
+  function init() {
+    var input = document.getElementById('pub-search');
+    render(input ? input.value : '');
+    if (input) {
+      input.addEventListener('input', function () { render(input.value); });
+    }
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', render);
+    document.addEventListener('DOMContentLoaded', init);
   } else {
-    render();
+    init();
   }
 })();

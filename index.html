@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=62">
+    <link rel="stylesheet" href="styles.css?v=63">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -144,6 +144,10 @@
             aforementioned analytic objects.
         </p>
         <h1 id="publications"><i class="fa-solid fa-book heading-icon"></i>Publications</h1>
+        <!-- Live filter: publications.js narrows the list below to entries matching
+             what you type (title, coauthor, journal, year, number, …). -->
+        <input type="search" id="pub-search" class="pub-search" autocomplete="off"
+               placeholder="Filter by title, coauthor, journal, year…" aria-label="Filter publications">
         <!-- Publications are generated from publications-data.js by publications.js -->
         <div id="publications-container"></div>
         <h1 id="activities"><i class="fa-solid fa-users heading-icon"></i>Activities</h1>
@@ -228,7 +232,7 @@
 
 <!-- Publications database + renderer -->
 <script src="publications-data.js?v=9"></script>
-<script src="publications.js?v=24"></script>
+<script src="publications.js?v=25"></script>
 <script>
 // Roll-down toggle for the PhD-thesis abstract in Vitae. The bibliography's grid
 // 0fr->1fr trick collapses inside a table cell, so animate via max-height set to
