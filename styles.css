@@ -533,8 +533,8 @@ mark.pub-hl {
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 .news-toggle:hover {
-    background: #eceef0; /* light grey, same as the preprint badge */
-    color: var(--text);
+    background: var(--accent-strong); /* homepage dark blue, like the icon tiles */
+    color: #ffffff;
 }
 /* Closing line under the posts, linking to the full LinkedIn profile. */
 .news-more {
