@@ -520,12 +520,12 @@ mark.pub-hl {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
+    width: 46px;
     height: 24px;
     margin: 5px auto 0;
     padding: 0;
     border: 0;
-    border-radius: 6px;
+    border-radius: 999px; /* capsule, like the site's other hover pills */
     background: transparent;
     color: var(--muted);
     font-size: 13px;
@@ -533,8 +533,8 @@ mark.pub-hl {
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 .news-toggle:hover {
-    background: #3a3f47; /* dark grey */
-    color: #ffffff;
+    background: #eceef0; /* light grey, same as the preprint badge */
+    color: var(--text);
 }
 /* Closing line under the posts, linking to the full LinkedIn profile. */
 .news-more {
