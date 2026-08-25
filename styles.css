@@ -413,6 +413,25 @@ mark.pub-hl {
     padding: 0 1px;
 }
 
+/* ==========================================================================
+   News — embedded LinkedIn posts
+   ========================================================================== */
+.news-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 6px;
+}
+.news-post {
+    display: block;
+    width: 100%;
+    max-width: 504px;
+    height: 550px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+}
+
 .pub-leadin {
     margin: 14px 0 0 0;
     font-weight: 600;
