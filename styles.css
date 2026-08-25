@@ -426,39 +426,77 @@ mark.pub-hl {
     width: 100%;
     max-width: 504px;
 }
-/* Collapsed by default: the embed is clipped to show its header + first lines,
-   with a fade hint that it continues. The toggle grows it to the full post. */
-.news-frame {
-    position: relative;
-    overflow: hidden;
-    max-height: 200px;
+.news-card {
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--surface);
+    padding: 12px 14px;
+}
+.news-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.news-meta {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+.news-author {
+    font-weight: 600;
+    color: var(--text);
+}
+.news-date {
+    font-size: 11px;
+    color: var(--muted);
+}
+.news-li {
+    font-size: 18px;
+    line-height: 1;
+    color: var(--accent);
+    flex: none;
+}
+.news-li:hover {
+    color: #0a66c2; /* LinkedIn blue on hover */
+}
+/* Collapsed by default: the text is clipped to its first few lines with a fade
+   hint that it continues; the toggle grows it to the full post (and its image). */
+.news-clip {
+    position: relative;
+    overflow: hidden;
+    max-height: 92px;
     transition: max-height 0.4s ease;
 }
-.news-post.is-open .news-frame {
-    max-height: 560px;
+.news-post.is-open .news-clip {
+    max-height: 1600px;
 }
-.news-frame iframe {
+.news-text {
+    margin: 0;
+    line-height: 1.5;
+    white-space: pre-line; /* keep the post's original line breaks */
+}
+.news-img {
     display: block;
     width: 100%;
-    height: 552px;
-    border: 0;
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 6px;
 }
 /* Fade-out over the clipped bottom edge; hidden once expanded. */
-.news-frame::after {
+.news-clip::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 64px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), var(--bg));
+    height: 42px;
+    background: linear-gradient(to bottom, rgba(246, 247, 249, 0), var(--surface));
     pointer-events: none;
     transition: opacity 0.25s ease;
 }
-.news-post.is-open .news-frame::after {
+.news-post.is-open .news-clip::after {
     opacity: 0;
 }
 .news-toggle {

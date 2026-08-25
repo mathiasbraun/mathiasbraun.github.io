@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=66">
+    <link rel="stylesheet" href="styles.css?v=67">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -106,26 +106,70 @@
             If you have any questions, please feel invited to get in touch with me!
         </p>
         <h1 id="news"><i class="fa-solid fa-newspaper heading-icon"></i>News</h1>
+        <!-- News: self-hosted cards built from my LinkedIn posts (no embed iframe, so
+             no cookie banner / third-party tracking). Text uses white-space: pre-line
+             to keep the original line breaks; each card links back to the post. -->
         <div class="news-posts">
             <div class="news-post">
-                <div class="news-frame">
-                    <iframe title="LinkedIn post" loading="lazy" frameborder="0" allowfullscreen
-                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7495151496737701888"></iframe>
-                </div>
+                <article class="news-card">
+                    <header class="news-head">
+                        <div class="news-meta">
+                            <span class="news-author">Mathias Braun</span>
+                            <span class="news-date">17 Aug 2026</span>
+                        </div>
+                        <a class="news-li" href="https://www.linkedin.com/posts/mvjbraun_focus-productivity-books-share-7495151496737701888-bGY0" target="_blank" rel="noopener" aria-label="Open post on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </header>
+                    <div class="news-clip">
+                        <p class="news-text">📖 A book recommendation: "Votre attention est votre superpouvoir" (viz. "Your attention is your superpower") by Fabien Olicard. (Yes, I'm reading the French original.)
+
+In an age of constant distraction, notably by social media, the ability to focus is becoming increasingly rare, hence increasingly valuable. The author offers practical advice to reclaim it. Recommended for anyone who feels their attention is pulled in too many directions at once.
+
+Thank you for your attention! 🙂
+
+#Focus #Productivity #Books #Mindfulness</p>
+                    </div>
+                </article>
                 <button type="button" class="news-toggle" aria-expanded="false">Show more</button>
             </div>
             <div class="news-post">
-                <div class="news-frame">
-                    <iframe title="LinkedIn post" loading="lazy" frameborder="0" allowfullscreen
-                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7480229845269004288"></iframe>
-                </div>
+                <article class="news-card">
+                    <header class="news-head">
+                        <div class="news-meta">
+                            <span class="news-author">Mathias Braun</span>
+                            <span class="news-date">7 Jul 2026</span>
+                        </div>
+                        <a class="news-li" href="https://www.linkedin.com/posts/mvjbraun_linearalgebra-mathematics-studentlife-share-7480229845269004288-b3lf" target="_blank" rel="noopener" aria-label="Open post on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </header>
+                    <div class="news-clip">
+                        <p class="news-text">I just found this little treasure in my stored photos. A screenshot from one of my students in a course on linear algebra during my time at the University of Toronto. When I learned about Jordan blocks during my first year, I didn't imagine how ambiguous that term could be. It is refreshing when students don't lose their humor during the stress that comes along with exam preparation.
+
+#LinearAlgebra #Mathematics #StudentLife #Teaching #UniversityLife</p>
+                        <img class="news-img" src="images/news-linear-algebra.jpg?v=1" alt="A student's exam-prep screenshot joking about the ambiguity of the term Jordan blocks" loading="lazy">
+                    </div>
+                </article>
                 <button type="button" class="news-toggle" aria-expanded="false">Show more</button>
             </div>
             <div class="news-post">
-                <div class="news-frame">
-                    <iframe title="LinkedIn post" loading="lazy" frameborder="0" allowfullscreen
-                            src="https://www.linkedin.com/embed/feed/update/urn:li:share:7474923453905608705"></iframe>
-                </div>
+                <article class="news-card">
+                    <header class="news-head">
+                        <div class="news-meta">
+                            <span class="news-author">Mathias Braun</span>
+                            <span class="news-date">22 Jun 2026</span>
+                        </div>
+                        <a class="news-li" href="https://www.linkedin.com/posts/mvjbraun_epfl-teamwork-teaching-share-7474923453905608705-rQYH" target="_blank" rel="noopener" aria-label="Open post on LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    </header>
+                    <div class="news-clip">
+                        <p class="news-text">📝 The first of two exams in my courses is done. Let me take the moment to say thank you.
+
+An exam of this scale (several hundred students) only works as a team effort. What impresses me again at EPFL is how seamlessly everyone pulls together. Especially those working behind the scenes.
+
+Thank you to the technical department for the reliable technical foundation and the consistently fast responses to my requests, to the administrative staff for the organizational work, and to my proctors, who on exam day handled everything responsibly and quickly. And, of course, to my students for their questions and feedback before the exam, which greatly helped me optimize my materials.
+
+Teaching in an environment like this is a privilege.
+
+#EPFL #Teamwork #Teaching #Mathematics</p>
+                    </div>
+                </article>
                 <button type="button" class="news-toggle" aria-expanded="false">Show more</button>
             </div>
         </div>
