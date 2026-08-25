@@ -20,7 +20,7 @@ const PUBLICATIONS = {
     "mathscinetAuthorId": "1422964",
     "zbmathAuthor": "braun.mathias",
     "googleScholar": "sDOT6TMAAAAJ",
-    "lastUpdated": "2026-08-04"
+    "lastUpdated": "2026-08-26"
   },
   "categories": [
     {
@@ -60,19 +60,6 @@ const PUBLICATIONS = {
       "title": "Publications",
       "items": [
         {
-          "id": "elliptic-proof-splitting",
-          "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Argam Ohanyan", "Clemens Sämann"],
-          "title": "An elliptic proof of the splitting theorems from Lorentzian geometry",
-          "venue": "Communications of the American Mathematical Society",
-          "details": "to appear, 34 pp.",
-          "year": 2024,
-          "status": "in press",
-          "url": null,
-          "doi": null,
-          "arxiv": "2410.12632",
-          "abstract": "We provide a new proof of the splitting theorems from Lorentzian geometry, in which simplicity is gained by sacrificing linearity of the d'Alembertian to recover ellipticity. We exploit a negative homogeneity (non-uniformly) elliptic $p$-d'Alembert operator for this purpose. This allows us to bring the Eschenburg, Galloway, and Newman Lorentzian splitting theorems into a framework closer to the Cheeger-Gromoll splitting theorem from Riemannian geometry."
-        },
-        {
           "id": "exact-dalembertian-lorentz-distance",
           "authors": ["Mathias Braun"],
           "title": "Exact d'Alembertian for Lorentz distance functions",
@@ -84,6 +71,19 @@ const PUBLICATIONS = {
           "doi": null,
           "arxiv": "2408.16525",
           "abstract": "We refine a recent distributional notion of d'Alembertian of a signed Lorentz distance function to an achronal set in a metric measure spacetime obeying the timelike measure contraction property. We show precise representation formulas and comparison estimates (both upper and lower bounds). Under a condition we call \"infinitesimally strict concavity\" (known for infinitesimally Minkowskian structures and established here for Finsler spacetimes), we prove the associated distribution is a signed measure certifying the integration by parts formula. This treatment of the d'Alembertian using techniques from metric geometry expands upon its recent nonlinear yet elliptic interpretation; even in the smooth case, our formulas seem to pioneer its exact shape across the timelike cut locus. Two central ingredients our contribution unifies are the localization paradigm of Cavalletti-Mondino and the Sobolev calculus of Beran-Braun-Calisti-Gigli-McCann-Ohanyan-Rott-Sämann. In the second part of our work, we present several applications of these insights. First, we show the equivalence of the timelike curvature-dimension condition with a Bochner-type inequality. Second, we set up synthetic mean curvature (as well as barriers for CMC sets) exactly. Third, we prove synthetic volume and area estimates of Heintze-Karcher-type, which enable us to show several synthetic volume singularity theorems."
+        },
+        {
+          "id": "elliptic-proof-splitting",
+          "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Argam Ohanyan", "Clemens Sämann"],
+          "title": "An elliptic proof of the splitting theorems from Lorentzian geometry",
+          "venue": "Communications of the American Mathematical Society",
+          "details": "to appear, 34 pp.",
+          "year": 2024,
+          "status": "in press",
+          "url": "https://pubs.ams.org/journals/cams/2026-06-20/S2692-3688-2026-00077-X",
+          "doi": null,
+          "arxiv": "2410.12632",
+          "abstract": "We provide a new proof of the splitting theorems from Lorentzian geometry, in which simplicity is gained by sacrificing linearity of the d'Alembertian to recover ellipticity. We exploit a negative homogeneity (non-uniformly) elliptic $p$-d'Alembert operator for this purpose. This allows us to bring the Eschenburg, Galloway, and Newman Lorentzian splitting theorems into a framework closer to the Cheeger-Gromoll splitting theorem from Riemannian geometry."
         },
         {
           "id": "spacetime-reconstruction",
