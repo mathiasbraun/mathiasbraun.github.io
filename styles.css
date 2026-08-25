@@ -427,10 +427,28 @@ mark.pub-hl {
     max-width: 504px;
 }
 .news-card {
+    position: relative;
+    overflow: hidden; /* clips the accent stripe to the rounded corners */
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--surface);
     padding: 12px 14px;
+}
+/* Blue accent stripe down the left edge — fades in when the card is expanded,
+   like the bibliography abstract's accent border. */
+.news-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.news-post.is-open .news-card::before {
+    opacity: 1;
 }
 .news-head {
     display: flex;
@@ -507,7 +525,11 @@ mark.pub-hl {
     cursor: pointer;
 }
 .news-toggle:hover {
-    text-decoration: underline;
+    color: var(--accent-strong);
+}
+/* Closing line under the posts, linking to the full LinkedIn profile. */
+.news-more {
+    margin-top: 16px;
 }
 
 .pub-leadin {
