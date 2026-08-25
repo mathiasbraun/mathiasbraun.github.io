@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=67">
+    <link rel="stylesheet" href="styles.css?v=68">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -144,7 +144,7 @@ Thank you for your attention! 🙂
                         <p class="news-text">I just found this little treasure in my stored photos. A screenshot from one of my students in a course on linear algebra during my time at the University of Toronto. When I learned about Jordan blocks during my first year, I didn't imagine how ambiguous that term could be. It is refreshing when students don't lose their humor during the stress that comes along with exam preparation.
 
 #LinearAlgebra #Mathematics #StudentLife #Teaching #UniversityLife</p>
-                        <img class="news-img" src="images/news-linear-algebra.jpg?v=1" alt="A student's exam-prep screenshot joking about the ambiguity of the term Jordan blocks" loading="lazy">
+                        <img class="news-img" src="images/news-linear-algebra.jpg?v=1" alt="A student's exam-prep screenshot joking about the ambiguity of the term Jordan blocks">
                     </div>
                 </article>
                 <button type="button" class="news-toggle" aria-expanded="false">Show more</button>
@@ -319,14 +319,29 @@ Teaching in an environment like this is a privilege.
     });
 })();
 
-// Expand/collapse for the LinkedIn news posts: each is clipped to a preview and
-// the button grows it to the full embed.
+// Expand/collapse for the LinkedIn news cards: each is clipped to a preview and
+// the button grows it to the full text (and image). The height is set inline —
+// same approach as the Vitae abstract — so the animation is reliable regardless
+// of the CSS cascade; the collapsed height falls back to the .news-clip rule.
 (function () {
     document.querySelectorAll('.news-toggle').forEach(function (btn) {
         var post = btn.closest('.news-post');
-        if (!post) return;
+        var clip = post && post.querySelector('.news-clip');
+        if (!clip) return;
+        function fit() { clip.style.maxHeight = (clip.scrollHeight + 8) + 'px'; }
         btn.addEventListener('click', function () {
             var open = post.classList.toggle('is-open');
+            if (open) {
+                fit();
+                // If the post image hasn't loaded yet, re-measure once it does so
+                // the box grows to fit it.
+                var img = clip.querySelector('img');
+                if (img && !img.complete) {
+                    img.addEventListener('load', function () { if (post.classList.contains('is-open')) fit(); }, { once: true });
+                }
+            } else {
+                clip.style.maxHeight = '';
+            }
             btn.setAttribute('aria-expanded', open ? 'true' : 'false');
             btn.textContent = open ? 'Show less' : 'Show more';
         });

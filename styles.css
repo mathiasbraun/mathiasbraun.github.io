@@ -466,11 +466,8 @@ mark.pub-hl {
 .news-clip {
     position: relative;
     overflow: hidden;
-    max-height: 92px;
+    max-height: 92px; /* collapsed preview; the toggle sets an inline max-height to expand */
     transition: max-height 0.4s ease;
-}
-.news-post.is-open .news-clip {
-    max-height: 1600px;
 }
 .news-text {
     margin: 0;
