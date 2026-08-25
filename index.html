@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=69">
+    <link rel="stylesheet" href="styles.css?v=70">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -128,7 +128,7 @@ Thank you for your attention! 🙂
 #Focus #Productivity #Books #Mindfulness</p>
                     </div>
                 </article>
-                <button type="button" class="news-toggle" aria-expanded="false">Show more</button>
+                <button type="button" class="news-toggle" aria-expanded="false" aria-label="Show more"><i class="fa-solid fa-chevron-down"></i></button>
             </div>
             <div class="news-post">
                 <article class="news-card">
@@ -145,7 +145,7 @@ Thank you for your attention! 🙂
                         <img class="news-img" src="images/news-linear-algebra.jpg?v=1" alt="A student's exam-prep screenshot joking about the ambiguity of the term Jordan blocks">
                     </div>
                 </article>
-                <button type="button" class="news-toggle" aria-expanded="false">Show more</button>
+                <button type="button" class="news-toggle" aria-expanded="false" aria-label="Show more"><i class="fa-solid fa-chevron-down"></i></button>
             </div>
             <div class="news-post">
                 <article class="news-card">
@@ -167,7 +167,7 @@ Teaching in an environment like this is a privilege.
 #EPFL #Teamwork #Teaching #Mathematics</p>
                     </div>
                 </article>
-                <button type="button" class="news-toggle" aria-expanded="false">Show more</button>
+                <button type="button" class="news-toggle" aria-expanded="false" aria-label="Show more"><i class="fa-solid fa-chevron-down"></i></button>
             </div>
         </div>
         <p class="news-more">Visit my <a href="https://www.linkedin.com/in/mvjbraun" target="_blank" rel="noopener">LinkedIn profile</a> to read more posts and thoughts!</p>
@@ -341,7 +341,9 @@ Teaching in an environment like this is a privilege.
                 clip.style.maxHeight = '';
             }
             btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-            btn.textContent = open ? 'Show less' : 'Show more';
+            btn.setAttribute('aria-label', open ? 'Show less' : 'Show more');
+            var icon = btn.querySelector('i');
+            if (icon) icon.className = open ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
         });
     });
 })();
