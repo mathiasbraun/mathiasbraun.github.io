@@ -310,7 +310,7 @@ li {
     align-items: center;
     justify-content: center;
     gap: 6px;
-    margin: 0 0 16px 0;
+    margin: 0 0 22px 0;
     color: var(--muted);
 }
 .topbar-langs i {
@@ -381,10 +381,10 @@ li {
     line-height: 1.7;
 }
 
-/* The word "Workshop" and its quotation marks in the body text colour (black),
-   not the muted grey; only the linked title "MDPDE 2026" stays in accent blue. */
+/* The word "Workshop" and its quotation marks in muted grey like the rest of
+   the header; only the linked title "MDPDE 2026" stays in accent blue. */
 .topbar-workshop {
-    color: var(--text);
+    color: var(--muted);
 }
 
 .topbar-talks a,
