@@ -536,9 +536,9 @@ mark.pub-hl {
     background: var(--accent-strong); /* homepage dark blue, like the icon tiles */
     color: #ffffff;
 }
-/* Closing line under the posts, linking to the full LinkedIn profile. */
+/* Intro line above the posts, linking to the full LinkedIn profile. */
 .news-more {
-    margin-top: 16px;
+    margin: 0 0 14px 0;
 }
 
 .pub-leadin {

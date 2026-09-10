@@ -209,6 +209,19 @@ const PUBLICATIONS = {
       "title": "Preprints",
       "items": [
         {
+          "id": "radial-part-p-brownian-motion",
+          "authors": ["Mathias Braun"],
+          "title": "The radial part of p-Brownian motion",
+          "venue": null,
+          "details": null,
+          "year": 2026,
+          "status": "preprint",
+          "url": null,
+          "doi": null,
+          "arxiv": null,
+          "abstract": null
+        },
+        {
           "id": "comparison-theory-lipschitz-spacetimes",
           "authors": ["Mathias Braun", "Marta Sálamo Candal"],
           "title": "Comparison theory for Lipschitz spacetimes",
