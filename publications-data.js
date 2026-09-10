@@ -219,7 +219,7 @@ const PUBLICATIONS = {
           "url": null,
           "doi": null,
           "arxiv": null,
-          "abstract": null
+          "abstract": "We initiate a geometric theory of $p$-Brownian motion, the nonlinear Markov process associated with the $p$-Laplacian introduced by Barbu–Rehmeier–Röckner. More precisely, we analyze its radial processes thoroughly, relative to an arbitrary center and in every dimension. On the one hand, we show explicit Tanaka–Meyer semimartingale formulas; our consequential characterization of nontriviality of the associated local times reveals notable differences to classical Brownian motion. In parallel, we establish sharp exit time estimates as well as scaling estimates for the self-similarly rescaled radial process. We also prove isometry of the corresponding marginal laws in each Wasserstein distance. Our contributions equally cover the Leibenson process — the nonlinear Markov process associated with the \"porous medium equation\" with $p$-Laplacian — recently introduced by Barbu–Grube–Rehmeier–Röckner."
         },
         {
           "id": "comparison-theory-lipschitz-spacetimes",
