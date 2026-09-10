@@ -284,7 +284,7 @@ li {
    line-height + a 14px bottom margin match the photo-to-name gap above it, so the
    name sits evenly between the photo and the icons. */
 .topbar-name {
-    margin: 0 0 4px 0;
+    margin: 0 0 8px 0;
     line-height: 1.1;
     font-size: 15px;
     font-weight: 600;
@@ -315,6 +315,7 @@ li {
 }
 .topbar-langs i {
     font-size: 13px;
+    margin-right: 3px; /* a touch more room before the first flag */
 }
 .topbar-langs .flag {
     height: 13px;
@@ -329,7 +330,7 @@ li {
     align-items: center;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 /* Each academic-profile icon sits in a dark-blue rounded "tile" with a light glyph
@@ -379,6 +380,9 @@ li {
 .topbar-talks,
 .topbar-workshop {
     line-height: 1.7;
+}
+.topbar-talks {
+    margin-bottom: 8px;
 }
 
 /* The word "Workshop" and its quotation marks in muted grey like the rest of
