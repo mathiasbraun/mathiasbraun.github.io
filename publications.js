@@ -297,6 +297,14 @@
     }
     var countEl = document.getElementById('pub-count');
     if (countEl) countEl.textContent = terms.length ? (shown + ' of ' + orig + ' shown') : '';
+
+    // Typeset math in titles/refs (e.g. a "$p$" in a title). Abstracts are left
+    // out on purpose — they typeset themselves lazily on open, and typesetting
+    // them here (while collapsed) would double-typeset them.
+    if (window.MathJax && window.MathJax.typesetPromise) {
+      var mathBits = Array.prototype.slice.call(container.querySelectorAll('.pub-title, .pub-ref'));
+      if (mathBits.length) window.MathJax.typesetPromise(mathBits);
+    }
   }
 
   function init() {

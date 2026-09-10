@@ -211,7 +211,7 @@ const PUBLICATIONS = {
         {
           "id": "radial-part-p-brownian-motion",
           "authors": ["Mathias Braun"],
-          "title": "The radial part of p-Brownian motion",
+          "title": "The radial part of \\(p\\)-Brownian motion",
           "venue": null,
           "details": null,
           "year": 2026,
