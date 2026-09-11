@@ -315,9 +315,11 @@ li {
     text-align: left;
 }
 
-/* Name — sized to match the section headings exactly (h1[id], 15px). */
+/* Name — sized to match the section headings exactly (h1[id], 15px). No
+   margin below: at 15px/1.2 its own box is already 18px tall, so it drops
+   straight into the title line at the same 18px pitch as everything else. */
 .topbar-name {
-    margin: 0 0 3px 0;
+    margin: 0;
     line-height: 1.2;
     font-size: 15px;
     font-weight: 600;
