@@ -388,9 +388,13 @@ li {
     font-size: 17px;
 }
 
-/* Location and workshop lines — small icon-led meta lines under the icons.
-   The location line carries the full postal address as a browser tooltip
-   (title attribute) rather than spelling out all four lines in the header. */
+/* Location, languages, and workshop lines — small icon-led meta lines under
+   the icons. No margin between them: like the rest of the page's running
+   text, the gap between lines comes only from line-height (1.5), not an
+   added margin, so this reads as three plain lines rather than three
+   separately-spaced paragraphs. The location line carries the full postal
+   address as a browser tooltip (title attribute) rather than spelling out
+   all four lines in the header. */
 .topbar-meta {
     display: flex;
     align-items: center;
@@ -398,7 +402,7 @@ li {
     line-height: 1.5;
     font-size: 11px;
     color: var(--muted);
-    margin-bottom: 4px;
+    margin-bottom: 0;
     cursor: default;
 }
 .topbar-meta i {
