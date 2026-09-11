@@ -275,38 +275,46 @@ li {
     gap: 14px; /* tight enough that the address line fits on one line at 12px */
 }
 
-/* Round profile photo beside the text block (rather than above it). */
-.topbar-photo {
-    display: block;
+/* Round profile photo beside the text block, resting on a rounded "tongue"
+   (see below) instead of a plain divider. */
+.topbar-photo-wrap {
+    position: relative;
     width: 84px;
     height: 84px;
+    flex: none;
+}
+.topbar-photo {
+    position: relative; /* stacks above the wrap's ::before tongue */
+    display: block;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    flex: none;
 }
 
-/* Thin divider standing in for a letterhead's crest-separating rule. A
-   ::before extends it upward past the top of the page, where the fixed,
-   opaque navbar (z-index 1000) swallows it — the rule appears to run up
-   and disappear behind the dark bar instead of just stopping in mid-air.
-   The row sits ~72px down (54px container + 18px topbar padding-top) and
-   the navbar is 52px tall, so 60px of extension tucks comfortably behind it
-   at any breakpoint (neither padding changes on mobile). */
-.topbar-rule {
-    position: relative;
-    align-self: stretch;
-    width: 1px;
-    background: var(--border);
-    flex: none;
-}
-.topbar-rule::before {
+/* The "tongue": a strip that emerges from behind the fixed navbar (z-index
+   1000, opaque) and ends in a rounded bottom that cradles the photo. Its
+   width is the photo's diameter plus a 10px rim on each side, and its
+   border-radius equals half that width, so the two bottom corners meet as
+   one true semicircle — concentric with the photo when the arc's center
+   (radius above the tongue's tip) lines up with the photo's own center,
+   leaving a uniform 10px ring visible all the way around it. The row sits
+   ~72px down the page (54px container + 18px topbar padding-top) and the
+   navbar is 52px tall, so extending 60px up from the wrap's top tucks the
+   tongue comfortably behind the bar at any breakpoint. */
+.topbar-photo-wrap::before {
     content: "";
+    box-sizing: border-box; /* keep the 1px border inside the 104px so the
+                               two 52px corner radii still meet exactly */
     position: absolute;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     top: -60px;
-    width: 1px;
-    height: 60px;
-    background: var(--border);
+    bottom: -10px;
+    width: 104px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0 0 52px 52px;
 }
 
 .topbar-text {

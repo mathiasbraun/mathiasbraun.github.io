@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=87">
+    <link rel="stylesheet" href="styles.css?v=88">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -57,14 +57,16 @@
 <div class="container">
     <div class="side"></div> <!-- Left margin -->
     <div class="content">
-        <!-- Top link bar: "letterhead" layout — photo beside the text block,
-             separated by a thin rule, like a departmental letterhead. The
-             profile-link icons sit centered below the whole letterhead block.
-             id="home" so the "Welcome" nav link scrolls here (to the photo). -->
+        <!-- Top link bar: "letterhead" layout — photo beside the text block.
+             The photo sits on a rounded "tongue" that emerges from behind the
+             navbar (see .topbar-photo-wrap::before). The profile-link icons
+             sit centered below the whole letterhead block. id="home" so the
+             "Welcome" nav link scrolls here (to the photo). -->
         <div class="topbar" id="home">
             <div class="topbar-row">
-                <img class="topbar-photo" src="profile.png?v=4" alt="Mathias Braun" onerror="this.style.display='none'">
-                <div class="topbar-rule"></div>
+                <div class="topbar-photo-wrap">
+                    <img class="topbar-photo" src="profile.png?v=4" alt="Mathias Braun" onerror="this.style.display='none'">
+                </div>
                 <div class="topbar-text">
                     <div class="topbar-name">Mathias Braun</div>
                     <div class="topbar-title">Bernoulli Instructor @ EPFL</div>
