@@ -272,7 +272,7 @@ li {
 .topbar-row {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 14px; /* tight enough that the address line fits on one line at 12px */
 }
 
 /* Round profile photo beside the text block (rather than above it). */
