@@ -407,9 +407,16 @@ li {
     margin-bottom: 0;
     cursor: default;
 }
+/* Fixed-width icon box (as wide as the widest glyph, the speech bubble) so
+   the text after it — "Institute...", "German..." — always starts at the
+   same x position, regardless of which icon's glyph is narrower. */
 .topbar-meta i {
     font-size: 11px;
     color: var(--muted);
+    display: flex;
+    justify-content: center;
+    width: 16px;
+    flex: none;
 }
 .topbar-meta.topbar-workshop {
     margin-bottom: 0;
