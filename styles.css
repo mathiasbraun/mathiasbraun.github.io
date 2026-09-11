@@ -345,15 +345,12 @@ li {
     color: var(--muted);
 }
 
-/* Below the whole letterhead row (photo + text), left-aligned to start at
-   the same x as the text column above it (104px photo wrap + 22px row gap
-   = 126px in from the topbar's own left edge). */
+/* Centered below the whole letterhead row (photo + text). */
 .topbar-icons {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    margin-left: 126px;
+    justify-content: center;
     gap: 15px;
     margin-top: 20px;
 }
