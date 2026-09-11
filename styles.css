@@ -259,78 +259,72 @@ li {
 }
 
 /* ==========================================================================
-   Top link bar (profile icons, talk slides, workshop)
+   Top link bar — "letterhead" layout: photo beside the text block, separated
+   by a thin rule, like a departmental letterhead standing in for a crest.
    ========================================================================== */
 .topbar {
     padding-top: 18px;
     margin-bottom: 26px;
     font-size: 12px;
     color: var(--muted);
-    text-align: center;
 }
 
-/* Round profile photo above the name + icon row. */
+.topbar-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Round profile photo beside the text block (rather than above it). */
 .topbar-photo {
     display: block;
-    width: 132px;
-    height: 132px;
-    margin: 0 auto 14px auto;
+    width: 84px;
+    height: 84px;
     border-radius: 50%;
     object-fit: cover;
+    flex: none;
 }
 
-/* Name under the photo, as plain text — sized to the section headings (h1[id],
-   15px), same accent colour, centered via the .topbar text-align. Tight
-   line-height + a 14px bottom margin match the photo-to-name gap above it, so the
-   name sits evenly between the photo and the icons. */
+/* Thin divider standing in for a letterhead's crest-separating rule. */
+.topbar-rule {
+    align-self: stretch;
+    width: 1px;
+    background: var(--border);
+    flex: none;
+}
+
+.topbar-text {
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+}
+
+/* Name — sized to the section headings (h1[id], 15px), bumped slightly since
+   it now leads a left-aligned block instead of sitting alone under a photo. */
 .topbar-name {
-    margin: 0 0 4px 0;
-    line-height: 1.1;
-    font-size: 15px;
+    margin: 0 0 3px 0;
+    line-height: 1.2;
+    font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.01em;
     color: var(--accent);
-    /* Same vertical centering of the leading icon as the section headings. */
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Role subtitle under the name. */
+/* Role + spoken languages share one line. */
 .topbar-title {
-    margin: 0 0 4px 0;
-    font-size: 12px;
+    margin: 0 0 10px 0;
+    font-size: 11.5px;
+    line-height: 1.5;
     color: var(--muted);
-}
-
-/* Spoken languages: a speaking icon followed by small drawn flags (SVG rather
-   than emoji, which render as bare country codes on Windows). */
-.topbar-langs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    margin: 0 0 12px 0;
-    color: var(--muted);
-}
-.topbar-langs i {
-    font-size: 13px;
-    margin-right: 3px; /* a touch more room before the first flag */
-}
-.topbar-langs .flag {
-    height: 13px;
-    width: auto;
-    border-radius: 2px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15); /* hairline border, no layout shift */
 }
 
 .topbar-icons {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 15px;
-    margin-bottom: 4px;
+    margin-bottom: 9px;
 }
 
 /* Each academic-profile icon sits in a dark-blue rounded "tile" with a light glyph
@@ -377,28 +371,28 @@ li {
     font-size: 17px;
 }
 
-/* Talk slides, workshop, and address share the site's line spacing (1.5). */
-.topbar-talks,
-.topbar-workshop,
-.topbar-address {
+/* Location and workshop lines — small icon-led meta lines under the icons.
+   The location line carries the full postal address as a browser tooltip
+   (title attribute) rather than spelling out all four lines in the header. */
+.topbar-meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     line-height: 1.5;
+    font-size: 11px;
+    color: var(--muted);
+    margin-bottom: 4px;
+    cursor: default;
 }
-.topbar-talks {
-    margin-bottom: 4px;   /* within block B (icons / talks / workshop) */
-}
-.topbar-workshop {
-    margin-bottom: 12px;  /* between block B and the address block */
-}
-
-/* The word "Workshop"/"quotes" and the address in muted grey like the rest of
-   the header; only links (talk slides, "MDPDE 2026") stay in accent blue. */
-.topbar-workshop,
-.topbar-address {
+.topbar-meta i {
+    font-size: 10px;
     color: var(--muted);
 }
-
-.topbar-talks a,
-.topbar-workshop a {
+.topbar-meta.topbar-workshop {
+    margin-bottom: 0;
+    cursor: auto;
+}
+.topbar-meta a {
     color: var(--accent);
 }
 

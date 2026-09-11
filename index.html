@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=77">
+    <link rel="stylesheet" href="styles.css?v=78">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -57,36 +57,34 @@
 <div class="container">
     <div class="side"></div> <!-- Left margin -->
     <div class="content">
-        <!-- Top link bar: photo, profile logos, talk slides, workshop. id="home"
+        <!-- Top link bar: "letterhead" layout — photo beside the text block,
+             separated by a thin rule, like a departmental letterhead. id="home"
              so the "Welcome" nav link scrolls here (to the photo). -->
         <div class="topbar" id="home">
-            <img class="topbar-photo" src="profile.png?v=4" alt="Mathias Braun" onerror="this.style.display='none'">
-            <div class="topbar-name">Mathias Braun</div>
-            <div class="topbar-title">Bernoulli Instructor @ EPFL</div>
-            <div class="topbar-langs" role="img" aria-label="Languages spoken: German, English, French">
-                <i class="fa-solid fa-comment-dots" aria-hidden="true"></i>
-                <svg class="flag" viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-label="German"><title>German</title><rect width="5" height="1" y="0" fill="#000000"/><rect width="5" height="1" y="1" fill="#DD0000"/><rect width="5" height="1" y="2" fill="#FFCE00"/></svg>
-                <svg class="flag" viewBox="0 0 5 3" xmlns="http://www.w3.org/2000/svg" aria-label="English"><title>English</title><rect width="5" height="3" fill="#FFFFFF"/><rect width="5" height="0.6" y="1.2" fill="#CE1124"/><rect width="0.6" height="3" x="2.2" fill="#CE1124"/></svg>
-                <svg class="flag" viewBox="0 0 3 2" xmlns="http://www.w3.org/2000/svg" aria-label="French"><title>French</title><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>
-            </div>
-            <!-- Icons: five academic-profile links (ResearchGate, ORCID, Google
-                 Scholar, Scopus, arXiv) as dark-blue tiles, plus a grey email tile. -->
-            <div class="topbar-icons">
-                <a class="ti" href="https://www.researchgate.net/profile/Mathias_Braun3" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="ai ai-researchgate"></i></a>
-                <a class="ti" href="https://orcid.org/0000-0002-3005-4267" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
-                <a class="ti" href="https://scholar.google.com/citations?user=sDOT6TMAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
-                <a class="ti" href="https://www.scopus.com/authid/detail.uri?authorId=57219619495" target="_blank" rel="noopener" title="Scopus" aria-label="Scopus"><i class="ai ai-scopus"></i></a>
-                <a class="ti" href="https://arxiv.org/search/?query=Braun%2C+Mathias&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
-                <a class="ti" href="mailto:mathias.braun@epfl.ch" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-            <div class="topbar-workshop">
-                Workshop &ldquo;<a href="https://sites.google.com/view/mdpde26" target="_blank" rel="noopener">MDPDE 2026</a>&rdquo;
-            </div>
-            <div class="topbar-address">
-                Institute of Mathematics<br>
-                EPFL SB MATH<br>
-                MA A1 354 (Bâtiment MA)<br>
-                CH-1015 Lausanne
+            <div class="topbar-row">
+                <img class="topbar-photo" src="profile.png?v=4" alt="Mathias Braun" onerror="this.style.display='none'">
+                <div class="topbar-rule"></div>
+                <div class="topbar-text">
+                    <div class="topbar-name">Mathias Braun</div>
+                    <div class="topbar-title">Bernoulli Instructor @ EPFL &middot; speaks German, English, French</div>
+                    <!-- Icons: five academic-profile links (ResearchGate, ORCID, Google
+                         Scholar, Scopus, arXiv) as dark-blue tiles, plus a grey email tile. -->
+                    <div class="topbar-icons">
+                        <a class="ti" href="https://www.researchgate.net/profile/Mathias_Braun3" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="ai ai-researchgate"></i></a>
+                        <a class="ti" href="https://orcid.org/0000-0002-3005-4267" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
+                        <a class="ti" href="https://scholar.google.com/citations?user=sDOT6TMAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+                        <a class="ti" href="https://www.scopus.com/authid/detail.uri?authorId=57219619495" target="_blank" rel="noopener" title="Scopus" aria-label="Scopus"><i class="ai ai-scopus"></i></a>
+                        <a class="ti" href="https://arxiv.org/search/?query=Braun%2C+Mathias&searchtype=author&abstracts=show&order=-announced_date_first&size=50" target="_blank" rel="noopener" title="arXiv" aria-label="arXiv"><i class="ai ai-arxiv"></i></a>
+                        <a class="ti" href="mailto:mathias.braun@epfl.ch" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <div class="topbar-meta" title="Institute of Mathematics, EPFL SB MATH, MA A1 354 (Bâtiment MA), CH-1015 Lausanne">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        EPFL SB MATH, Lausanne, Switzerland
+                    </div>
+                    <div class="topbar-meta topbar-workshop">
+                        Workshop &ldquo;<a href="https://sites.google.com/view/mdpde26" target="_blank" rel="noopener">MDPDE 2026</a>&rdquo;
+                    </div>
+                </div>
             </div>
         </div>
         <p>
