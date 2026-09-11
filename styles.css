@@ -285,12 +285,28 @@ li {
     flex: none;
 }
 
-/* Thin divider standing in for a letterhead's crest-separating rule. */
+/* Thin divider standing in for a letterhead's crest-separating rule. A
+   ::before extends it upward past the top of the page, where the fixed,
+   opaque navbar (z-index 1000) swallows it — the rule appears to run up
+   and disappear behind the dark bar instead of just stopping in mid-air.
+   The row sits ~72px down (54px container + 18px topbar padding-top) and
+   the navbar is 52px tall, so 60px of extension tucks comfortably behind it
+   at any breakpoint (neither padding changes on mobile). */
 .topbar-rule {
+    position: relative;
     align-self: stretch;
     width: 1px;
     background: var(--border);
     flex: none;
+}
+.topbar-rule::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -60px;
+    width: 1px;
+    height: 60px;
+    background: var(--border);
 }
 
 .topbar-text {
@@ -299,12 +315,11 @@ li {
     text-align: left;
 }
 
-/* Name — sized to the section headings (h1[id], 15px), bumped slightly since
-   it now leads a left-aligned block instead of sitting alone under a photo. */
+/* Name — sized to match the section headings exactly (h1[id], 15px). */
 .topbar-name {
     margin: 0 0 3px 0;
     line-height: 1.2;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.01em;
     color: var(--accent);
