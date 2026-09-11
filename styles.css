@@ -418,15 +418,6 @@ li {
     width: 16px;
     flex: none;
 }
-
-/* The address is the one three-line meta entry; top-align its pin with the
-   first line instead of the vertical center of the whole three-line block. */
-.topbar-location {
-    align-items: flex-start;
-}
-.topbar-location i {
-    margin-top: 3px; /* optical alignment with the first line's cap-height */
-}
 .topbar-meta.topbar-workshop {
     margin-bottom: 0;
     cursor: auto;
