@@ -333,13 +333,15 @@ li {
     color: var(--muted);
 }
 
+/* Centered below the whole letterhead row (photo + text), rather than
+   left-aligned inside the text column. */
 .topbar-icons {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 15px;
-    margin-bottom: 9px;
+    margin-top: 20px;
 }
 
 /* Each academic-profile icon sits in a dark-blue rounded "tile" with a light glyph
