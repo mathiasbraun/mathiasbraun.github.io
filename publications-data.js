@@ -67,8 +67,8 @@ const PUBLICATIONS = {
           "details": "to appear, 84 pp.",
           "year": 2024,
           "status": "in press",
-          "url": null,
-          "doi": null,
+          "url": "https://link.springer.com/article/10.1007/s00526-026-03429-8",
+          "doi": "10.1007/s00526-026-03429-8",
           "arxiv": "2408.16525",
           "abstract": "We refine a recent distributional notion of d'Alembertian of a signed Lorentz distance function to an achronal set in a metric measure spacetime obeying the timelike measure contraction property. We show precise representation formulas and comparison estimates (both upper and lower bounds). Under a condition we call \"infinitesimally strict concavity\" (known for infinitesimally Minkowskian structures and established here for Finsler spacetimes), we prove the associated distribution is a signed measure certifying the integration by parts formula. This treatment of the d'Alembertian using techniques from metric geometry expands upon its recent nonlinear yet elliptic interpretation; even in the smooth case, our formulas seem to pioneer its exact shape across the timelike cut locus. Two central ingredients our contribution unifies are the localization paradigm of Cavalletti-Mondino and the Sobolev calculus of Beran-Braun-Calisti-Gigli-McCann-Ohanyan-Rott-Sämann. In the second part of our work, we present several applications of these insights. First, we show the equivalence of the timelike curvature-dimension condition with a Bochner-type inequality. Second, we set up synthetic mean curvature (as well as barriers for CMC sets) exactly. Third, we prove synthetic volume and area estimates of Heintze-Karcher-type, which enable us to show several synthetic volume singularity theorems."
         },
