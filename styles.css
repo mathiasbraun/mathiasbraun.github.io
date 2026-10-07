@@ -790,18 +790,21 @@ mark.pub-hl {
     color: var(--on-accent);
 }
 
-/* The arXiv buttons are set apart from the slate "Abstract" buttons: dark blue
-   in the light theme, white in the dark theme (outline and text; on hover they
-   fill with that colour). */
+/* The arXiv buttons are solid pills, set apart from the outlined slate
+   "Abstract" buttons: dark blue with white text in the light theme, white with
+   dark text in the dark theme. Already filled, so hover just softens them. */
 .pub-arxiv-btn {
-    color: var(--arxiv);
+    background-color: var(--arxiv);
+    color: var(--on-arxiv);
     border-color: var(--arxiv);
+    transition: opacity 0.15s ease;
 }
 
 .pub-arxiv-btn:hover,
 .pub-arxiv-btn:active {
     background-color: var(--arxiv);
     color: var(--on-arxiv);
+    opacity: 0.82;
 }
 
 /* Roll-down reveal: the wrapper's single grid row grows from 0fr to its natural
