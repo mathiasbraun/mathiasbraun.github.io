@@ -18,11 +18,11 @@
     --accent-soft: #eef2f7;   /* tint for badges */
     --on-accent: #ffffff;     /* text on a filled accent background */
 
-    /* Links in running text: a brighter blue than the slate accent so they stand
-       out from the body text without an underline (about 3:1 against the text
-       colour and 4.8:1 against the page). */
-    --link: #3873c2;
-    --link-hover: #2a5a9e;
+    /* The one link blue (steel blue): brighter than the slate accent so links
+       stand out from the body text without an underline (about 3.2:1 against the
+       text colour, 4.7:1 against the page). */
+    --link: #2e79ae;
+    --link-hover: #1e5f8a;
 
     --tile-bg: #2b4058;       /* profile-link tiles in the header */
     --tile-fg: #eef2f7;
@@ -54,8 +54,8 @@
         --accent-strong: #b9d0ec;
         --accent-soft: #263244;
         --on-accent: #11161d;
-        --link: #4a86d0;
-        --link-hover: #6fa3e6;
+        --link: #358ac6;
+        --link-hover: #5ba6dc;
         --tile-bg: #3a5679;
         --tile-fg: #eaf1fa;
         --tile-grey: #5d6877;
@@ -79,8 +79,8 @@
     --accent-strong: #b9d0ec;
     --accent-soft: #263244;
     --on-accent: #11161d;
-    --link: #4a86d0;
-    --link-hover: #6fa3e6;
+    --link: #358ac6;
+    --link-hover: #5ba6dc;
     --tile-bg: #3a5679;
     --tile-fg: #eaf1fa;
     --tile-grey: #5d6877;
