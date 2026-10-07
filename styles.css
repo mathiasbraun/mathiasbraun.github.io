@@ -289,6 +289,15 @@ h1[id] {
     outline-offset: -2px;
 }
 
+/* While the theme is being switched, every colour changes at once instead of
+   links and buttons fading in a beat behind the rest of the page. */
+.theme-switching,
+.theme-switching *,
+.theme-switching *::before,
+.theme-switching *::after {
+    transition: none !important;
+}
+
 /* ==========================================================================
    Lists (Teaching / Activities use ul; Publications use ol)
    ========================================================================== */
