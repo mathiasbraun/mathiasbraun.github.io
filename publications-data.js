@@ -32,7 +32,7 @@ const PUBLICATIONS = {
           "authors": ["Mathias Braun"],
           "title": "Vector calculus for tamed Dirichlet spaces",
           "venue": "Memoirs of the American Mathematical Society",
-          "details": "303 (2024), no. 1522, 118 pp.",
+          "details": "303 (2024), no. 1522, viii+135 pp.",
           "year": 2024,
           "status": "published",
           "url": "https://www.ams.org/books/memo/1522",
@@ -208,6 +208,19 @@ const PUBLICATIONS = {
       "id": "prepublications",
       "title": "Preprints",
       "items": [
+        {
+          "id": "timelike-ollivier-ricci",
+          "authors": ["Mathias Braun", "Xue-Mei Li"],
+          "title": "Timelike Ollivier–Ricci curvature",
+          "venue": "arXiv preprint",
+          "details": "arXiv:2609.18664, 34 pp.",
+          "year": 2026,
+          "status": "preprint",
+          "url": null,
+          "doi": null,
+          "arxiv": "2609.18664",
+          "abstract": "We introduce a codimension one construction of coarse Ricci curvature in Lorentzian geometry. Using the $1$-Lorentz-Wasserstein distance $\\ell_1$, we compare probability measures supported on small spacelike hypersurfaces through nearby events and recover, in a precise asymptotic regime, the ambient Ricci curvature in future-directed unit timelike directions, with a universal dimensional prefactor reflecting this codimension one construction. The construction echoes the Raychaudhuri equation, which relates the evolution of spatial volume expansion along timelike geodesics to Ricci curvature. Our quantitative estimates rely on transport maps with controlled displacement, constructed through a Moser-type flow. At leading order, the slice construction is insensitive to smooth weights. By smearing the spacelike slices into thin timelike tubes and calibrating the temporal and spatial scales, we recover the timelike Bakry-Émery tensor $\\mathrm{Ric}+\\mathrm{Hess}\\,V$ associated with the weighted reference measure $\\smash{\\mathfrak{m}=\\mathrm{e}^{-V}\\,\\mathrm{vol}_g}$."
+        },
         {
           "id": "radial-part-p-brownian-motion",
           "authors": ["Mathias Braun"],
