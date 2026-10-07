@@ -92,6 +92,14 @@ p {
     line-height: 1.5;
 }
 
+/* One bold weight across the page: <b> (the run-in headings "Outreach.",
+   "Career." … and the bold journal volumes) uses the same 600 as the section
+   headings, the name, and the bibliography's category lead-ins, instead of
+   the browser's default 700. */
+b {
+    font-weight: 600;
+}
+
 /* Section headings double as anchor targets. scroll-margin-top sits flush under
    the navbar so no previous-section text peeks through; the leading accent dash
    and spacing give a clean, modern section label without any underline. */
