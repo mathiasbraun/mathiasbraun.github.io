@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Stop mobile browsers turning date ranges like "07/2023–06/2024" into phone links. -->
     <meta name="format-detection" content="telephone=no">
+    <!-- Apply a saved light/dark choice before first paint (no flash of the wrong
+         theme). Without a saved choice the system preference decides, via CSS. -->
+    <script>
+    try {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark' || savedTheme === 'light') document.documentElement.setAttribute('data-theme', savedTheme);
+    } catch (e) {}
+    </script>
     <title>Mathias Braun</title>
+    <meta name="description" content="Mathias Braun, Bernoulli Instructor at EPFL. Mathematician working on probability theory, nonlinear PDEs, and mathematical relativity.">
+    <meta name="theme-color" content="#26303f">
+    <!-- Link previews (LinkedIn, WhatsApp, Slack, …) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Mathias Braun">
+    <meta property="og:title" content="Mathias Braun">
+    <meta property="og:description" content="Bernoulli Instructor at EPFL. Probability theory, nonlinear PDEs, and mathematical relativity.">
+    <meta property="og:url" content="https://mathiasbraun.github.io/">
+    <meta property="og:image" content="https://mathiasbraun.github.io/profile.png?v=4">
+    <meta property="og:image:alt" content="Portrait of Mathias Braun">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="profile.png?v=4">
     <!-- Google Font for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Icon fonts for the profile links (Academicons = academic logos, Font Awesome = LinkedIn/email) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=95">
+    <link rel="stylesheet" href="styles.css?v=96">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -52,6 +73,9 @@
         <a href="#teaching">Teaching</a>
         <a href="#vitae">Vitae</a>
     </div>
+    <!-- Light/dark switch; icon, label and behaviour are set by the script at the
+         end of the page. -->
+    <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
 </div>
 
 <div class="container">
@@ -104,12 +128,9 @@
         </p>
         <p>
             Currently, I am a <a href="https://www.epfl.ch/schools/sb/research/math/bernoulli-instructors" target="_blank">Bernoulli Instructor</a> @ <a href="https://www.epfl.ch/schools/sb/research/math" target="_blank">EPFL</a>. My mentor is Professor <a href="https://www.epfl.ch/labs/propde/prof-martin-hairer/" target="_blank">Martin Hairer</a>.
-            Before, I held a Postdoctoral Fellowship in the group of Professor <a href="https://www.math.toronto.edu/mccann" target="_blank">Robert McCann</a> @ <a href="https://www.mathematics.utoronto.ca" target="_blank">Department of Mathematics</a>, <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>.
-            In between, I was a <a href="https://www.fields.utoronto.ca/honours-and-fellowships/postdoctoral-fellowships" target="_blank">Fields Postdoctoral Fellow</a> @ <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>,
-            advised by Professors <a href="https://www.math.toronto.edu/roberth" target="_blank">Robert Haslhofer</a>, <a href="https://www.math.toronto.edu/~vtk" target="_blank">Vitali Kapovitch</a>, Robert McCann, and <a href="https://www.ece.utoronto.ca/people/nachman-a" target="_blank">Adrian Nachman</a>.
-            I was associated with the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.
-            I completed my doctorate advised by Professor <a href="https://wt.iam.uni-bonn.de/sturm/home" target="_blank">Theo Sturm</a> @ <a href="https://wt.iam.uni-bonn.de" target="_blank">Institute for Applied Mathematics</a>, <a href="https://www.uni-bonn.de/en" target="_blank">University of Bonn</a>.
+            Before, I was affiliated with the <a href="https://www.utoronto.ca" target="_blank">University of Toronto</a>, the <a href="http://www.fields.utoronto.ca" target="_blank">Fields Institute for Research in Mathematical Sciences</a>, and the <a href="https://www.uni-bonn.de/en" target="_blank">University of Bonn</a>.
         </p>
+
         <p>
             If you have any questions, do not hesitate to get in touch with me!
         </p>
@@ -243,7 +264,7 @@
         <p><b>Education.</b></p>
         <ul>
             <li>October 2018&ndash;January 2022. Doctorate in Mathematics, University of Bonn
-                <br><span class="v-sub">Thesis. <a class="pub-title" href="https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/9561" target="_blank" rel="noopener">Heat flow aspects of synthetic Ricci bounds in the extended Kato class</a> <span class="pub-badge pub-badge--published">published</span> <span class="pub-abstract-btn" role="button" tabindex="0" aria-label="Toggle abstract">Abstract</span>
+                <br><span class="v-sub">Thesis. <a class="pub-title" href="https://bonndoc.ulb.uni-bonn.de/xmlui/handle/20.500.11811/9561" target="_blank" rel="noopener">Heat flow aspects of synthetic Ricci bounds in the extended Kato class</a> <span class="pub-abstract-btn" role="button" tabindex="0" aria-label="Toggle abstract">Abstract</span>
                 <br>Advisor. Theo Sturm</span>
                 <div class="pub-abstract-wrap"><div class="pub-abstract-clip"><div class="pub-abstract">This thesis studies heat flows acting on different objects on possibly singular spaces that admit synthetic lower Ricci curvature bounds by constants, functions, or signed measures. Geometric properties of such spaces and probabilistic features of diffusion processes on these are related to functional inequalities for the involved semigroups. Moreover, heat flow methods are used to set up a second order calculus in the general presence of such measure-valued lower Ricci bounds.<br><br>First, for a given RCD space, we prove the equivalence of the following synthetic characterizations (with respect to a given lower semicontinuous function $k$) of the &ldquo;Ricci curvature at every point being bounded from below by $k$&rdquo;: geodesic semiconvexity of the relative entropy, the evolution variational inequality, Bochner's inequality, gradient bounds for the functional heat flow, transport estimates, and the pathwise coupling property.<br><br>Second, on arbitrary weighted Riemannian manifolds, we prove the equivalence of the previous pathwise coupling property with respect to $k$ and pointwise lower boundedness of the Bakry&ndash;Émery Ricci tensor by $k$, only assuming continuity of $k$. Under an additional exponential integrability condition on $k$, which holds if $k$ is in the functional Kato class of the weighted manifold, we prove conservativeness and Bismut&ndash;Elworthy&ndash;Li's derivative formula.<br><br>Third, we extend the second order calculus for RCD spaces from Gigli to Dirichlet spaces which are tamed by a signed extended Kato class measure in the sense of Erbar, Rigoni, Sturm and Tamanini. Inter alia, nonsmooth analogues of Hessians, covariant and exterior derivatives, and the Ricci curvature are defined. Employing these objects, in turn, we define heat flows on $1$-forms and vector fields and, along with their basic properties, prove domination of the latter by certain semigroups acting on functions.<br><br>Fourth, again in the setting of RCD spaces, we obtain improved functional inequalities and regularization properties of the heat flow on $1$-forms. The spectrum of its generator, the Hodge Laplacian, is studied as well. Finally, we construct a heat kernel for this heat flow and prove Gaussian upper bounds on its pointwise operator norm.</div></div></div></li>
             <li>October 2016&ndash;August 2018. Master of Science in Mathematics, University of Bonn
@@ -259,7 +280,7 @@
 
 <!-- Publications database + renderer -->
 <script src="publications-data.js?v=20"></script>
-<script src="publications.js?v=27"></script>
+<script src="publications.js?v=28"></script>
 <script>
 // Roll-down toggle for the PhD-thesis abstract in Vitae. It reuses the
 // bibliography's CSS (grid 0fr->1fr), so only the is-open classes are toggled.
@@ -309,6 +330,68 @@
             if (icon) icon.className = open ? 'fa-solid fa-chevron-up' : 'fa-solid fa-chevron-down';
         });
     });
+})();
+
+// Light/dark switch in the navbar. Until the visitor clicks it, the system
+// preference decides (pure CSS); a click stores an explicit choice, which the
+// script in <head> re-applies on the next visit before the first paint.
+(function () {
+    var root = document.documentElement;
+    var btn = document.querySelector('.theme-toggle');
+    if (!btn) return;
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    function isDark() {
+        var t = root.getAttribute('data-theme');
+        return t ? t === 'dark' : mq.matches;
+    }
+    function paint() {
+        var dark = isDark();
+        var label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+        btn.querySelector('i').className = dark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+    }
+    btn.addEventListener('click', function () {
+        var next = isDark() ? 'light' : 'dark';
+        root.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        paint();
+    });
+    // While no explicit choice is stored, follow the system if it changes.
+    if (mq.addEventListener) mq.addEventListener('change', paint);
+    paint();
+})();
+
+// Highlight the nav link of the section currently in view. A section counts as
+// "current" once its heading has passed a line just below the fixed bar; at the
+// very bottom of the page the last section wins (it may be too short to reach
+// the line); at the very top it is "Welcome".
+(function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.navbar .nav-links a[href^="#"]'));
+    var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+    if (!links.length) return;
+    var current = -1, ticking = false;
+    function update() {
+        ticking = false;
+        var line = 54 + 24;
+        var idx = 0;
+        for (var i = 0; i < targets.length; i++) {
+            if (targets[i] && targets[i].getBoundingClientRect().top <= line) idx = i;
+        }
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) idx = targets.length - 1;
+        if (idx === current) return;
+        current = idx;
+        links.forEach(function (a, i) {
+            a.classList.toggle('is-active', i === idx);
+            if (i === idx) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+        });
+        // On narrow screens the link row scrolls sideways: keep the active one visible.
+        if (links[idx].scrollIntoView) links[idx].scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
+    function onScroll() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
 })();
 </script>
 

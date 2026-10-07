@@ -175,12 +175,15 @@
     li.appendChild(titleEl);
     li.appendChild(document.createTextNode('. '));
 
-    // Status badge, then the "Abstract" button, then the arXiv logo — all on the
-    // title line, in that order.
-    li.appendChild(el('span', {
-      class: 'pub-badge pub-badge--' + item.status.replace(/\s+/g, '-'),
-      text: item.status
-    }));
+    // Status badge (only for "in press" / "preprint" — "published" is the norm, a
+    // pill on every entry would just be noise), then the "Abstract" button, then
+    // the arXiv logo — all on the title line, in that order.
+    if (item.status !== 'published') {
+      li.appendChild(el('span', {
+        class: 'pub-badge pub-badge--' + item.status.replace(/\s+/g, '-'),
+        text: item.status
+      }));
+    }
     let abstractWrap = null;
     if (item.abstract && item.abstract.trim()) {
       const btn = el('span', { class: 'pub-abstract-btn', text: 'Abstract', attrs: { role: 'button', tabindex: '0', 'aria-label': 'Toggle abstract' } });
