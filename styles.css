@@ -29,8 +29,6 @@
     --tile-grey: #6a7280;     /* the e-mail tile */
     --badge-bg: #eceef0;      /* grey "preprint" pill */
     --li-hover: #0a66c2;      /* LinkedIn blue, on hover */
-    --arxiv: #2b4058;         /* the "arXiv" buttons: dark blue … */
-    --on-arxiv: #ffffff;      /* … and the text on their hover fill */
 
     --nav-bg: #26303f;        /* navbar — deep slate, replaces the green */
     --nav-text: #d5dae2;
@@ -61,8 +59,6 @@
         --tile-grey: #596473;
         --badge-bg: #262e3a;
         --li-hover: #70b5f9;
-        --arxiv: #ffffff;
-        --on-arxiv: #11161d;
         --nav-bg: #090c10;
         --nav-text: #cfd6df;
     }
@@ -86,8 +82,6 @@
     --tile-grey: #596473;
     --badge-bg: #262e3a;
     --li-hover: #70b5f9;
-    --arxiv: #ffffff;
-    --on-arxiv: #11161d;
     --nav-bg: #090c10;
     --nav-text: #cfd6df;
 }
@@ -766,9 +760,9 @@ mark.pub-hl {
     border: 1px solid var(--badge-bg); /* border same colour as the fill */
 }
 
-/* "Abstract" and "arXiv" buttons — outlined (ghost) accent pills, same size as
-   the badges. They fill with the accent colour on hover (and, for Abstract, while
-   the abstract is open; for arXiv, also while pressed). */
+/* "Abstract" and "arXiv" buttons — outlined (ghost) grey pills, same size as
+   the badges, in both themes. They fill with the grey on hover (and, for
+   Abstract, while the abstract is open; for arXiv, also while pressed). */
 .pub-abstract-btn,
 .pub-arxiv-btn {
     display: inline-block;
@@ -783,36 +777,22 @@ mark.pub-hl {
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
-    color: var(--link);
+    color: var(--muted);
     background-color: transparent;
-    border: 1px solid var(--link);
+    border: 1px solid var(--muted);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
+/* On hover / press (and while an abstract is open) the pill fills with the grey
+   and its text takes the page background colour. */
 .pub-abstract-btn:hover,
 .pub-abstract-btn.is-open,
 .pub-arxiv-btn:hover,
 .pub-arxiv-btn:active {
-    background-color: var(--link);
-    color: var(--on-accent);
+    background-color: var(--muted);
+    color: var(--bg);
 }
 
-/* The arXiv buttons are solid pills, set apart from the outlined slate
-   "Abstract" buttons: dark blue with white text in the light theme, white with
-   dark text in the dark theme. Already filled, so hover just softens them. */
-.pub-arxiv-btn {
-    background-color: var(--arxiv);
-    color: var(--on-arxiv);
-    border-color: var(--arxiv);
-    transition: opacity 0.15s ease;
-}
-
-.pub-arxiv-btn:hover,
-.pub-arxiv-btn:active {
-    background-color: var(--arxiv);
-    color: var(--on-arxiv);
-    opacity: 0.82;
-}
 
 /* Roll-down reveal: the wrapper's single grid row grows from 0fr to its natural
    height (1fr); the clip hides the content while collapsed. */
