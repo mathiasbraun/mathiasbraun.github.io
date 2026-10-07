@@ -885,3 +885,216 @@ mjx-container {
         letter-spacing: 0.05em;
     }
 }
+
+/* ==========================================================================
+   Phones and tablets — larger type and touch-sized controls.
+   Everything here sits inside a media query; the desktop layout above is
+   untouched. Applies to phones (narrow windows) and to touch devices up to
+   tablet size, including phones held sideways.
+   ========================================================================== */
+@media (max-width: 600px), (pointer: coarse) and (max-width: 1024px) {
+    body,
+    .topbar,
+    .topbar-title,
+    .topbar-meta {
+        font-size: 14px;
+    }
+
+    h1[id],
+    .topbar-name {
+        font-size: 17px;
+    }
+
+    .topbar-meta i {
+        font-size: 13px;
+        width: 18px;
+    }
+
+    .news-date,
+    .pub-count {
+        font-size: 13px;
+    }
+
+    .news-li {
+        font-size: 22px;
+    }
+
+    /* 16px keeps iOS from zooming the page when the filter box gets focus. */
+    .pub-search {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+
+    /* Long words, URLs and journal names must wrap rather than widen the page. */
+    .content {
+        overflow-wrap: break-word;
+    }
+
+    /* A wide displayed formula scrolls inside its own box instead of pushing the
+       page sideways. */
+    mjx-container[display="true"] {
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    /* Navigation bar */
+    .navbar a {
+        font-size: 12px;
+        padding: 10px 13px;
+    }
+
+    .theme-toggle {
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+    }
+
+    /* Profile icons: bigger tiles, glyphs scaled with them (24px -> 34px). */
+    .topbar-icons {
+        gap: 10px;
+    }
+
+    .topbar-icons a.ti {
+        width: 34px;
+        height: 34px;
+        border-radius: 7px;
+    }
+
+    .topbar-icons a.ti i {
+        font-size: 23px;
+    }
+
+    .topbar-icons a.ti[aria-label="ResearchGate"] i,
+    .topbar-icons a.ti[aria-label="Google Scholar"] i,
+    .topbar-icons a.ti[aria-label="Scopus"] i {
+        font-size: 30px;
+    }
+
+    .topbar-icons a.ti[aria-label="Email"] i {
+        font-size: 24px;
+    }
+
+    /* News: a bigger collapse/expand target and a taller preview for the larger type. */
+    .news-toggle {
+        width: 60px;
+        height: 38px;
+        margin-top: 2px;
+        font-size: 15px;
+    }
+
+    .news-clip {
+        max-height: 108px;
+    }
+
+    /* Publication pills: larger text and a ~26px tap height. The negative vertical
+       margin keeps them from stretching the line they sit in. */
+    .pub-badge,
+    .pub-abstract-btn,
+    .pub-arxiv-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+        border-radius: 14px;
+        margin-top: -3px;
+        margin-bottom: -3px;
+    }
+
+    .pub-abstract {
+        padding: 12px 14px;
+    }
+}
+
+/* Phones only: reclaim width. */
+@media (max-width: 600px) {
+    .container > .content {
+        padding: 0 16px 56px 16px;
+    }
+
+    .topbar-row {
+        gap: 16px;
+    }
+
+    ul,
+    .pub-list {
+        padding-left: 28px;
+    }
+}
+
+/* Touch screens have no hover, so a tapped control must not stay "hovered". */
+@media (hover: none) {
+    .navbar a:hover:not(.is-active),
+    .theme-toggle:hover {
+        background-color: transparent;
+    }
+
+    .navbar a:hover:not(.is-active) {
+        color: var(--nav-text);
+    }
+
+    .theme-toggle:hover {
+        color: var(--nav-text);
+    }
+
+    .news-toggle:hover {
+        background: transparent;
+        color: var(--muted);
+    }
+
+    .topbar-icons a.ti:hover {
+        opacity: 1;
+    }
+
+    .pub-abstract-btn:hover:not(.is-open),
+    .pub-arxiv-btn:hover {
+        background-color: transparent;
+        color: var(--muted);
+    }
+
+    .pub-arxiv-btn:active {
+        background-color: var(--muted);
+        color: var(--bg);
+    }
+}
+
+/* Very narrow phones (320–360px): slightly smaller tiles so all seven icons
+   still fit on one row. */
+@media (max-width: 360px) {
+    .topbar-icons {
+        gap: 8px;
+    }
+
+    .topbar-icons a.ti {
+        width: 30px;
+        height: 30px;
+    }
+
+    .topbar-icons a.ti i {
+        font-size: 20px;
+    }
+
+    .topbar-icons a.ti[aria-label="ResearchGate"] i,
+    .topbar-icons a.ti[aria-label="Google Scholar"] i,
+    .topbar-icons a.ti[aria-label="Scopus"] i {
+        font-size: 26px;
+    }
+
+    .topbar-icons a.ti[aria-label="Email"] i {
+        font-size: 21px;
+    }
+}
+
+/* Phones and tablets held sideways: the bar has room for all the links, so keep
+   them centred between the edges, balancing the (larger) toggle on the right. The
+   "safe" keyword makes the row start at its left end instead of being clipped on
+   both sides if it ever does overflow. */
+@media (min-width: 600px) and (max-width: 1024px) and (pointer: coarse) {
+    .navbar {
+        padding: 0 12px 0 16px;
+    }
+
+    .navbar .nav-links {
+        justify-content: center;
+        justify-content: safe center;
+        padding-left: 48px;
+    }
+}
