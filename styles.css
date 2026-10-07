@@ -14,7 +14,7 @@
     --surface: #f6f7f9;       /* abstract box background */
 
     --accent: #3d5a80;        /* a calm slate blue: card stripe, abstract box edge, focus ring */
-    --heading: #8c702c;       /* section headings, the name, heading icons — a dark gold */
+    --heading: #936c31;       /* section headings, the name, heading icons  — an ochre */
     --accent-strong: #2b4058; /* hover / stronger */
     --accent-soft: #eef2f7;   /* tint for badges */
     --on-accent: #ffffff;     /* text on a filled accent background */
@@ -50,7 +50,7 @@
         --border: #29313c;
         --surface: #1a2029;
         --accent: #5c82b4;
-        --heading: #998148;
+        --heading: #a17e48;
         --accent-strong: #b9d0ec;
         --accent-soft: #212a38;
         --on-accent: #11161d;
@@ -74,7 +74,7 @@
     --border: #29313c;
     --surface: #1a2029;
     --accent: #5c82b4;
-    --heading: #998148;
+    --heading: #a17e48;
     --accent-strong: #b9d0ec;
     --accent-soft: #212a38;
     --on-accent: #11161d;
