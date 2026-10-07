@@ -160,9 +160,8 @@
     terms = terms || [];
     const li = el('li', { class: 'pub-item' });
 
-    // Authors.
+    // Authors (no full stop after the names).
     li.appendChild(highlightFragment(item.authors.join(', '), terms));
-    li.appendChild(document.createTextNode('.'));
     li.appendChild(el('br'));
 
     // Title — links to the most current version (journal for published/in press,
@@ -173,7 +172,8 @@
       : el('span', { class: 'pub-title' });
     titleEl.appendChild(highlightFragment(item.title, terms));
     li.appendChild(titleEl);
-    li.appendChild(document.createTextNode('. '));
+    // No full stop after the title — just a space before the badge / buttons.
+    li.appendChild(document.createTextNode(' '));
 
     // Status badge (only for "in press" / "preprint" — "published" is the norm, a
     // pill on every entry would just be noise), then the "Abstract" button, then
