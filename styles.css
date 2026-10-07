@@ -1084,17 +1084,36 @@ mjx-container {
 }
 
 /* Phones and tablets held sideways: the bar has room for all the links, so keep
-   them centred between the edges, balancing the (larger) toggle on the right. The
-   "safe" keyword makes the row start at its left end instead of being clipped on
-   both sides if it ever does overflow. */
-@media (min-width: 600px) and (max-width: 1024px) and (pointer: coarse) {
-    .navbar {
-        padding: 0 12px 0 16px;
+   them centred between the edges, balancing the (larger) toggle on the right.
+   Auto margins on the first and last link (rather than justify-content: center)
+   centre the row when it fits, yet let it start at its left end, unclipped, when
+   it does not. */
+@media (min-width: 480px) and (max-width: 1024px) and (pointer: coarse) {
+    .navbar .nav-links {
+        justify-content: flex-start;
+        padding-left: 48px;
     }
 
-    .navbar .nav-links {
-        justify-content: center;
-        justify-content: safe center;
-        padding-left: 48px;
+    .navbar .nav-links a:first-child {
+        margin-left: auto;
+    }
+
+    .navbar .nav-links a:last-child {
+        margin-right: auto;
+    }
+}
+
+/* Phones with a notch or rounded corners, held sideways: the page extends under
+   the cut-outs (viewport-fit=cover), so the bar reaches the screen edges and the
+   text keeps clear of them. env() is 0 everywhere else. */
+@media (pointer: coarse) {
+    body {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    .navbar {
+        padding-left: max(8px, env(safe-area-inset-left));
+        padding-right: max(8px, env(safe-area-inset-right));
     }
 }
