@@ -190,8 +190,10 @@ p:has(+ .vitae-table) {
     margin-bottom: 0;
 }
 
+/* Same indent as the bibliography's numbered list (.pub-list, 34px), so the
+   bullets in Activities sit in the same column as the reference numbers. */
 ul {
-    padding-left: 20px;
+    padding-left: 34px;
 }
 
 li {
