@@ -13,7 +13,8 @@
     --border: #e9e9e6;        /* hairlines */
     --surface: #f6f7f9;       /* abstract box background */
 
-    --accent: #3d5a80;        /* headings, titles, buttons — a calm slate blue */
+    --accent: #3d5a80;        /* a calm slate blue: card stripe, abstract box edge, focus ring */
+    --heading: #956c0f;       /* section headings, the name, heading icons — a dark gold */
     --accent-strong: #2b4058; /* hover / stronger */
     --accent-soft: #eef2f7;   /* tint for badges */
     --on-accent: #ffffff;     /* text on a filled accent background */
@@ -49,6 +50,7 @@
         --border: #29313c;
         --surface: #1a2029;
         --accent: #5c82b4;
+        --heading: #a27f33;
         --accent-strong: #b9d0ec;
         --accent-soft: #212a38;
         --on-accent: #11161d;
@@ -72,6 +74,7 @@
     --border: #29313c;
     --surface: #1a2029;
     --accent: #5c82b4;
+    --heading: #a27f33;
     --accent-strong: #b9d0ec;
     --accent-soft: #212a38;
     --on-accent: #11161d;
@@ -179,7 +182,7 @@ h1[id] {
     font-weight: 600;
     letter-spacing: 0.01em;
     text-align: left;
-    color: var(--accent);
+    color: var(--heading);
     /* Flex row so the small leading icon is vertically centered with the title
        text (baseline alignment left it sitting slightly high). */
     display: flex;
@@ -191,11 +194,11 @@ h1[id] {
     scroll-margin-top: 54px;
 }
 
-/* Small dark-blue icon before each section title. */
+/* Small icon before each section title, in the heading colour. */
 .heading-icon {
     margin-right: 9px;
     font-size: 0.82em;
-    color: var(--accent);
+    color: var(--heading);
 }
 
 /* ==========================================================================
@@ -413,7 +416,7 @@ li {
     font-size: 15px;
     font-weight: 600;
     letter-spacing: 0.01em;
-    color: var(--accent);
+    color: var(--heading);
 }
 
 /* Role subtitle under the name, at the page's normal body text size. */
