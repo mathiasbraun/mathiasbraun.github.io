@@ -760,6 +760,9 @@ mark.pub-hl {
 .pub-badge--preprint {
     background-color: var(--badge-bg);
     color: var(--muted);
+    /* a touch more of the text colour: small grey text on a grey pill needs it to
+       stay above 4.5:1 in both themes */
+    color: color-mix(in srgb, var(--muted) 70%, var(--text));
     border: 1px solid var(--badge-bg); /* border same colour as the fill */
 }
 
