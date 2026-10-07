@@ -185,8 +185,7 @@ ol, ul {
 }
 
 p:has(+ ol),
-p:has(+ ul),
-p:has(+ .vitae-table) {
+p:has(+ ul) {
     margin-bottom: 0;
 }
 
@@ -201,63 +200,11 @@ li {
 }
 
 /* ==========================================================================
-   Vitae — borderless two-column table (dates right-aligned, positions left)
+   Teaching / Vitae — bulleted lists (see "Lists" above); role, advisor, and
+   thesis sub-lines in the same muted grey as the bibliography venues.
    ========================================================================== */
-/* margin-left 20px matches where the old bulleted text started, so the leftmost
-   (widest) date lines up exactly with the former bullet text. */
-.vitae-table {
-    border-collapse: collapse;
-    margin: 0 0 12px 20px;
-}
-
-.vitae-table td {
-    border: 0;
-    padding: 0 0 7px 0;        /* small vertical gap between entries */
-    vertical-align: top;
-    line-height: 1.5;
-}
-
-.vitae-table .v-date {
-    text-align: right;
-    white-space: nowrap;
-    padding-right: 16px;       /* small gutter between dates and positions */
-    /* Fixed width (fits the widest date) so the date/position divider lines up
-       between the Teaching and Vitae tables; shorter dates sit right-aligned. */
-    width: 114px;
-    box-sizing: content-box;
-}
-
-/* Section labels (Career./Education.) span both columns; text-indent pulls them
-   back to the content edge (the table itself is indented to the old bullet-text
-   position). */
-.vitae-table .v-head {
-    text-indent: -20px;
-    padding-bottom: 3px;
-}
-.vitae-table .v-head-gap {
-    padding-top: 12px;         /* space before the Education section */
-}
-
-/* Thesis / Advisor sub-lines in the same muted grey as the bibliography venues. */
-.vitae-table .v-sub {
+.v-sub {
     color: var(--muted);
-}
-
-/* Teaching reuses the Vitae table, but its terms can be long (e.g. three winters),
-   so allow the date column to wrap there instead of forcing one very wide column. */
-.vitae-table.teaching .v-date {
-    white-space: normal;
-}
-
-/* The bibliography's grid 0fr->1fr abstract roll-down collapses to 0 inside a
-   table cell, so the Vitae (PhD thesis) abstract animates via max-height, which
-   the toggle script sets to the measured content height. */
-.vitae-table .pub-abstract-wrap {
-    display: block;
-    grid-template-rows: none;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
 }
 
 /* ==========================================================================
