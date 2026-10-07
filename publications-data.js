@@ -191,7 +191,7 @@ const PUBLICATIONS = {
         },
         {
           "id": "ot-gradient-estimates-brownian",
-          "authors": ["Mathias Braun", "Karen Habermann", "Theo Sturm"],
+          "authors": ["Mathias Braun", "Karen Habermann", "Karl-Theodor Sturm"],
           "title": "Optimal transport, gradient estimates, and pathwise Brownian coupling on spaces with variable Ricci bounds",
           "venue": "Journal de Mathématiques Pures et Appliquées",
           "details": "147 (2021), 60–97",
