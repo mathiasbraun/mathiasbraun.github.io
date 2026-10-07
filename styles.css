@@ -420,7 +420,7 @@ li {
     min-height: 1em;
     margin: 3px 2px 0 0;
     text-align: right;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--muted);
 }
 
@@ -486,7 +486,7 @@ mark.pub-hl {
     color: var(--text);
 }
 .news-date {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--muted);
 }
 .news-li {
@@ -507,9 +507,17 @@ mark.pub-hl {
     transition: max-height 0.4s ease;
 }
 .news-text {
-    margin: 0;
     line-height: 1.5;
-    white-space: pre-line; /* keep the post's original line breaks */
+}
+/* Paragraph breaks inside a post are real paragraphs (12px apart, like the rest
+   of the page) rather than blank lines (18px). pre-line on the paragraphs keeps
+   the post's single line breaks; it is not set on the container, where it would
+   turn the whitespace between paragraphs into extra blank lines. */
+.news-text p {
+    white-space: pre-line;
+}
+.news-text p:last-child {
+    margin-bottom: 0;
 }
 .news-img {
     display: block;
@@ -557,11 +565,11 @@ mark.pub-hl {
 }
 /* Intro line above the posts, linking to the full LinkedIn profile. */
 .news-more {
-    margin: 0 0 14px 0;
+    margin: 0 0 12px 0;
 }
 
 .pub-leadin {
-    margin: 14px 0 0 0;
+    margin: 12px 0 0 0;
     font-weight: 600;
     color: var(--text);
 }
