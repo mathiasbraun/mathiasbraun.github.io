@@ -356,6 +356,7 @@
         // Switch without per-element colour transitions (see .theme-switching).
         root.classList.add('theme-switching');
         root.setAttribute('data-theme', next);
+        void root.offsetWidth; // apply the new styles right now, while transitions are off
         try { localStorage.setItem('theme', next); } catch (e) {}
         paint();
         window.setTimeout(function () { root.classList.remove('theme-switching'); }, 100);
