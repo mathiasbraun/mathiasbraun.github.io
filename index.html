@@ -29,12 +29,12 @@
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png?v=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=1">
     <!-- Google Font for Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
     <!-- Icon fonts for the profile links (Academicons = academic logos, Font Awesome = LinkedIn/email) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=109">
+    <link rel="stylesheet" href="styles.css?v=110">
     <!-- MathJax: the config MUST be defined BEFORE the library script loads —
          MathJax v3 reads window.MathJax at load time. When it came *after* (as it
          used to), custom delimiters like $...$ and processEnvironments were ignored,
@@ -281,6 +281,61 @@
                 <br><span class="v-sub">Thesis. On a contraction theorem between transferences of log-concave probability measures
                 <br>Advisor. Joe Neeman</span></li>
         </ul>
+        <!-- Closing doodle from the old site: "Caution! Danger of confusion" - the L^p-norm vs. the L^p-worm.
+             Redrawn as an inline SVG so it follows the light/dark theme. -->
+        <figure class="lp-joke">
+            <svg viewBox="0 0 920 416" role="img" aria-labelledby="lp-title" xmlns="http://www.w3.org/2000/svg">
+                <title id="lp-title">Caution! Danger of confusion: the L^p-norm, the p-th root of the integral of |f|^p, is not the L^p-worm, where the integral sign is a worm.</title>
+                <defs>
+                    <!-- a faint pencil wobble, so the lines don't look ruler-straight -->
+                    <filter id="lp-pencil" x="-5%" y="-5%" width="110%" height="110%">
+                        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="7" result="n"/>
+                        <feDisplacementMap in="SourceGraphic" in2="n" scale="2.6"/>
+                    </filter>
+                    <!-- the integrand |f|^p dμ, drawn once (origin = its left edge, baseline y = 266);
+                         the bars and the μ are strokes, so they look the same on every device -->
+                    <g id="lp-integrand">
+                        <path d="M3 212 L1 273"/>
+                        <text class="lp-hand" x="13" y="266" font-size="66" fill="currentColor" stroke="none">f</text>
+                        <path d="M52 212 L50 273"/>
+                        <text class="lp-hand" x="55" y="238" font-size="42" fill="currentColor" stroke="none">p</text>
+                        <text class="lp-hand" x="100" y="266" font-size="66" fill="currentColor" stroke="none">d</text>
+                        <path d="M136 232 L133 285 M136 252 C138 266 148 270 156 262 C162 255 164 246 165 232 L164 258 C164 266 170 268 176 262"/>
+                    </g>
+                </defs>
+                <g filter="url(#lp-pencil)" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+                    <!-- title -->
+                    <text class="lp-hand" x="450" y="66" text-anchor="middle" font-size="58" fill="currentColor" stroke="none">Caution! Danger of confusion</text>
+
+                    <!-- LEFT: [ ∫ |f|^p dμ ]^{1/p}  =  the L^p-norm -->
+                    <path d="M40 152 L24 153 L22 270 L40 271"/>
+                    <path d="M80 160 C76 142 58 142 57 170 L48 292 C46 318 28 320 26 302"/>
+                    <use href="#lp-integrand" x="96"/>
+                    <path d="M292 152 L309 153 L310 270 L293 271"/>
+                    <text class="lp-hand" x="320" y="176" font-size="44" fill="currentColor" stroke="none">1/p</text>
+
+                    <!-- the not-equal sign -->
+                    <path d="M388 270 L466 268 M390 297 L468 295 M444 250 L416 316"/>
+
+                    <!-- RIGHT: [ worm |f|^p dμ ]^{1/p}  =  the L^p-worm -->
+                    <path d="M552 152 L536 153 L534 270 L552 271"/>
+                    <!-- worm: outline, body fill, stripes (dashes across the body), face -->
+                    <path d="M596 158 C612 186 586 206 588 238 C590 272 580 300 556 303" stroke-width="40"/>
+                    <path d="M596 158 C612 186 586 206 588 238 C590 272 580 300 556 303" stroke="var(--bg)" stroke-width="31"/>
+                    <path d="M596 190 C608 208 588 218 589 238 C590 268 581 296 558 302" stroke-width="29" stroke-dasharray="2.6 14" stroke-linecap="butt"/>
+                    <circle cx="589" cy="152" r="2.6" fill="currentColor" stroke="none"/>
+                    <circle cx="603" cy="152" r="2.6" fill="currentColor" stroke="none"/>
+                    <path d="M588 163 Q596 171 605 163" stroke-width="2.6"/>
+                    <use href="#lp-integrand" x="634"/>
+                    <path d="M830 152 L847 153 L848 270 L831 271"/>
+                    <text class="lp-hand" x="858" y="176" font-size="44" fill="currentColor" stroke="none">1/p</text>
+
+                    <!-- labels -->
+                    <text class="lp-hand" x="86" y="392" font-size="50" fill="currentColor" stroke="none">L<tspan dy="-20" font-size="32">p</tspan><tspan dy="20">-norm</tspan></text>
+                    <text class="lp-hand" x="590" y="392" font-size="50" fill="currentColor" stroke="none">L<tspan dy="-20" font-size="32">p</tspan><tspan dy="20">-worm</tspan></text>
+                </g>
+            </svg>
+        </figure>
     </div>
     <div class="side"></div> <!-- Right margin -->
 </div>

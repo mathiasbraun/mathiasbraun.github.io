@@ -832,6 +832,30 @@ mark.pub-hl {
     opacity: 1;
 }
 
+/* ==========================================================================
+   Closing doodle — "Caution! Danger of confusion": the L^p-norm vs. the L^p-worm
+   (redrawn from the old site as an inline SVG; strokes use currentColor and the
+   worm's body uses the page background, so it follows the light/dark theme)
+   ========================================================================== */
+.lp-joke {
+    margin: 64px auto 0;
+    max-width: 380px;
+    color: var(--text);
+    opacity: 0.88;
+}
+
+.lp-joke svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.lp-hand {
+    font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', 'Comic Sans MS', cursive;
+    font-weight: 500;
+}
+
 /* Respect users who prefer no motion. */
 @media (prefers-reduced-motion: reduce) {
     .pub-abstract-wrap,
