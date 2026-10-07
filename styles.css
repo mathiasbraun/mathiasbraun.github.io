@@ -621,7 +621,7 @@ mark.pub-hl {
 .news-li {
     font-size: 18px;
     line-height: 1;
-    color: var(--accent);
+    color: var(--link);
     flex: none;
 }
 .news-li:hover {
@@ -717,14 +717,14 @@ mark.pub-hl {
     color: var(--text);
 }
 
+/* Titles are links like any other, so they use the one link blue. */
 .pub-title {
     font-weight: 500;
-    color: var(--accent);
+    color: var(--link);
 }
 
-/* Titles stay in the slate accent (they are the entry, not an inline link). */
 .pub-title:hover {
-    color: var(--accent-strong);
+    color: var(--link-hover);
 }
 
 .pub-ref {
@@ -776,9 +776,9 @@ mark.pub-hl {
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
-    color: var(--accent);
+    color: var(--link);
     background-color: transparent;
-    border: 1px solid var(--accent);
+    border: 1px solid var(--link);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -786,7 +786,7 @@ mark.pub-hl {
 .pub-abstract-btn.is-open,
 .pub-arxiv-btn:hover,
 .pub-arxiv-btn:active {
-    background-color: var(--accent);
+    background-color: var(--link);
     color: var(--on-accent);
 }
 
