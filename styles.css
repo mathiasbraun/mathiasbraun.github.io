@@ -96,6 +96,9 @@
    Base
    ========================================================================== */
 html {
+    /* No rubber-band / overscroll bounce at the top or bottom of the page: it
+       dragged the whole header (and the tongue) away from the fixed navbar. */
+    overscroll-behavior-y: none;
     scroll-behavior: smooth; /* animated scroll when a nav link is clicked */
     /* Prevent iOS/Safari from auto-inflating some text on mobile, which made
        different paragraphs render at different sizes. */
@@ -104,6 +107,7 @@ html {
 }
 
 body {
+    overscroll-behavior-y: none;
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -382,15 +386,18 @@ li {
    bottom corners meet as one true semicircle — concentric with the photo,
    since both share the same horizontal center — leaving a uniform 10px ring
    visible all the way around it. The row sits ~72px down the page (54px
-   container + 18px topbar padding-top) and the navbar is 52px tall, so
-   extending 60px up from the wrap's top tucks the tongue comfortably behind
-   the bar at any breakpoint. One flat fill colour throughout — no separate
-   border tone — so it reads as a single solid shape. */
+   container + 18px topbar padding-top) and the navbar is 52px tall. The
+   tongue reaches 600px up from the wrap's top — far past the top of the page,
+   hidden behind the bar — so that even if a browser still lets the page bounce
+   when pulled down past the top (overscroll-behavior is off, but not every
+   browser honours it), the tongue stays attached to the bar instead of
+   detaching from it. One flat fill colour throughout — no separate border
+   tone — so it reads as a single solid shape. */
 .topbar-photo-wrap::before {
     content: "";
     position: absolute;
     left: 0;
-    top: -60px;
+    top: -600px;
     bottom: -10px;
     width: 104px;
     background: var(--border);
