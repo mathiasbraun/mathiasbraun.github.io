@@ -397,7 +397,7 @@ li {
     top: -600px;
     bottom: -10px;
     width: 104px;
-    background: var(--border);
+    background: var(--badge-bg);
     border-radius: 0 0 52px 52px;
 }
 
