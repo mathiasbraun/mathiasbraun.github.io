@@ -490,10 +490,11 @@ li {
    all four lines in the header. */
 .topbar-meta {
     display: flex;
-    align-items: center;
+    align-items: flex-start;   /* icon sits on the first line when the text wraps */
     gap: 5px;
     line-height: 1.5;
-    font-size: 13px;
+    --meta-fs: 13px;
+    font-size: var(--meta-fs);
     color: var(--muted);
     margin-bottom: 0;
     cursor: default;
@@ -506,6 +507,8 @@ li {
     color: var(--muted);
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: calc(1.5 * var(--meta-fs));   /* one text line tall, so the glyph centres on line 1 */
     width: 17px;
     flex: none;
 }
@@ -906,6 +909,10 @@ mjx-container {
     h1[id],
     .topbar-name {
         font-size: 18px;
+    }
+
+    .topbar-meta {
+        --meta-fs: 15px;
     }
 
     .topbar-meta i {
