@@ -783,9 +783,9 @@ mark.pub-hl {
     white-space: nowrap;
     cursor: pointer;
     user-select: none;
-    color: var(--muted);
+    color: var(--text);
     background-color: transparent;
-    border: 1px solid var(--muted);
+    border: 1px solid var(--text);
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -795,7 +795,7 @@ mark.pub-hl {
 .pub-abstract-btn.is-open,
 .pub-arxiv-btn:hover,
 .pub-arxiv-btn:active {
-    background-color: var(--muted);
+    background-color: var(--text);
     color: var(--bg);
 }
 
@@ -1047,11 +1047,11 @@ mjx-container {
     .pub-abstract-btn:hover:not(.is-open),
     .pub-arxiv-btn:hover {
         background-color: transparent;
-        color: var(--muted);
+        color: var(--text);
     }
 
     .pub-arxiv-btn:active {
-        background-color: var(--muted);
+        background-color: var(--text);
         color: var(--bg);
     }
 }
