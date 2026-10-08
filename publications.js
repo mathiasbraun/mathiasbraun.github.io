@@ -282,7 +282,7 @@
       if (!matched.length) return;               // hide categories that have no matches
 
       const lead = el('p', { class: 'pub-leadin' });
-      lead.appendChild(el('b', { text: cat.title + '.' }));
+      lead.appendChild(el('b', { text: cat.title }));
       container.appendChild(lead);
 
       const ol = el('ol', { class: 'pub-list' });
