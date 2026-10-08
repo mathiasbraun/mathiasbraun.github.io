@@ -900,26 +900,26 @@ mjx-container {
     .topbar,
     .topbar-title,
     .topbar-meta {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     h1[id],
     .topbar-name {
-        font-size: 17px;
+        font-size: 18px;
     }
 
     .topbar-meta i {
-        font-size: 13px;
-        width: 18px;
+        font-size: 14px;
+        width: 19px;
     }
 
     .news-date,
     .pub-count {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .news-li {
-        font-size: 22px;
+        font-size: 24px;
     }
 
     /* 16px keeps iOS from zooming the page when the filter box gets focus. */
@@ -987,7 +987,7 @@ mjx-container {
     }
 
     .news-clip {
-        max-height: 108px;
+        max-height: 116px;
     }
 
     /* Publication pills: larger text and a ~26px tap height. The negative vertical
@@ -995,31 +995,63 @@ mjx-container {
     .pub-badge,
     .pub-abstract-btn,
     .pub-arxiv-btn {
-        font-size: 11px;
-        padding: 6px 10px;
-        border-radius: 14px;
+        font-size: 10px;
+        padding: 5px 9px;
+        border-radius: 13px;
         margin-top: -3px;
         margin-bottom: -3px;
     }
 
     .pub-abstract {
-        padding: 12px 14px;
+        padding: 13px 15px;
+    }
+
+    /* Spacing scaled up with the type (14px -> 15px, about 7%). */
+    p {
+        margin-bottom: 13px;
+    }
+
+    h1[id] {
+        margin: 43px 0 15px 0;
+        padding-top: 19px;
+    }
+
+    .topbar {
+        padding-top: 20px;
+        margin-bottom: 28px;
+    }
+
+    .topbar-title {
+        margin-bottom: 11px;
+    }
+
+    .topbar-icons {
+        margin-top: 22px;
+    }
+
+    .news-more {
+        margin-bottom: 13px;
+    }
+
+    .container > .content {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
 
 /* Phones only: reclaim width. */
 @media (max-width: 600px) {
     .container > .content {
-        padding: 0 16px 56px 16px;
+        padding: 0 18px 60px 18px;
     }
 
     .topbar-row {
-        gap: 16px;
+        gap: 18px;
     }
 
     ul,
     .pub-list {
-        padding-left: 28px;
+        padding-left: 30px;
     }
 }
 
