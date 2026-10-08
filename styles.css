@@ -725,6 +725,9 @@ mark.pub-hl {
 .pub-title {
     font-weight: 500;
     color: var(--link);
+    /* a little extra room before the pills that follow the title; padding on the
+       inline box only shows after its last line, so a wrapped title is not indented */
+    padding-right: 3px;
 }
 
 .pub-title:hover {
