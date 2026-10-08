@@ -227,9 +227,9 @@ h1[id] {
     flex-wrap: nowrap;
     justify-content: center;
     gap: 2px;
-    /* Balances the toggle on the right (30px + 8px margin) so the links stay
+    /* Balances the toggle on the right (32px + 8px margin) so the links stay
        visually centered in the bar. */
-    padding-left: 38px;
+    padding-left: 40px;
     overflow-x: auto;
     scrollbar-width: none;         /* hide scrollbar (Firefox) */
     -ms-overflow-style: none;
@@ -242,11 +242,11 @@ h1[id] {
 .navbar a {
     color: var(--nav-text);
     text-align: center;
-    padding: 8px 14px;
+    padding: 9px 15px;
     /* Pill/capsule shape (fully rounded ends) so the hover highlight echoes the
        ghost-pill buttons in the Publications list, rather than a rounded box. */
     border-radius: 999px;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -269,8 +269,8 @@ h1[id] {
    the nav pills on hover. The icon is swapped by the script (moon = go dark). */
 .theme-toggle {
     flex: none;
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     margin-left: 8px;
     padding: 0;
     display: inline-flex;
@@ -280,7 +280,7 @@ h1[id] {
     border-radius: 50%;
     background: transparent;
     color: var(--nav-text);
-    font-size: 13px;
+    font-size: 14px;
     cursor: pointer;
     transition: color 0.15s ease, background-color 0.15s ease;
 }
@@ -943,7 +943,7 @@ mjx-container {
 
     /* Navigation bar */
     .navbar a {
-        font-size: 12px;
+        font-size: 13px;
         padding: 10px 13px;
     }
 
