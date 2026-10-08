@@ -433,7 +433,7 @@ li {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 16px;
     margin-top: 22px;
 }
 
@@ -445,12 +445,12 @@ li {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     line-height: 1;
     background: var(--tile-bg);         /* dark blue box */
     color: var(--tile-fg);              /* light glyph */
-    border-radius: 5px;
+    border-radius: 5.5px;
     transition: opacity 0.15s ease;
 }
 
@@ -462,12 +462,12 @@ li {
    (icon fonts draw each glyph at a different fraction of the em). The default covers
    ORCID and arXiv; the letter-mark icons need a larger em to reach the same height. */
 .topbar-icons a.ti i {
-    font-size: 16.49px;
+    font-size: 17.8px;
 }
 .topbar-icons a.ti[aria-label="ResearchGate"] i,
 .topbar-icons a.ti[aria-label="Google Scholar"] i,
 .topbar-icons a.ti[aria-label="Scopus"] i {
-    font-size: 21.33px;
+    font-size: 23px;
 }
 
 /* The email tile is grey (instead of dark blue) so it stands apart from the
@@ -478,7 +478,7 @@ li {
 /* The envelope glyph is wide, so it uses a smaller size than the letter-mark
    icons to keep a little clearance from the tile edges. */
 .topbar-icons a.ti[aria-label="Email"] i {
-    font-size: 17px;
+    font-size: 18.4px;
 }
 
 /* Location, languages, and workshop lines — small icon-led meta lines under
