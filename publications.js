@@ -175,10 +175,10 @@
     // No full stop after the title — just a space before the badge / buttons.
     li.appendChild(document.createTextNode(' '));
 
-    // Status badge (only for "in press" / "preprint" — "published" is the norm, a
-    // pill on every entry would just be noise), then the "Abstract" button, then
+    // Status badge (only for "in press" — "published" is the norm and a preprint is
+    // already marked by its section, so a pill on those would just be noise), then the "Abstract" button, then
     // the arXiv logo — all on the title line, in that order.
-    if (item.status !== 'published') {
+    if (item.status === 'in press') {
       li.appendChild(el('span', {
         class: 'pub-badge pub-badge--' + item.status.replace(/\s+/g, '-'),
         text: item.status
@@ -195,7 +195,7 @@
       li.appendChild(btn);
       abstractWrap = a.wrapper;
     }
-    if (item.arxiv && item.status !== 'preprint') {
+    if (item.arxiv) {
       li.appendChild(arxivButton(item.arxiv));
     }
     li.appendChild(el('br'));

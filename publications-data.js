@@ -213,12 +213,12 @@ const PUBLICATIONS = {
           "authors": ["Mathias Braun", "Chiara Rigoni", "Christian Rose", "David Tewodrose"],
           "title": "Doubling, Poincaré and Gromov–Hausdorff precompactness for tamed spaces",
           "venue": "arXiv preprint",
-          "details": "",
+          "details": "arXiv:2610.11478",
           "year": 2026,
           "status": "preprint",
           "url": null,
           "doi": null,
-          "arxiv": null,
+          "arxiv": "2610.11478",
           "abstract": "We establish local volume doubling and a local $L^2$-Poincaré inequality for metric measure spaces tamed by a measure in the extended Kato class that satisfy the bounded interpolation property. To this end, we construct a bi-Lipschitz time change to a metric measure space satisfying a uniform lower Ricci curvature bound. As an application, we obtain pointed measured Gromov–Hausdorff precompactness for such spaces."
         },
         {

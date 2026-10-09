@@ -805,6 +805,21 @@ mark.pub-hl {
     color: var(--bg);
 }
 
+/* The arXiv pill is filled in the grey of the former "preprint" pill (and, like
+   it, a touch darker in the text so it stays above 4.5:1); it inverts on hover. */
+.pub-arxiv-btn {
+    background-color: var(--badge-bg);
+    color: color-mix(in srgb, var(--muted) 70%, var(--text));
+    border-color: var(--badge-bg);
+}
+
+.pub-arxiv-btn:hover,
+.pub-arxiv-btn:active {
+    background-color: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+}
+
 
 /* Roll-down reveal: the wrapper's single grid row grows from 0fr to its natural
    height (1fr); the clip hides the content while collapsed. */
@@ -1086,15 +1101,21 @@ mjx-container {
         opacity: 1;
     }
 
-    .pub-abstract-btn:hover:not(.is-open),
-    .pub-arxiv-btn:hover {
+    .pub-abstract-btn:hover:not(.is-open) {
         background-color: transparent;
         color: var(--text);
+    }
+
+    .pub-arxiv-btn:hover {
+        background-color: var(--badge-bg);
+        color: color-mix(in srgb, var(--muted) 70%, var(--text));
+        border-color: var(--badge-bg);
     }
 
     .pub-arxiv-btn:active {
         background-color: var(--text);
         color: var(--bg);
+        border-color: var(--text);
     }
 }
 
