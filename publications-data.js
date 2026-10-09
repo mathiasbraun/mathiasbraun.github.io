@@ -50,7 +50,7 @@ const PUBLICATIONS = {
           "authors": ["Mathias Braun"],
           "title": "Exact d'Alembertian for Lorentz distance functions",
           "venue": "Calculus of Variations and Partial Differential Equations",
-          "details": "65 (2026), no. 9, Paper No. 262, 84 pp.",
+          "details": "65 (2026), no. 9, Paper No. 262, 87 pp.",
           "year": 2026,
           "status": "published",
           "url": "https://link.springer.com/article/10.1007/s00526-026-03429-8",
