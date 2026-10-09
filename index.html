@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <!-- Stop mobile browsers turning date ranges like "07/2023–06/2024" into phone links. -->
     <meta name="format-detection" content="telephone=no">
-    <!-- Apply a saved light/dark choice before first paint (no flash of the wrong
-         theme). Without a saved choice the system preference decides, via CSS. -->
     <script>
     try {
         var savedTheme = localStorage.getItem('theme');
@@ -17,7 +14,6 @@
     <meta name="description" content="Mathias Braun, Bernoulli Instructor at EPFL. Mathematician working on probability, nonlinear PDEs, and mathematical relativity.">
     <meta name="theme-color" content="#26303f" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#090c10" media="(prefers-color-scheme: dark)">
-    <!-- Link previews (LinkedIn, WhatsApp, Slack, …) -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Mathias Braun">
     <meta property="og:title" content="Mathias Braun">
@@ -29,33 +25,28 @@
     <meta name="twitter:card" content="summary">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon.png?v=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png?v=1">
-    <!-- Google Font for Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Icon fonts for the profile links (Academicons = academic logos, Font Awesome = LinkedIn/email) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.4/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=137">
-    <!-- MathJax: the config MUST be defined BEFORE the library script loads —
-         MathJax v3 reads window.MathJax at load time. When it came *after* (as it
-         used to), custom delimiters like $...$ and processEnvironments were ignored,
-         so the formulas in the abstracts showed up as literal "code". -->
+    <link rel="stylesheet" href="styles.css?v=138">
+    <!-- MathJax config must be defined before the library loads -->
     <script>
     window.MathJax = {
         tex: {
             inlineMath: [['$', '$'], ['\\(', '\\)']],
             displayMath: [['$$', '$$'], ['\\[', '\\]']],
-            processEnvironments: true, // allow \begin{equation*}...\end{equation*} in abstracts
+            processEnvironments: true,
             processEscapes: true,
             packages: {'[+]': ['ams', 'color', 'boldsymbol']},
             macros: {
-                mathscr: ['\\mathcal{#1}', 1] // \mathscr is not built in; approximate with \mathcal
+                mathscr: ['\\mathcal{#1}', 1]
             }
         },
         chtml: {
-            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2', // no trailing slash — MathJax appends "/<file>.woff"; a trailing slash makes "//" → HTTP 400
+            fontURL: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/output/chtml/fonts/woff-v2', // no trailing slash
             scale: 1.0,
-            mtextFontInherit: true // text in formulas also uses Poppins
+            mtextFontInherit: true
         },
         loader: {load: ['[tex]/ams', '[tex]/color', '[tex]/boldsymbol']}
     };
@@ -65,7 +56,6 @@
 </head>
 <body>
 
-<!-- Top navigation bar -->
 <div class="navbar">
     <div class="nav-links">
         <a href="#home">Welcome</a>
@@ -75,19 +65,11 @@
         <a href="#teaching">Teaching</a>
         <a href="#vitae">Vitae</a>
     </div>
-    <!-- Light/dark switch; icon, label and behaviour are set by the script at the
-         end of the page. -->
     <button type="button" class="theme-toggle" aria-label="Switch to dark mode" title="Switch to dark mode"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
 </div>
 
 <div class="container">
-    <div class="side"></div> <!-- Left margin -->
     <div class="content">
-        <!-- Top link bar: "letterhead" layout — photo beside the text block.
-             The photo sits on a rounded "tongue" that emerges from behind the
-             navbar (see .topbar-photo-wrap::before). The profile-link icons
-             sit centered below the whole letterhead block. id="home" so the
-             "Welcome" nav link scrolls here (to the photo). -->
         <div class="topbar" id="home">
             <div class="topbar-row">
                 <div class="topbar-photo-wrap">
@@ -109,8 +91,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Icons: five academic-profile links (ResearchGate, ORCID, Google
-                 Scholar, Scopus, arXiv) as dark-blue tiles, plus a grey email tile. -->
             <div class="topbar-icons">
                 <a class="ti" href="https://www.researchgate.net/profile/Mathias_Braun3" target="_blank" rel="noopener" title="ResearchGate" aria-label="ResearchGate"><i class="ai ai-researchgate"></i></a>
                 <a class="ti" href="https://orcid.org/0000-0002-3005-4267" target="_blank" rel="noopener" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
@@ -136,14 +116,10 @@
             I completed my doctorate advised by Professor <a href="https://wt.iam.uni-bonn.de/sturm/home" target="_blank">Theo Sturm</a> @ <a href="https://wt.iam.uni-bonn.de" target="_blank">Institute for Applied Mathematics</a>, University of Bonn.
         </p>
 
-
         <p>
             If you have any questions, do not hesitate to get in touch with me!
         </p>
         <h1 id="news"><i class="fa-solid fa-newspaper heading-icon"></i>News</h1>
-        <!-- News: self-hosted cards built from my LinkedIn posts (no embed iframe, so
-             no cookie banner / third-party tracking). Text uses white-space: pre-line
-             to keep the original line breaks; each card links back to the post. -->
         <p class="news-more">Visit my <a href="https://www.linkedin.com/in/mvjbraun" target="_blank" rel="noopener">LinkedIn profile</a> to read more posts and thoughts!</p>
         <div class="news-posts">
             <div class="news-post">
@@ -207,12 +183,9 @@
             </div>
         </div>
         <h1 id="publications"><i class="fa-solid fa-book heading-icon"></i>Publications</h1>
-        <!-- Live filter: publications.js narrows the list below to entries matching
-             what you type (title, coauthor, journal, year, number, …). -->
         <input type="search" id="pub-search" class="pub-search" autocomplete="off"
                placeholder="Filter by title, coauthor, journal, year…" aria-label="Filter publications">
         <div id="pub-count" class="pub-count" aria-live="polite"></div>
-        <!-- Publications are generated from publications-data.js by publications.js -->
         <div id="publications-container"></div>
         <h1 id="activities"><i class="fa-solid fa-users heading-icon"></i>Activities</h1>
         <p>
@@ -235,7 +208,6 @@
             <li>Together with Ghazal Geshnizjani, Robert McCann, and Christina Sormani, I have coorganized the hybrid <a href="https://sites.google.com/site/professorsormani/home/lorephygeseminar" target="_blank" rel="noopener">Low Regularity Physics and Geometry Seminar</a>. It took place from July 2022&ndash;December 2022 at the Fields Institute for Research in Mathematical Sciences as part of the <a href="http://www.fields.utoronto.ca/activities/22-23/nonsmooth" target="_blank" rel="noopener">Thematic Program on Nonsmooth Riemannian and Lorentzian Geometry</a>.</li>
         </ul>
         <h1 id="teaching"><i class="fa-solid fa-graduation-cap heading-icon"></i>Teaching</h1>
-        <!-- Teaching: one bulleted list per institution, "term: course". -->
         <p><b>Instructorships @ EPFL</b></p>
         <ul>
             <li>Fall 2026. MATH-418 <a href="https://edu.epfl.ch/coursebook/fr/heat-kernel-and-analysis-on-manifolds-MATH-418" target="_blank" rel="noopener">Heat Kernel and Analysis on Manifolds</a> and MATH-502 <a href="https://edu.epfl.ch/coursebook/en/distribution-and-interpolation-spaces-MATH-502" target="_blank" rel="noopener">Distribution and Interpolation Spaces</a></li>
@@ -279,17 +251,11 @@
                 <br>Advisor. Joe Neeman</span></li>
         </ul>
     </div>
-    <div class="side"></div> <!-- Right margin -->
 </div>
 
-<!-- Publications database + renderer -->
-<script src="publications-data.js?v=23"></script>
-<script src="publications.js?v=31"></script>
+<script src="publications-data.js?v=24"></script>
+<script src="publications.js?v=32"></script>
 <script>
-// Roll-down toggle for the PhD-thesis abstract in Vitae. It reuses the
-// bibliography's CSS (grid 0fr->1fr), so only the is-open classes are toggled.
-// Math is already typeset by MathJax on page load. (Scoped to the Vitae lists —
-// the bibliography's own buttons are wired up by publications.js.)
 (function () {
     document.querySelectorAll('#vitae ~ ul .pub-abstract-btn').forEach(function (btn) {
         var item = btn.closest('li');
@@ -305,10 +271,6 @@
     });
 })();
 
-// Expand/collapse for the LinkedIn news cards: each is clipped to a preview and
-// the button grows it to the full text (and image). The height is set inline —
-// same approach as the Vitae abstract — so the animation is reliable regardless
-// of the CSS cascade; the collapsed height falls back to the .news-clip rule.
 (function () {
     document.querySelectorAll('.news-toggle').forEach(function (btn) {
         var post = btn.closest('.news-post');
@@ -319,8 +281,6 @@
             var open = post.classList.toggle('is-open');
             if (open) {
                 fit();
-                // If the post image hasn't loaded yet, re-measure once it does so
-                // the box grows to fit it.
                 var img = clip.querySelector('img');
                 if (img && !img.complete) {
                     img.addEventListener('load', function () { if (post.classList.contains('is-open')) fit(); }, { once: true });
@@ -336,9 +296,6 @@
     });
 })();
 
-// Light/dark switch in the navbar. Until the visitor clicks it, the system
-// preference decides (pure CSS); a click stores an explicit choice, which the
-// script in <head> re-applies on the next visit before the first paint.
 (function () {
     var root = document.documentElement;
     var btn = document.querySelector('.theme-toggle');
@@ -357,23 +314,17 @@
     }
     btn.addEventListener('click', function () {
         var next = isDark() ? 'light' : 'dark';
-        // Switch without per-element colour transitions (see .theme-switching).
         root.classList.add('theme-switching');
         root.setAttribute('data-theme', next);
-        void root.offsetWidth; // apply the new styles right now, while transitions are off
+        void root.offsetWidth;
         try { localStorage.setItem('theme', next); } catch (e) {}
         paint();
         window.setTimeout(function () { root.classList.remove('theme-switching'); }, 100);
     });
-    // While no explicit choice is stored, follow the system if it changes.
     if (mq.addEventListener) mq.addEventListener('change', paint);
     paint();
 })();
 
-// Highlight the nav link of the section currently in view. A section counts as
-// "current" once its heading has passed a line just below the fixed bar; at the
-// very bottom of the page the last section wins (it may be too short to reach
-// the line); at the very top it is "Welcome".
 (function () {
     var links = Array.prototype.slice.call(document.querySelectorAll('.navbar .nav-links a[href^="#"]'));
     var targets = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
@@ -393,7 +344,6 @@
             a.classList.toggle('is-active', i === idx);
             if (i === idx) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
         });
-        // On narrow screens the link row scrolls sideways: keep the active one visible.
         if (links[idx].scrollIntoView) links[idx].scrollIntoView({ block: 'nearest', inline: 'nearest' });
     }
     function onScroll() { if (!ticking) { ticking = true; window.requestAnimationFrame(update); } }

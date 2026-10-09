@@ -1,15 +1,3 @@
-/*
- * Publication update bot.
- *
- * Discovers new works via OpenAlex (keyed by the author's ORCID, so there is no
- * risk of picking up a different "Mathias Braun"), compares them against
- * publications-data.js, fetches a clean LaTeX abstract from arXiv for anything
- * new, inserts best-guess entries (flagged "_needsReview": true), and rewrites
- * publications-data.js. The GitHub workflow then opens a pull request so the
- * changes can be reviewed and merged.
- *
- * Runs on GitHub Actions (Node 20, global fetch). No local install needed.
- */
 const fs = require('fs');
 const path = require('path');
 
@@ -36,7 +24,6 @@ function slugify(title) {
   return normTitle(title).slice(0, 48) || 'work-' + Date.now();
 }
 
-// --- Gather what we already have -------------------------------------------
 function knownKeys() {
   const arxiv = new Set();
   const doi = new Set();
@@ -51,7 +38,6 @@ function knownKeys() {
   return { arxiv, doi, title };
 }
 
-// --- Fetch helpers ----------------------------------------------------------
 async function fetchJSON(url) {
   const r = await fetch(url, { headers: { 'Accept': 'application/json' } });
   if (!r.ok) throw new Error(`GET ${url} -> ${r.status}`);
@@ -84,7 +70,6 @@ function deriveArxivId(work) {
   return null;
 }
 
-// --- Main -------------------------------------------------------------------
 async function main() {
   if (!ORCID) throw new Error('No ORCID in publications-data.js meta.');
   const known = knownKeys();
@@ -109,7 +94,6 @@ async function main() {
       known.title.has(nt);
     if (isKnown) continue;
 
-    // New work — build a best-guess entry for review.
     const isPreprint = w.type === 'preprint' ||
                        (!!arxiv && (!doi || /arxiv/i.test(doi)));
     const venueName =
@@ -144,11 +128,9 @@ async function main() {
     return;
   }
 
-  // Stamp and rewrite the data file.
   PUBLICATIONS.meta.lastUpdated = new Date().toISOString().slice(0, 10);
   fs.writeFileSync(DATA_PATH, serialize(PUBLICATIONS));
 
-  // PR summary for humans.
   const lines = [
     `The bot found **${added.length}** new work(s) via OpenAlex/ORCID and added them to \`publications-data.js\`.`,
     '',
@@ -169,19 +151,7 @@ async function main() {
 }
 
 function serialize(data) {
-  const header =
-`/*
- * Publications database — the single source of truth for the Publications section.
- * Rendered into the page by publications.js. Edited by hand or by the update bot
- * (scripts/update-publications.cjs via .github/workflows/update-publications.yml).
- *
- * Each item: authors[], title, venue, details, year, status
- * (published | in press | preprint), url, doi, arxiv, abstract.
- * Bot-added items carry "_needsReview": true until a human verifies them.
- */
-`;
-  return header +
-    'const PUBLICATIONS = ' + JSON.stringify(data, null, 2) + ';\n\n' +
+  return 'const PUBLICATIONS = ' + JSON.stringify(data, null, 2) + ';\n\n' +
     "if (typeof window !== 'undefined') window.PUBLICATIONS = PUBLICATIONS;\n" +
     "if (typeof module !== 'undefined' && module.exports) module.exports = PUBLICATIONS;\n";
 }

@@ -1,43 +1,32 @@
-/* ==========================================================================
-   Design tokens
-   ========================================================================== */
-/* Every colour comes from these tokens. The light palette is the bare :root;
-   the dark palette is applied (a) when the visitor has picked dark with the
-   toggle (data-theme="dark"), or (b) when they have not picked anything and
-   their system prefers dark. An explicit data-theme="light" beats a dark OS. */
 :root {
     color-scheme: light;
     --bg: #ffffff;
-    --text: #23282f;          /* main body text */
-    --muted: #6a7280;         /* secondary text: venues, meta */
-    --border: #e9e9e6;        /* hairlines */
-    --surface: #f6f7f9;       /* abstract box background */
+    --text: #23282f;
+    --muted: #6a7280;
+    --border: #e9e9e6;
+    --surface: #f6f7f9;
 
-    --accent: #3d5a80;        /* a calm slate blue: card stripe, abstract box edge, focus ring */
-    --heading: #936c31;       /* section headings, the name, heading icons  — an ochre */
-    --accent-strong: #2b4058; /* hover / stronger */
-    --accent-soft: #eef2f7;   /* tint for badges */
-    --on-accent: #ffffff;     /* text on a filled accent background */
+    --accent: #3d5a80;
+    --heading: #936c31;
+    --accent-strong: #2b4058;
+    --accent-soft: #eef2f7;
+    --on-accent: #ffffff;
 
-    /* The one link blue (steel blue): brighter than the slate accent so links
-       stand out from the body text without an underline (about 3.2:1 against the
-       text colour, 4.7:1 against the page). */
     --link: #2e79ae;
     --link-hover: #1e5f8a;
 
-    --tile-bg: #2b4058;       /* profile-link tiles in the header */
+    --tile-bg: #2b4058;
     --tile-fg: #eef2f7;
-    --tile-grey: #6a7280;     /* the e-mail tile */
-    --badge-bg: #eceef0;      /* grey "preprint" pill */
-    --li-hover: #0a66c2;      /* LinkedIn blue, on hover */
+    --tile-grey: #6a7280;
+    --badge-bg: #eceef0;
+    --li-hover: #0a66c2;
 
-    --nav-bg: #26303f;        /* navbar — deep slate, replaces the green */
+    --nav-bg: #26303f;
     --nav-text: #d5dae2;
     --nav-text-hover: #ffffff;
 
     --navbar-height: 52px;
-    /* Middle ground between the readability optimum (~450px) and the previous
-       wide column (720px). */
+
     --content-max: 634px;
 }
 
@@ -89,16 +78,11 @@
     --nav-text: #cfd6df;
 }
 
-/* ==========================================================================
-   Base
-   ========================================================================== */
 html {
-    /* No rubber-band / overscroll bounce at the top or bottom of the page: it
-       dragged the whole header (and the tongue) away from the fixed navbar. */
+
     overscroll-behavior-y: none;
-    scroll-behavior: smooth; /* animated scroll when a nav link is clicked */
-    /* Prevent iOS/Safari from auto-inflating some text on mobile, which made
-       different paragraphs render at different sizes. */
+    scroll-behavior: smooth;
+
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
 }
@@ -115,7 +99,6 @@ body {
     text-rendering: optimizeLegibility;
 }
 
-/* Never underline anything, anywhere. */
 a,
 a:hover,
 a:focus {
@@ -131,49 +114,29 @@ a:hover {
     color: var(--link-hover);
 }
 
-/* ==========================================================================
-   Layout — a single centered reading column
-   ========================================================================== */
 .container {
     max-width: var(--content-max);
     margin: 0 auto;
     min-height: 100vh;
     box-sizing: border-box;
     background-color: var(--bg);
-    /* Clears the fixed navbar AND (because .content has no top padding and #home
-       has no top margin) sets where the first heading sits on load, matching the
-       scroll-margin-top used for nav-link jumps so nothing shifts. */
-    padding-top: 54px;
-}
 
-/* The old three-column margins are no longer needed. */
-.container > .side {
-    display: none;
+    padding-top: 54px;
 }
 
 .container > .content {
     padding: 0 34px 86px 34px;
 }
 
-/* ==========================================================================
-   Typography
-   ========================================================================== */
 p {
     margin: 0 0 13px 0;
     line-height: 1.5;
 }
 
-/* One bold weight across the page: <b> (the run-in headings "Outreach.",
-   "Career." … and the bold journal volumes) uses the same 600 as the section
-   headings, the name, and the bibliography's category lead-ins, instead of
-   the browser's default 700. */
 b {
     font-weight: 600;
 }
 
-/* Section headings double as anchor targets. scroll-margin-top sits flush under
-   the navbar so no previous-section text peeks through; the leading accent dash
-   and spacing give a clean, modern section label without any underline. */
 h1[id] {
     scroll-margin-top: 54px;
     padding-top: 19px;
@@ -183,27 +146,21 @@ h1[id] {
     letter-spacing: 0.01em;
     text-align: left;
     color: var(--heading);
-    /* Flex row so the small leading icon is vertically centered with the title
-       text (baseline alignment left it sitting slightly high). */
+
     display: flex;
     align-items: center;
 }
 
-/* "Welcome" now points at the top bar (id="home"); land it just below the navbar. */
 #home {
     scroll-margin-top: 54px;
 }
 
-/* Small icon before each section title, in the heading colour. */
 .heading-icon {
     margin-right: 9px;
     font-size: 0.82em;
     color: var(--heading);
 }
 
-/* ==========================================================================
-   Navigation bar (fixed, deep slate)
-   ========================================================================== */
 .navbar {
     background-color: var(--nav-bg);
     position: fixed;
@@ -217,9 +174,6 @@ h1[id] {
     height: var(--navbar-height);
 }
 
-/* The links are one row that scrolls horizontally instead of wrapping, so the
-   bar's height stays constant and the scroll offsets below remain correct. The
-   theme toggle sits outside this scroller, so it stays visible. */
 .navbar .nav-links {
     flex: 1;
     min-width: 0;
@@ -227,24 +181,22 @@ h1[id] {
     flex-wrap: nowrap;
     justify-content: center;
     gap: 2px;
-    /* Balances the toggle on the right (32px + 8px margin) so the links stay
-       visually centered in the bar. */
+
     padding-left: 40px;
     overflow-x: auto;
-    scrollbar-width: none;         /* hide scrollbar (Firefox) */
+    scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
 .navbar .nav-links::-webkit-scrollbar {
-    display: none;                 /* hide scrollbar (Chrome/Safari) */
+    display: none;
 }
 
 .navbar a {
     color: var(--nav-text);
     text-align: center;
     padding: 9px 15px;
-    /* Pill/capsule shape (fully rounded ends) so the hover highlight echoes the
-       ghost-pill buttons in the Publications list, rather than a rounded box. */
+
     border-radius: 999px;
     font-size: 12px;
     font-weight: 500;
@@ -259,14 +211,11 @@ h1[id] {
     background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* The section currently in view (set by the scroll script). */
 .navbar a.is-active {
     color: var(--nav-text-hover);
     background-color: rgba(255, 255, 255, 0.14);
 }
 
-/* Light/dark switch at the right end of the bar: a round button that fills like
-   the nav pills on hover. The icon is swapped by the script (moon = go dark). */
 .theme-toggle {
     flex: none;
     width: 32px;
@@ -296,8 +245,6 @@ h1[id] {
     outline-offset: -2px;
 }
 
-/* While the theme is being switched, every colour changes at once instead of
-   links and buttons fading in a beat behind the rest of the page. */
 .theme-switching,
 .theme-switching *,
 .theme-switching *::before,
@@ -305,11 +252,6 @@ h1[id] {
     transition: none !important;
 }
 
-/* ==========================================================================
-   Lists (Teaching / Activities use ul; Publications use ol)
-   ========================================================================== */
-/* Remove the browser's default space above lists (amsart-like tightness) and
-   the bottom margin of the paragraph that leads into a list. */
 ol, ul {
     margin-top: 0;
 }
@@ -319,8 +261,6 @@ p:has(+ ul) {
     margin-bottom: 0;
 }
 
-/* Same indent as the bibliography's numbered list (.pub-list, 34px), so the
-   bullets in Activities sit in the same column as the reference numbers. */
 ul {
     padding-left: 36px;
 }
@@ -329,18 +269,10 @@ li {
     line-height: 1.5;
 }
 
-/* ==========================================================================
-   Teaching / Vitae — bulleted lists (see "Lists" above); role, advisor, and
-   thesis sub-lines in the same muted grey as the bibliography venues.
-   ========================================================================== */
 .v-sub {
     color: var(--muted);
 }
 
-/* ==========================================================================
-   Top link bar — "letterhead" layout: photo beside the text block, separated
-   by a thin rule, like a departmental letterhead standing in for a crest.
-   ========================================================================== */
 .topbar {
     padding-top: 19px;
     margin-bottom: 28px;
@@ -354,11 +286,6 @@ li {
     gap: 22px;
 }
 
-/* Round profile photo beside the text block, resting on a rounded "tongue"
-   (see below) instead of a plain divider. The wrap is as wide as the tongue
-   (104px) and flush with the row's left edge — matching the rest of the
-   page's left margin — so the photo, centered within it, sits 10px in from
-   the left rather than flush left. */
 .topbar-photo-wrap {
     position: relative;
     width: 104px;
@@ -366,7 +293,7 @@ li {
     flex: none;
 }
 .topbar-photo {
-    position: absolute; /* stacks above the wrap's ::before tongue */
+    position: absolute;
     left: 10px;
     top: 0;
     width: 84px;
@@ -376,20 +303,6 @@ li {
     object-fit: cover;
 }
 
-/* The "tongue": a strip that emerges from behind the fixed navbar (z-index
-   1000, opaque) and ends in a rounded bottom that cradles the photo. It
-   fills the wrap's full width (104px = the photo's diameter plus a 10px rim
-   on each side); its border-radius equals half that width, so the two
-   bottom corners meet as one true semicircle — concentric with the photo,
-   since both share the same horizontal center — leaving a uniform 10px ring
-   visible all the way around it. The row sits ~72px down the page (54px
-   container + 18px topbar padding-top) and the navbar is 52px tall. The
-   tongue reaches 600px up from the wrap's top — far past the top of the page,
-   hidden behind the bar — so that even if a browser still lets the page bounce
-   when pulled down past the top (overscroll-behavior is off, but not every
-   browser honours it), the tongue stays attached to the bar instead of
-   detaching from it. One flat fill colour throughout — no separate border
-   tone — so it reads as a single solid shape. */
 .topbar-photo-wrap::before {
     content: "";
     position: absolute;
@@ -407,9 +320,6 @@ li {
     text-align: left;
 }
 
-/* Name — sized to match the section headings exactly (h1[id], 15px). No
-   margin below: at 15px/1.2 its own box is already 18px tall, so it drops
-   straight into the title line at the same 18px pitch as everything else. */
 .topbar-name {
     margin: 0;
     line-height: 1.2;
@@ -419,7 +329,6 @@ li {
     color: var(--heading);
 }
 
-/* Role subtitle under the name, at the page's normal body text size. */
 .topbar-title {
     margin: 0 0 11px 0;
     font-size: 13px;
@@ -427,7 +336,6 @@ li {
     color: var(--muted);
 }
 
-/* Centered below the whole letterhead row (photo + text). */
 .topbar-icons {
     display: flex;
     flex-wrap: wrap;
@@ -437,10 +345,6 @@ li {
     margin-top: 22px;
 }
 
-/* Each academic-profile icon sits in a dark-blue rounded "tile" with a light glyph
-   (app-icon style; this also makes the ResearchGate "RG" read as its boxed brand
-   mark). The tile is a fixed square so all five align exactly; the glyph is
-   flex-centred inside it. */
 .topbar-icons a.ti {
     display: inline-flex;
     align-items: center;
@@ -448,8 +352,8 @@ li {
     width: 26px;
     height: 26px;
     line-height: 1;
-    background: var(--tile-bg);         /* dark blue box */
-    color: var(--tile-fg);              /* light glyph */
+    background: var(--tile-bg);
+    color: var(--tile-fg);
     border-radius: 5.5px;
     transition: opacity 0.15s ease;
 }
@@ -458,9 +362,6 @@ li {
     opacity: 0.72;
 }
 
-/* Per-glyph font-size so each icon renders at ~16px glyph height inside its tile
-   (icon fonts draw each glyph at a different fraction of the em). The default covers
-   ORCID and arXiv; the letter-mark icons need a larger em to reach the same height. */
 .topbar-icons a.ti i {
     font-size: 17.8px;
 }
@@ -470,27 +371,17 @@ li {
     font-size: 23px;
 }
 
-/* The email tile is grey (instead of dark blue) so it stands apart from the
-   academic-profile tiles beside it. */
 .topbar-icons a.ti[aria-label="Email"] {
     background: var(--tile-grey);
 }
-/* The envelope glyph is wide, so it uses a smaller size than the letter-mark
-   icons to keep a little clearance from the tile edges. */
+
 .topbar-icons a.ti[aria-label="Email"] i {
     font-size: 18.4px;
 }
 
-/* Location, languages, and workshop lines — small icon-led meta lines under
-   the icons. No margin between them: like the rest of the page's running
-   text, the gap between lines comes only from line-height (1.5), not an
-   added margin, so this reads as three plain lines rather than three
-   separately-spaced paragraphs. The location line carries the full postal
-   address as a browser tooltip (title attribute) rather than spelling out
-   all four lines in the header. */
 .topbar-meta {
     display: flex;
-    align-items: flex-start;   /* icon sits on the first line when the text wraps */
+    align-items: flex-start;
     gap: 5px;
     line-height: 1.5;
     --meta-fs: 13px;
@@ -499,16 +390,14 @@ li {
     margin-bottom: 0;
     cursor: default;
 }
-/* Fixed-width icon box (as wide as the widest glyph, the speech bubble) so
-   the text after it — "Institute...", "German..." — always starts at the
-   same x position, regardless of which icon's glyph is narrower. */
+
 .topbar-meta i {
     font-size: 12px;
     color: var(--muted);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(1.5 * var(--meta-fs));   /* one text line tall, so the glyph centres on line 1 */
+    height: calc(1.5 * var(--meta-fs));
     width: 17px;
     flex: none;
 }
@@ -520,10 +409,6 @@ li {
     color: var(--link);
 }
 
-/* ==========================================================================
-   Publications (generated from publications-data.js by publications.js)
-   ========================================================================== */
-/* Live filter box above the list — a rounded pill with an accent focus ring. */
 .pub-search {
     display: block;
     width: 100%;
@@ -551,7 +436,6 @@ li {
     color: var(--muted);
 }
 
-/* Match count under the filter box (e.g. "5 of 20 shown"); empty when unfiltered. */
 .pub-count {
     min-height: 1em;
     margin: 3px 2px 0 0;
@@ -560,17 +444,13 @@ li {
     color: var(--muted);
 }
 
-/* Highlighted search matches within the list (and in an opened abstract). */
 mark.pub-hl {
     background-color: #ffe08a;
-    color: #23282f; /* dark text on the amber highlight in both themes */
+    color: #23282f;
     border-radius: 2px;
     padding: 0 1px;
 }
 
-/* ==========================================================================
-   News — embedded LinkedIn posts
-   ========================================================================== */
 .news-posts {
     display: flex;
     flex-direction: column;
@@ -583,14 +463,13 @@ mark.pub-hl {
 }
 .news-card {
     position: relative;
-    overflow: hidden; /* clips the accent stripe to the rounded corners */
+    overflow: hidden;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--surface);
     padding: 12px 14px;
 }
-/* Blue accent stripe down the left edge — fades in when the card is expanded,
-   like the bibliography abstract's accent border. */
+
 .news-card::before {
     content: "";
     position: absolute;
@@ -617,12 +496,8 @@ mark.pub-hl {
     flex-direction: column;
     line-height: 1.25;
 }
-.news-author {
-    font-weight: 600;
-    color: var(--text);
-}
 .news-date {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--muted);
 }
 .news-li {
@@ -632,37 +507,25 @@ mark.pub-hl {
     flex: none;
 }
 .news-li:hover {
-    color: var(--li-hover); /* LinkedIn blue on hover */
+    color: var(--li-hover);
 }
-/* Collapsed by default: the text is clipped to its first few lines with a fade
-   hint that it continues; the toggle grows it to the full post (and its image). */
+
 .news-clip {
     position: relative;
     overflow: hidden;
-    max-height: 98px; /* collapsed preview; the toggle sets an inline max-height to expand */
+    max-height: 98px;
     transition: max-height 0.4s ease;
 }
 .news-text {
     line-height: 1.5;
 }
-/* Paragraph breaks inside a post are real paragraphs (12px apart, like the rest
-   of the page) rather than blank lines (18px). pre-line on the paragraphs keeps
-   the post's single line breaks; it is not set on the container, where it would
-   turn the whitespace between paragraphs into extra blank lines. */
+
 .news-text p {
     white-space: pre-line;
 }
 .news-text p:last-child {
     margin-bottom: 0;
 }
-.news-img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 10px;
-    border-radius: 6px;
-}
-/* Fade-out over the clipped bottom edge; hidden once expanded. */
 .news-clip::after {
     content: "";
     position: absolute;
@@ -677,8 +540,7 @@ mark.pub-hl {
 .news-post.is-open .news-clip::after {
     opacity: 0;
 }
-/* Chevron toggle centred under each post: down = collapsed, up = expanded.
-   Background darkens to grey on hover. */
+
 .news-toggle {
     display: flex;
     align-items: center;
@@ -688,7 +550,7 @@ mark.pub-hl {
     margin: 5px auto 0;
     padding: 0;
     border: 0;
-    border-radius: 999px; /* capsule, like the site's other hover pills */
+    border-radius: 999px;
     background: transparent;
     color: var(--muted);
     font-size: 13px;
@@ -696,10 +558,10 @@ mark.pub-hl {
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 .news-toggle:hover {
-    background: var(--accent-strong); /* homepage dark blue, like the icon tiles */
+    background: var(--accent-strong);
     color: var(--on-accent);
 }
-/* Intro line above the posts, linking to the full LinkedIn profile. */
+
 .news-more {
     margin: 0 0 12px 0;
 }
@@ -724,12 +586,10 @@ mark.pub-hl {
     color: var(--text);
 }
 
-/* Titles are links like any other, so they use the one link blue. */
 .pub-title {
     font-weight: 500;
     color: var(--link);
-    /* a little extra room before the pills that follow the title; padding on the
-       inline box only shows after its last line, so a wrapped title is not indented */
+
     padding-right: 3px;
 }
 
@@ -741,14 +601,12 @@ mark.pub-hl {
     color: var(--muted);
 }
 
-/* Status pill: in press / preprint. (Published is the norm and gets no pill.) */
 .pub-badge {
     display: inline-block;
     font-size: 9.5px;
     line-height: 1;
     padding: 2px 6px;
-    /* Gap to the following tag via margin-right — a right margin is invisible at a
-       line end, so a tag that wraps to the start of a line is not indented. */
+
     margin-right: 7px;
     border-radius: 10px;
     vertical-align: middle;
@@ -760,21 +618,9 @@ mark.pub-hl {
 .pub-badge--in-press {
     background-color: var(--accent-soft);
     color: var(--accent-strong);
-    border: 1px solid var(--accent-soft); /* border same colour as the fill */
+    border: 1px solid var(--accent-soft);
 }
 
-.pub-badge--preprint {
-    background-color: var(--badge-bg);
-    color: var(--muted);
-    /* a touch more of the text colour: small grey text on a grey pill needs it to
-       stay above 4.5:1 in both themes */
-    color: color-mix(in srgb, var(--muted) 70%, var(--text));
-    border: 1px solid var(--badge-bg); /* border same colour as the fill */
-}
-
-/* "Abstract" and "arXiv" buttons — outlined (ghost) grey pills, same size as
-   the badges, in both themes. They fill with the grey on hover (and, for
-   Abstract, while the abstract is open; for arXiv, also while pressed). */
 .pub-abstract-btn,
 .pub-arxiv-btn {
     display: inline-block;
@@ -795,8 +641,6 @@ mark.pub-hl {
     transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-/* On hover / press (and while an abstract is open) the pill fills with the grey
-   and its text takes the page background colour. */
 .pub-abstract-btn:hover,
 .pub-abstract-btn.is-open,
 .pub-arxiv-btn:hover,
@@ -805,8 +649,6 @@ mark.pub-hl {
     color: var(--bg);
 }
 
-/* The arXiv pill is filled in the grey of the former "preprint" pill (and, like
-   it, a touch darker in the text so it stays above 4.5:1); it inverts on hover. */
 .pub-arxiv-btn {
     background-color: var(--badge-bg);
     color: color-mix(in srgb, var(--muted) 70%, var(--text));
@@ -820,9 +662,6 @@ mark.pub-hl {
     border-color: var(--text);
 }
 
-
-/* Roll-down reveal: the wrapper's single grid row grows from 0fr to its natural
-   height (1fr); the clip hides the content while collapsed. */
 .pub-abstract-wrap {
     display: grid;
     grid-template-rows: 0fr;
@@ -856,7 +695,6 @@ mark.pub-hl {
     opacity: 1;
 }
 
-/* Respect users who prefer no motion. */
 @media (prefers-reduced-motion: reduce) {
     .pub-abstract-wrap,
     .pub-abstract {
@@ -864,34 +702,19 @@ mark.pub-hl {
     }
 }
 
-/* ==========================================================================
-   MathJax
-   ========================================================================== */
-/* Let MathJax use its own math fonts so variables are properly italic and symbols
-   render correctly. (A previous `font-family: Poppins !important` forced all math
-   into an upright text font, which looked wrong.) Only the colour is inherited;
-   text inside formulas still matches Poppins via the tex `mtextFontInherit` option. */
 mjx-container {
     color: inherit;
 }
 
-/* Wraps an inline formula together with its trailing punctuation (see
-   glueMathPunctuation in publications.js) so a line break can't isolate a comma. */
 .math-nobreak {
     white-space: nowrap;
 }
 
-/* ==========================================================================
-   Small screens
-   ========================================================================== */
 @media (max-width: 768px) {
     .container > .content {
         padding: 0 18px 56px 18px;
     }
 
-    /* Keep the bar one row (the links scroll, the toggle stays put) and a
-       constant height; align the links to the start so the first ones are
-       visible when the row overflows, and drop the centering padding. */
     .navbar {
         padding: 0 8px;
     }
@@ -907,12 +730,6 @@ mjx-container {
     }
 }
 
-/* ==========================================================================
-   Phones and tablets — larger type and touch-sized controls.
-   Everything here sits inside a media query; the desktop layout above is
-   untouched. Applies to phones (narrow windows) and to touch devices up to
-   tablet size, including phones held sideways.
-   ========================================================================== */
 @media (max-width: 600px), (pointer: coarse) and (max-width: 1024px) {
     body,
     .topbar,
@@ -944,26 +761,21 @@ mjx-container {
         font-size: 24px;
     }
 
-    /* 16px keeps iOS from zooming the page when the filter box gets focus. */
     .pub-search {
         font-size: 16px;
         padding: 10px 16px;
     }
 
-    /* Long words, URLs and journal names must wrap rather than widen the page. */
     .content {
         overflow-wrap: break-word;
     }
 
-    /* A wide displayed formula scrolls inside its own box instead of pushing the
-       page sideways. */
     mjx-container[display="true"] {
         max-width: 100%;
         overflow-x: auto;
         overflow-y: hidden;
     }
 
-    /* Navigation bar */
     .navbar a {
         font-size: 13px;
         padding: 10px 13px;
@@ -975,7 +787,6 @@ mjx-container {
         font-size: 15px;
     }
 
-    /* Profile icons: bigger tiles, glyphs scaled with them (24px -> 34px). */
     .topbar-icons {
         gap: 10px;
     }
@@ -1000,7 +811,6 @@ mjx-container {
         font-size: 24px;
     }
 
-    /* News: a bigger collapse/expand target and a taller preview for the larger type. */
     .news-toggle {
         width: 60px;
         height: 38px;
@@ -1012,8 +822,6 @@ mjx-container {
         max-height: 116px;
     }
 
-    /* Publication pills: larger text and a ~26px tap height. The negative vertical
-       margin keeps them from stretching the line they sit in. */
     .pub-badge,
     .pub-abstract-btn,
     .pub-arxiv-btn {
@@ -1028,7 +836,6 @@ mjx-container {
         padding: 13px 15px;
     }
 
-    /* Spacing scaled up with the type (14px -> 15px, about 7%). */
     p {
         margin-bottom: 13px;
     }
@@ -1061,7 +868,6 @@ mjx-container {
     }
 }
 
-/* Phones only: reclaim width. */
 @media (max-width: 600px) {
     .container > .content {
         padding: 0 18px 60px 18px;
@@ -1077,7 +883,6 @@ mjx-container {
     }
 }
 
-/* Touch screens have no hover, so a tapped control must not stay "hovered". */
 @media (hover: none) {
     .navbar a:hover:not(.is-active),
     .theme-toggle:hover {
@@ -1119,8 +924,6 @@ mjx-container {
     }
 }
 
-/* Very narrow phones (320–360px): slightly smaller tiles so all seven icons
-   still fit on one row. */
 @media (max-width: 360px) {
     .topbar-icons {
         gap: 8px;
@@ -1146,11 +949,6 @@ mjx-container {
     }
 }
 
-/* Phones and tablets held sideways: the bar has room for all the links, so keep
-   them centred between the edges, balancing the (larger) toggle on the right.
-   Auto margins on the first and last link (rather than justify-content: center)
-   centre the row when it fits, yet let it start at its left end, unclipped, when
-   it does not. */
 @media (min-width: 480px) and (max-width: 1024px) and (pointer: coarse) {
     .navbar .nav-links {
         justify-content: flex-start;
@@ -1166,9 +964,6 @@ mjx-container {
     }
 }
 
-/* Phones with a notch or rounded corners, held sideways: the page extends under
-   the cut-outs (viewport-fit=cover), so the bar reaches the screen edges and the
-   text keeps clear of them. env() is 0 everywhere else. */
 @media (pointer: coarse) {
     body {
         padding-left: env(safe-area-inset-left);

@@ -1,12 +1,9 @@
 name: Update publications
 
-# Checks for new works via ORCID/OpenAlex and, if it finds any, opens a pull
-# request adding them to publications-data.js for you to review and merge.
-
 on:
   schedule:
-    - cron: '0 6 * * 1'   # every Monday at 06:00 UTC
-  workflow_dispatch: {}   # allows running it manually from the Actions tab
+    - cron: '0 6 * * 1'
+  workflow_dispatch: {}
 
 permissions:
   contents: write

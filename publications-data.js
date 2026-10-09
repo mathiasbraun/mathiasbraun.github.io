@@ -1,17 +1,3 @@
-/*
- * Publications database — the single source of truth for the Publications section.
- * Rendered into the page by publications.js. Can be edited by hand or by the
- * ORCID/arXiv update bot (see .github/workflows/update-publications.yml).
- *
- * Each item: authors[], title, venue, details, year, status
- * (published | in press | preprint), url, doi, arxiv, abstract.
- *
- * Abstracts of published works are taken from the publisher page, otherwise from
- * arXiv (latest version). Math is written in LaTeX and typeset by MathJax.
- *
- * Wrapped as a JS global (instead of a plain .json) so the browser can load it
- * locally via file:// too; also exported for Node so the bot can read/write it.
- */
 const PUBLICATIONS = {
   "meta": {
     "author": "Mathias Braun",

@@ -1,12 +1,3 @@
-/*
- * Renders the Publications section from window.PUBLICATIONS (see publications-data.js).
- * Builds one numbered list per category (continuous numbering across all
- * categories) and, per item: a title that links to the most current version
- * (journal, or arXiv for preprints), an "Abstract" button that rolls the abstract
- * open, a status badge (label), and — for non-preprints — a linked arXiv logo.
- * Abstracts are typeset by MathJax lazily the first time they open, which avoids
- * MathJax measuring math while collapsed.
- */
 (function () {
   function el(tag, opts) {
     const e = document.createElement(tag);
@@ -25,14 +16,10 @@
     return null;
   }
 
-  // arXiv button — styled like the "Abstract" button; links to the paper.
   function arxivButton(id) {
     return el('a', { class: 'pub-arxiv-btn', text: 'arXiv', href: 'https://arxiv.org/abs/' + id, attrs: { title: 'arXiv:' + id, 'aria-label': 'arXiv:' + id } });
   }
 
-  // --- Search highlighting ---------------------------------------------------
-  // Fold a string to accent-free lowercase, recording for each output character
-  // the index it came from in the original string (so we can map matches back).
   function foldWithMap(str) {
     var out = '', map = [];
     for (var i = 0; i < str.length; i++) {
@@ -42,7 +29,6 @@
     return { folded: out, map: map };
   }
 
-  // Fragment of `text` with every occurrence of any term wrapped in <mark class="pub-hl">.
   function highlightFragment(text, terms) {
     var frag = document.createDocumentFragment();
     text = text == null ? '' : String(text);
@@ -72,8 +58,6 @@
     return frag;
   }
 
-  // Highlight matches inside already-rendered prose (used when an abstract opens);
-  // skips text that is inside math (mjx-container) or an existing mark.
   function highlightWithin(root, terms) {
     if (!terms.length) return;
     var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), texts = [], n, p, t, skip;
@@ -88,14 +72,9 @@
     });
   }
 
-  // Keep trailing punctuation on the same line as the inline formula it follows.
-  // MathJax renders each formula as an atomic inline element, and the browser may
-  // break right after it, dropping a lone comma/period onto the next line. Wrapping
-  // the formula together with the punctuation in a nowrap span prevents that (and
-  // also strips any stray space that slipped in before the punctuation).
   function glueMathPunctuation(root) {
     root.querySelectorAll('mjx-container').forEach(function (c) {
-      if (c.getAttribute('display') === 'true') return; // skip centered display equations
+      if (c.getAttribute('display') === 'true') return;
       const next = c.nextSibling;
       if (!next || next.nodeType !== 3) return;
       const m = next.textContent.match(/^\s*([,.;:!?)]+)/);
@@ -109,11 +88,6 @@
     });
   }
 
-  // Uppercase Greek typed as literal Unicode (Γ, Δ, …) is rendered italic by
-  // MathJax, but LaTeX convention sets uppercase Greek upright. Rewrite those to
-  // their commands (\Gamma, \Delta, …), which MathJax sets upright — but only
-  // inside math regions, so surrounding prose is never touched. Lowercase Greek
-  // (γ, μ, …) is left alone: it should stay italic.
   function uprightCapitalGreek(s) {
     const MAP = {
       'Γ': '\\Gamma ', 'Δ': '\\Delta ', 'Θ': '\\Theta ', 'Λ': '\\Lambda ',
@@ -124,7 +98,6 @@
     return s.replace(/\$\$[\s\S]*?\$\$|\$[^$]*\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\\begin\{[^}]*\}[\s\S]*?\\end\{[^}]*\}/g, fix);
   }
 
-  // Build the roll-down abstract (grid 0fr -> 1fr) and return it with a flip fn.
   function makeAbstract(abstract, onState, terms) {
     const outer = el('div', { class: 'pub-abstract-wrap' });
     const clip = el('div', { class: 'pub-abstract-clip' });
@@ -135,10 +108,9 @@
 
     function setOpen(open) {
       outer.classList.toggle('is-open', open);
-      if (onState) onState(open); // lets the caller flip the title's ▸/▾ marker
+      if (onState) onState(open);
     }
     let typeset = false, highlighted = false;
-    // Only highlight the search terms once the abstract is actually opened.
     function reveal() {
       if (!highlighted) { highlightWithin(box, terms || []); highlighted = true; }
       setOpen(true);
@@ -147,7 +119,6 @@
       if (outer.classList.contains('is-open')) {
         setOpen(false);
       } else if (!typeset && window.MathJax && window.MathJax.typesetPromise) {
-        // Typeset first (while collapsed) so the roll animates to the final height.
         window.MathJax.typesetPromise([box]).then(function () { glueMathPunctuation(box); typeset = true; reveal(); });
       } else {
         reveal();
@@ -160,24 +131,17 @@
     terms = terms || [];
     const li = el('li', { class: 'pub-item' });
 
-    // Authors (no full stop after the names).
     li.appendChild(highlightFragment(item.authors.join(', '), terms));
     li.appendChild(el('br'));
 
-    // Title — links to the most current version (journal for published/in press,
-    // arXiv for preprints).
     const url = primaryUrl(item);
     const titleEl = url
       ? el('a', { class: 'pub-title', href: url })
       : el('span', { class: 'pub-title' });
     titleEl.appendChild(highlightFragment(item.title, terms));
     li.appendChild(titleEl);
-    // No full stop after the title — just a space before the badge / buttons.
     li.appendChild(document.createTextNode(' '));
 
-    // Status badge (only for "in press" — "published" is the norm and a preprint is
-    // already marked by its section, so a pill on those would just be noise), then the "Abstract" button, then
-    // the arXiv logo — all on the title line, in that order.
     if (item.status === 'in press') {
       li.appendChild(el('span', {
         class: 'pub-badge pub-badge--' + item.status.replace(/\s+/g, '-'),
@@ -200,7 +164,6 @@
     }
     li.appendChild(el('br'));
 
-    // Reference line. Preprints show no reference line at all.
     let ref;
     if (item.status === 'preprint') {
       ref = '';
@@ -208,12 +171,9 @@
       ref = (item.venue && item.venue !== 'arXiv preprint')
         ? item.venue + ' ' + item.details
         : item.details;
-      // Drop a redundant "in press" / "to appear" phrase — the badge conveys it.
       ref = ref.replace(/,?\s*\b(?:in press|to appear)\b/gi, '').replace(/\s{2,}/g, ' ').trim();
     }
     if (ref) {
-      // Bold the journal volume (the number right before the "(year)"), as is
-      // customary in LaTeX/amsart bibliographies.
       const refSpan = el('span', { class: 'pub-ref' });
       const m = ref.match(/^(.*?)(\d+)(\s+\(\d{4}\).*)$/);
       if (m) {
@@ -228,13 +188,11 @@
       li.appendChild(refSpan);
     }
 
-    // The abstract rolls down below the entry.
     if (abstractWrap) li.appendChild(abstractWrap);
 
     return li;
   }
 
-  // Lowercase, accent-folded search text for one item (cached on the item).
   function norm(s) { return String(s == null ? '' : s).normalize('NFD').replace(/\p{Diacritic}/gu, '').toLowerCase(); }
   function itemSearchText(item) {
     if (item._search == null) {
@@ -252,9 +210,6 @@
     return terms.every(function (term) { return t.indexOf(term) >= 0; });
   }
 
-  // Render the list, filtered to items matching every whitespace-separated word in
-  // `query` (searched across authors/title/venue/details/year/status/ids/abstract).
-  // An empty query shows everything; numbering runs continuously over shown items.
   function render(query) {
     const data = window.PUBLICATIONS;
     const container = document.getElementById('publications-container');
@@ -263,8 +218,6 @@
 
     var terms = norm(query).split(/\s+/).filter(Boolean);
 
-    // Display order of the categories (independent of their order in the data
-    // file). Change this list to reorder the sections on the page.
     var ORDER = ['prepublications', 'monographs', 'publications', 'proceedings'];
     var cats = data.categories.slice().sort(function (a, b) {
       var ia = ORDER.indexOf(a.id); if (ia < 0) ia = ORDER.length;
@@ -276,10 +229,10 @@
     cats.forEach(function (cat) {
       var matched = [];
       cat.items.forEach(function (item) {
-        orig++;                                  // position in the full (unfiltered) list
+        orig++;
         if (itemMatches(item, terms)) matched.push({ item: item, num: orig });
       });
-      if (!matched.length) return;               // hide categories that have no matches
+      if (!matched.length) return;
 
       const lead = el('p', { class: 'pub-leadin' });
       lead.appendChild(el('b', { text: cat.title }));
@@ -288,7 +241,7 @@
       const ol = el('ol', { class: 'pub-list' });
       matched.forEach(function (m) {
         const li = renderItem(m.item, terms);
-        li.setAttribute('value', m.num);         // keep each item's number from the full bibliography
+        li.setAttribute('value', m.num);
         ol.appendChild(li);
         shown++;
       });
@@ -301,9 +254,6 @@
     var countEl = document.getElementById('pub-count');
     if (countEl) countEl.textContent = terms.length ? (shown + ' of ' + orig + ' shown') : '';
 
-    // Typeset math in titles/refs (e.g. a "$p$" in a title). Abstracts are left
-    // out on purpose — they typeset themselves lazily on open, and typesetting
-    // them here (while collapsed) would double-typeset them.
     if (window.MathJax && window.MathJax.typesetPromise) {
       var mathBits = Array.prototype.slice.call(container.querySelectorAll('.pub-title, .pub-ref'));
       if (mathBits.length) window.MathJax.typesetPromise(mathBits);
