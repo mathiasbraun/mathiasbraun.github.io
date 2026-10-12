@@ -14,6 +14,7 @@
 
     --link: #2e79ae;
     --link-hover: #1e5f8a;
+    --subhead: color-mix(in srgb, var(--accent) 80%, var(--text));
 
     --tile-bg: #2b4058;
     --tile-fg: #eef2f7;
@@ -45,6 +46,7 @@
         --on-accent: #11161d;
         --link: #70a6d2;
         --link-hover: #96bede;
+        --subhead: var(--accent);
         --tile-bg: #364f70;
         --tile-fg: #eaf1fa;
         --tile-grey: #596473;
@@ -69,6 +71,7 @@
     --on-accent: #11161d;
     --link: #70a6d2;
     --link-hover: #96bede;
+    --subhead: var(--accent);
     --tile-bg: #364f70;
     --tile-fg: #eaf1fa;
     --tile-grey: #596473;
@@ -288,7 +291,7 @@ ul > li::before {
 
 p > b:first-child,
 .pub-leadin b {
-    color: color-mix(in srgb, var(--accent) 80%, var(--text));
+    color: var(--subhead);
 }
 
 .when {
