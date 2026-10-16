@@ -195,6 +195,19 @@ const PUBLICATIONS = {
       "title": "Preprints",
       "items": [
         {
+          "id": "causal-sobolev-spaces-gradient-flows",
+          "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Simone Vincini"],
+          "title": "Causal Sobolev spaces and gradient flows",
+          "venue": "arXiv preprint",
+          "details": "arXiv:2610.21775",
+          "year": 2026,
+          "status": "preprint",
+          "url": null,
+          "doi": null,
+          "arxiv": "2610.21775",
+          "abstract": "We develop a relaxation-based approach to Sobolev functions and Cheeger energies on metric spacetimes, in analogy with the construction used in positive signature. For an exponent $p<0$, we introduce a pre-$p$-Cheeger energy built from a local steepness constant on causal functions, and define the $p$-Cheeger energy as its relaxation in $L^0$; this yields, by construction, a convex and lower semicontinuous functional together with an associated maximal relaxed subslope. We establish natural calculus rules for the resulting Sobolev class. We then define the $p$-heat flow as the gradient flow of the $p$-Cheeger energy in $L^2$ and its generator, the $p$-d'Alembertian. Combining a Kuwada-type lemma with entropy growth estimates along the flow, we show that our notion of Sobolev class and relaxed subslope coincides with the Sobolev class and weak subslope introduced by Beran et al."
+        },
+        {
           "id": "doubling-poincare-tamed-spaces",
           "authors": ["Mathias Braun", "Chiara Rigoni", "Christian Rose", "David Tewodrose"],
           "title": "Doubling, Poincaré and Gromov–Hausdorff precompactness for tamed spaces",
