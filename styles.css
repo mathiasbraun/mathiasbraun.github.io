@@ -431,13 +431,6 @@ p > b:first-child,
     width: 17px;
     flex: none;
 }
-.topbar-meta.topbar-workshop {
-    margin-bottom: 0;
-    cursor: auto;
-}
-.topbar-meta a {
-    color: var(--link);
-}
 
 .pub-search {
     display: block;
