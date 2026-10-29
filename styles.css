@@ -21,7 +21,8 @@
     --tile-fg: #f1f2f4;
     --tile-grey: #6a7280;
     --badge-bg: #eceef0;
-    --li-hover: #0a66c2;
+    --li: #0a66c2;
+    --li-hover: #004182;
 
     --nav-bg: #24272c;
     --nav-text: #d5dae2;
@@ -53,7 +54,8 @@
         --tile-fg: #eceef1;
         --tile-grey: #596473;
         --badge-bg: #262e3a;
-        --li-hover: #70b5f9;
+        --li: #70b5f9;
+        --li-hover: #9bcbf5;
         --nav-bg: #090c10;
         --nav-text: #cfd6df;
     }
@@ -79,7 +81,8 @@
     --tile-fg: #eceef1;
     --tile-grey: #596473;
     --badge-bg: #262e3a;
-    --li-hover: #70b5f9;
+    --li: #70b5f9;
+    --li-hover: #9bcbf5;
     --nav-bg: #090c10;
     --nav-text: #cfd6df;
 }
@@ -529,7 +532,7 @@ mark.pub-hl {
 .news-li {
     font-size: 19px;
     line-height: 1;
-    color: var(--link);
+    color: var(--li);
     flex: none;
 }
 .news-li:hover {
