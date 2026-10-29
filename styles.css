@@ -6,23 +6,24 @@
     --border: #e9e9e6;
     --surface: #f6f7f9;
 
-    --accent: #3d5a80;
+    --accent: #936c31;
     --heading: #936c31;
-    --accent-strong: #2b4058;
-    --accent-soft: #eef2f7;
+    --section: #4d535c;
+    --accent-strong: #5a4524;
+    --accent-soft: #f4eee2;
     --on-accent: #ffffff;
 
-    --link: #2e79ae;
-    --link-hover: #1e5f8a;
-    --subhead: color-mix(in srgb, var(--accent) 80%, var(--text));
+    --link: #8a6430;
+    --link-hover: #6f4f1c;
+    --subhead: var(--text);
 
-    --tile-bg: #2b4058;
-    --tile-fg: #eef2f7;
+    --tile-bg: #2f333a;
+    --tile-fg: #f1f2f4;
     --tile-grey: #6a7280;
     --badge-bg: #eceef0;
     --li-hover: #0a66c2;
 
-    --nav-bg: #26303f;
+    --nav-bg: #24272c;
     --nav-text: #d5dae2;
     --nav-text-hover: #ffffff;
 
@@ -39,16 +40,17 @@
         --muted: #848b95;
         --border: #29313c;
         --surface: #1a2029;
-        --accent: #5c82b4;
+        --accent: #bf9a5f;
         --heading: #a17e48;
-        --accent-strong: #b9d0ec;
-        --accent-soft: #212a38;
+        --section: #b4bac3;
+        --accent-strong: #dcc59b;
+        --accent-soft: #2a2619;
         --on-accent: #11161d;
-        --link: #70a6d2;
-        --link-hover: #96bede;
-        --subhead: var(--accent);
-        --tile-bg: #364f70;
-        --tile-fg: #eaf1fa;
+        --link: #c4a066;
+        --link-hover: #dcc08a;
+        --subhead: var(--text);
+        --tile-bg: #3a4048;
+        --tile-fg: #eceef1;
         --tile-grey: #596473;
         --badge-bg: #262e3a;
         --li-hover: #70b5f9;
@@ -64,16 +66,17 @@
     --muted: #848b95;
     --border: #29313c;
     --surface: #1a2029;
-    --accent: #5c82b4;
+    --accent: #bf9a5f;
     --heading: #a17e48;
-    --accent-strong: #b9d0ec;
-    --accent-soft: #212a38;
+    --section: #b4bac3;
+    --accent-strong: #dcc59b;
+    --accent-soft: #2a2619;
     --on-accent: #11161d;
-    --link: #70a6d2;
-    --link-hover: #96bede;
-    --subhead: var(--accent);
-    --tile-bg: #364f70;
-    --tile-fg: #eaf1fa;
+    --link: #c4a066;
+    --link-hover: #dcc08a;
+    --subhead: var(--text);
+    --tile-bg: #3a4048;
+    --tile-fg: #eceef1;
     --tile-grey: #596473;
     --badge-bg: #262e3a;
     --li-hover: #70b5f9;
@@ -148,7 +151,7 @@ h1[id] {
     font-weight: 600;
     letter-spacing: 0.01em;
     text-align: left;
-    color: var(--heading);
+    color: var(--section);
 
     display: flex;
     align-items: center;
@@ -161,7 +164,7 @@ h1[id] {
 .heading-icon {
     margin-right: 9px;
     font-size: 0.82em;
-    color: var(--heading);
+    color: var(--section);
 }
 
 .navbar {
@@ -356,7 +359,7 @@ p > b:first-child,
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0.01em;
-    color: var(--heading);
+    color: var(--section);
 }
 
 .topbar-title {
