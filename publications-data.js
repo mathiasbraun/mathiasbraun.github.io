@@ -208,6 +208,19 @@ const PUBLICATIONS = {
       "title": "Preprints",
       "items": [
         {
+          "id": "p-harmonic-gauge-isometries",
+          "authors": ["Mathias Braun"],
+          "title": "\\(p\\)-Harmonic gauge and the regularity of spacetime isometries",
+          "venue": "arXiv preprint",
+          "details": "",
+          "year": 2026,
+          "status": "preprint",
+          "url": null,
+          "doi": null,
+          "arxiv": null,
+          "abstract": "We show every Lorentzian metric of class $C^{k,\\alpha}$, where $k\\in\\mathbf{N}_0$ and $\\alpha\\in(0,1)$, admits local coordinates of class $C^{k+1,\\alpha}$ all of whose coordinate functions are temporal functions that are harmonic with respect to a nonlinear $p$-wave operator, where $p\\in(-\\infty,1)$. Unlike the classical wave operator, this operator is elliptic on temporal functions. As an application, we show that an isometry between Lorentzian metrics of class $C^{k,\\alpha}$ is of class $C^{k+1,\\alpha}$."
+        },
+        {
           "id": "causal-sobolev-spaces-gradient-flows",
           "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Simone Vincini"],
           "title": "Causal Sobolev spaces and gradient flows",
