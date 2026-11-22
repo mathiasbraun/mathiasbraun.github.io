@@ -46,6 +46,19 @@ const PUBLICATIONS = {
       "title": "Publications",
       "items": [
         {
+          "id": "lorentzian-splitting-c1",
+          "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Argam Ohanyan", "Clemens Sämann"],
+          "title": "A Lorentzian splitting theorem for continuously differentiable metrics and weights",
+          "venue": "Annals of PDE",
+          "details": "to appear, 44 pp.",
+          "year": 2025,
+          "status": "published",
+          "url": null,
+          "doi": null,
+          "arxiv": "2507.06836",
+          "abstract": "We prove a splitting theorem for globally hyperbolic, weighted spacetimes with metrics and weights of regularity $C^1$ by combining elliptic techniques for the negative homogeneity $p$-d'Alembert operator from our recent work in the smooth setting with the concept of line-adapted curves introduced here. Our results extend the Lorentzian splitting theorem proved for smooth globally hyperbolic spacetimes by Galloway – and variants of its weighted counterparts by Case and Woolgar–Wylie – to this low regularity setting."
+        },
+        {
           "id": "exact-dalembertian-lorentz-distance",
           "authors": ["Mathias Braun"],
           "title": "Exact d'Alembertian for Lorentz distance functions",
@@ -271,19 +284,6 @@ const PUBLICATIONS = {
           "doi": null,
           "arxiv": "2602.14246",
           "abstract": "We prove the Gannon-Lee incompleteness theorem for globally hyperbolic spacetimes. We assume the synthetic null energy condition of Ketterer and a trappedness condition we call \"synthetically asymptotically regular\". Our result generalizes this classical result to the weighted case. It also motivates and indicates extensions to low regularity, which are deferred to future work."
-        },
-        {
-          "id": "lorentzian-splitting-c1",
-          "authors": ["Mathias Braun", "Nicola Gigli", "Robert J. McCann", "Argam Ohanyan", "Clemens Sämann"],
-          "title": "A Lorentzian splitting theorem for continuously differentiable metrics and weights",
-          "venue": "arXiv preprint",
-          "details": "arXiv:2507.06836, 44 pp.",
-          "year": 2025,
-          "status": "preprint",
-          "url": null,
-          "doi": null,
-          "arxiv": "2507.06836",
-          "abstract": "We prove a splitting theorem for globally hyperbolic, weighted spacetimes with metrics and weights of regularity $C^1$ by combining elliptic techniques for the negative homogeneity $p$-d'Alembert operator from our recent work in the smooth setting with the concept of line-adapted curves introduced here. Our results extend the Lorentzian splitting theorem proved for smooth globally hyperbolic spacetimes by Galloway – and variants of its weighted counterparts by Case and Woolgar–Wylie – to this low regularity setting."
         },
         {
           "id": "gromov-reconstruction-lorentzian",
