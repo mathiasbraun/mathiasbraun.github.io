@@ -52,7 +52,7 @@ const PUBLICATIONS = {
           "venue": "Annals of PDE",
           "details": "to appear, 44 pp.",
           "year": 2025,
-          "status": "published",
+          "status": "in press",
           "url": null,
           "doi": null,
           "arxiv": "2507.06836",

@@ -159,7 +159,7 @@
       li.appendChild(btn);
       abstractWrap = a.wrapper;
     }
-    if (item.arxiv) {
+    if (item.arxiv && item.status !== 'preprint') {
       li.appendChild(arxivButton(item.arxiv));
     }
     li.appendChild(el('br'));
